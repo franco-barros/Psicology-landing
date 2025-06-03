@@ -1,0 +1,100 @@
+.footer {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 3rem 1.5rem 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.bottomBar {
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a {
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #0070f3;
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: center;
+}
+
+.backToTop {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #0070f3;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.backToTop:hover {
+  transform: translateY(-2px);
+}

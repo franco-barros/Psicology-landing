@@ -1,0 +1,111 @@
+.hero {
+  width: 100%;
+  background-color: #f5f8fa;
+  padding: 4rem 1.5rem;
+}
+
+.overlay {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f3b4d;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btnPrimary {
+  background-color: #0056b3;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background-color: #00418f;
+}
+
+.btnSecondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btnSecondary:hover {
+  background-color: #cacaca;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #0056b3;
+}
+
+.signature {
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.imageContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
