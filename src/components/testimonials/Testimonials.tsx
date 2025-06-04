@@ -39,7 +39,7 @@ const stats = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className={styles.testimonialSection} id="testimonios">
+    <section className={styles.testimonialSection} id="testimonials">
       <h2 className={styles.title}>Lo Que Dicen Mis Pacientes</h2>
       <p className={styles.subtitle}>
         Testimonios reales de personas que han transformado sus vidas
@@ -65,9 +65,10 @@ const Testimonials: React.FC = () => {
         ))}
       </div>
 
+      <h3 className={styles.statsTitle}>Resultados en Números</h3>
       <div className={styles.statsContainer}>
         {stats.map((stat, index) => (
-          <div className={styles.statBox} key={index}>
+          <div className={styles.statCard} key={index}>
             <span className={styles.statValue}>{stat.value}</span>
             <span className={styles.statLabel}>{stat.label}</span>
           </div>

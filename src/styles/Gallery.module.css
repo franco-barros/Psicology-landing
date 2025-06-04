@@ -1,0 +1,77 @@
+.gallery {
+  padding: 4rem 2rem;
+  background-color: #fffaf3;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #5a3921; /* marrón suave */
+}
+
+.instagramSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.instagramFollow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagramImage {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.qrText {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.instagramCard {
+  max-width: 400px;
+  background-color: #fffdf9;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  text-align: left;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  color: #7c5318;
+  margin-bottom: 1rem;
+}
+
+.cardText p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.cardList {
+  padding-left: 1rem;
+  color: #5a3921;
+}
+
+.instagramButton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #88a14a; /* verde otoñal */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.instagramButton:hover {
+  background-color: #6c8536;
+}

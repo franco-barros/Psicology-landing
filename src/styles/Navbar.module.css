@@ -29,7 +29,11 @@
 .logo {
   display: flex;
   align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  color: #4d6447; /* Verde otoñal */
+  text-decoration: none;
 }
 
 .links {
@@ -73,6 +77,33 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.ctaButton {
+  background-color: #4d6447; /* Verde otoñal */
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #3c4f36;
+}
+
+.mobileCtaButton {
+  background-color: #4d6447;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
 }
 
 /* Mobile styles */

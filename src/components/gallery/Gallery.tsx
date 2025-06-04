@@ -2,14 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/gallery/Gallery.module.css";
-import GalleryCarousel from "../gallerycarousel";
-import galleryImages from "../../data/galleryData";
+import styles from "../../styles/Gallery.module.css";
 
 const Gallery: React.FC = () => (
   <section id="gallery" className={styles.gallery}>
-    <h2 className={styles.heading}>Nuestro instagram</h2>
-    <GalleryCarousel images={galleryImages} />
+    <h2 className={styles.heading}>Nuestro Instagram</h2>
 
     <div className={styles.instagramSection}>
       <div className={styles.instagramFollow}>
@@ -20,16 +17,20 @@ const Gallery: React.FC = () => (
           height={200}
           className={styles.instagramImage}
         />
+        <p className={styles.qrText}>Escanea el código para seguirnos</p>
       </div>
+
       <div className={styles.instagramCard}>
         <h3 className={styles.cardTitle}>¿Qué compartimos?</h3>
         <div className={styles.cardText}>
-          <p>En nuestro Instagram encontrarás:</p>
+          <p>
+            En nuestro Instagram encontrarás contenido que inspira bienestar:
+          </p>
           <ul className={styles.cardList}>
-            <li>🍰 Fotos de nuestras últimas creaciones.</li>
-            <li>📸 Detrás de escena preparando pedidos.</li>
-            <li>🎉 Promociones exclusivas y sorteos.</li>
-            <li>🛍️ Novedades y lanzamientos de temporada.</li>
+            <li>🧘 Consejos para manejar la ansiedad y el estrés.</li>
+            <li>📚 Reflexiones sobre salud mental y autocuidado.</li>
+            <li>🎥 Fragmentos de charlas y videos educativos.</li>
+            <li>🌱 Frases motivacionales y ejercicios prácticos.</li>
           </ul>
         </div>
         <a

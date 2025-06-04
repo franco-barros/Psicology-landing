@@ -4,7 +4,7 @@ import styles from "../../styles/ContactForm.module.css";
 
 const ContactForm: React.FC = () => {
   return (
-    <section className={styles.contactSection} id="contacto">
+    <section className={styles.contactSection} id="contact">
       <h2 className={styles.title}>Agenda Tu Primera Consulta</h2>
       <p className={styles.subtitle}>
         Da el primer paso hacia tu bienestar mental

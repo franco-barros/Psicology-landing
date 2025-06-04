@@ -1,80 +1,93 @@
 .testimonialSection {
-  padding: 4rem 1.5rem;
+  padding: 4rem 1rem;
   background-color: #f9f9f9;
   text-align: center;
 }
 
 .title {
   font-size: 2rem;
-  color: #003366;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
   color: #666;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
+/* --- Testimonial Cards --- */
 .testimonialsGrid {
   display: grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .card {
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e6e4e0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border-color: #d6c1a8;
+  background-color: #fdfaf6;
 }
 
 .quote {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
 .author {
-  font-size: 0.9rem;
-  color: #555;
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .rating {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  color: #f39c12;
-  font-weight: bold;
+  gap: 0.5rem;
+  color: #c29d56; /* marrón amarillento otoñal */
 }
 
 .star {
-  color: #f39c12;
+  color: #c29d56;
 }
 
+/* --- Stats Section --- */
 .statsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
   margin-top: 2rem;
 }
 
-.statBox {
-  text-align: center;
+.statCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #f0eee9;
 }
 
 .statValue {
-  display: block;
   font-size: 1.5rem;
-  color: #0056b3;
-  font-weight: bold;
+  font-weight: 700;
+  color: #4b4b38; /* tono marrón suave */
 }
 
 .statLabel {
   font-size: 0.9rem;
   color: #777;
+  margin-top: 0.25rem;
+  text-align: center;
 }

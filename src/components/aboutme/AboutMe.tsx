@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import styles from "../../styles/About.module.css";
+import styles from "../../styles/AboutMe.module.css";
 import Image from "next/image";
 
 const AboutMe: React.FC = () => {
   return (
-    <section id="about" className={styles.aboutSection}>
+    <section id="aboutme" className={styles.aboutSection}>
       <div className={styles.container}>
         {/* Imagen a la izquierda */}
         <div className={styles.imageWrapper}>

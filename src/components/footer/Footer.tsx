@@ -8,6 +8,7 @@ import {
   FaMapMarkerAlt,
   FaArrowUp,
   FaEnvelope,
+  FaLeaf,
 } from "react-icons/fa";
 import styles from "../../styles/Footer.module.css";
 
@@ -25,7 +26,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     <footer id="footer" className={`${styles.footer} ${className || ""}`}>
       <div className={styles.content}>
         <div className={styles.section}>
-          <h3 className={styles.title}>Dr. Carlos Mendoza</h3>
+          <h3 className={styles.title}>
+            <FaLeaf className={styles.iconLeaf} />
+            Dr. Carlos Mendoza
+          </h3>
           <p className={styles.description}>
             Psicólogo clínico especializado en bienestar mental y crecimiento
             personal.
