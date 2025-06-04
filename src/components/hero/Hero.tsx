@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <section id="hero" className={styles.hero}>
       <div className={styles.overlay}>
         <div className={styles.content}>
-          <h1 className={styles.title}>✨ Psicólogo Clínico Certificado</h1>
+          <h1 className={styles.title}>🍂 Psicólogo Clínico Certificado</h1>
           <p className={styles.subtitle}>
             Transformando vidas a través de la psicología especializada
           </p>
@@ -24,14 +24,6 @@ const Hero: React.FC = () => {
               className={`${styles.btn} ${styles.btnPrimary}`}
             >
               Reservar Primera Consulta
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.btn} ${styles.btnSecondary}`}
-            >
-              Sígueme en Instagram
             </a>
           </div>
 
@@ -55,7 +47,7 @@ const Hero: React.FC = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/image/dr-carlos-hero.jpg" // Asegúrate de tener esta imagen en public/image
+            src="/image/dr-carlos-hero.jpg"
             alt="Dr. Carlos Mendoza"
             width={800}
             height={500}

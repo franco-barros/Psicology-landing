@@ -1,13 +1,15 @@
 .hero {
   width: 100%;
-  background-color: #f5f8fa;
+  background-color: #faf3e0; /* Beige otoñal */
   padding: 4rem 1.5rem;
+  border-radius: 2rem;
 }
 
 .overlay {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  border-radius: 2rem;
 }
 
 .content {
@@ -15,21 +17,21 @@
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: #1f3b4d;
+  color: #4d392d; /* Marrón oscuro */
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #4a4a4a;
+  color: #6d5c4d;
   margin-bottom: 1rem;
 }
 
 .description {
   font-size: 1.1rem;
-  color: #555;
+  color: #5c4a3d;
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
@@ -47,27 +49,18 @@
 .btn {
   padding: 0.8rem 1.6rem;
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 
 .btnPrimary {
-  background-color: #0056b3;
+  background-color: #8a6e3d; /* Marrón cálido */
   color: white;
 }
 
 .btnPrimary:hover {
-  background-color: #00418f;
-}
-
-.btnSecondary {
-  background-color: #e0e0e0;
-  color: #333;
-}
-
-.btnSecondary:hover {
-  background-color: #cacaca;
+  background-color: #70572f;
 }
 
 .stats {
@@ -77,7 +70,7 @@
   flex-wrap: wrap;
   margin-top: 2rem;
   font-size: 1.1rem;
-  color: #333;
+  color: #4d392d;
 }
 
 .stats div {
@@ -87,25 +80,27 @@
 .stats strong {
   display: block;
   font-size: 1.8rem;
-  color: #0056b3;
+  color: #8a6e3d;
 }
 
 .signature {
   margin-top: 2rem;
   font-style: italic;
   font-size: 1.1rem;
-  color: #444;
+  color: #5c4a3d;
 }
 
 .imageContainer {
   max-width: 800px;
   margin: 0 auto;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 1rem;
   object-fit: cover;
+  border-radius: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
