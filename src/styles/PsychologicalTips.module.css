@@ -1,0 +1,141 @@
+.container {
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #3a3a3a;
+  background-color: #faf3e0; /* fondo marrón claro */
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff9c4;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  max-width: 100%;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #555;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoryBtn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border: 2px solid #ccc;
+  background: transparent;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+/* Hover personalizado CON fondo y texto blanco */
+.hoverAnsiedad:hover {
+  border-color: #f44336;
+  background-color: #f44336;
+  color: #fff;
+}
+.hoverEstrés:hover {
+  border-color: #ff9800;
+  background-color: #ff9800;
+  color: #fff;
+}
+.hoverRelaciones:hover {
+  border-color: #4caf50;
+  background-color: #4caf50;
+  color: #fff;
+}
+.hoverAutoestima:hover {
+  border-color: #3f51b5;
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+/* Activos con color propio y fondo suave */
+.active.hoverAnsiedad {
+  border-color: #f44336;
+  background-color: #f44336;
+  color: #fdecea;
+}
+.active.hoverEstrés {
+  border-color: #ff9800;
+  background-color: #ff9800;
+  color: #fff3e0;
+}
+.active.hoverRelaciones {
+  border-color: #4caf50;
+  background-color: #4caf50;
+  color: #e8f5e9;
+}
+.active.hoverAutoestima {
+  border-color: #3f51b5;
+  background-color: #3f51b5;
+  color: #e8eaf6;
+}
+
+.active {
+  font-weight: 700;
+}
+
+/* Tarjeta */
+.tipBox {
+  background-color: #fff;
+  padding: 1.7rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: #555;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  justify-content: center;
+  max-width: 450px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tipBox:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tipIcon {
+  font-size: 1.9rem;
+  flex-shrink: 0;
+}

@@ -1,23 +1,33 @@
+// components/Hero.tsx
 "use client";
 
 import Image from "next/image";
+import { UserCheck } from "lucide-react";
 import styles from "../../styles/Hero.module.css";
 
 const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.overlay}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>🍂 Psicólogo Clínico Certificado</h1>
-          <p className={styles.subtitle}>
-            Transformando vidas a través de la psicología especializada
-          </p>
+      <div className={styles.container}>
+        {/* Área de texto */}
+        <div className={styles.textArea}>
+          <div className={styles.badge}>
+            <UserCheck size={18} />
+            <span>Psicólogo Clínico Certificado</span>
+          </div>
+          <h1 className={styles.title}>
+            <span className={styles.highlightPrimary}>
+              Transformando vidas a través de la
+            </span>{" "}
+            <span className={styles.highlightSecondary}>
+              psicología especializada
+            </span>
+          </h1>
           <p className={styles.description}>
             Acompañamiento profesional para superar desafíos emocionales,
             mejorar relaciones y alcanzar tu mejor versión. Terapia presencial y
             online.
           </p>
-
           <div className={styles.buttons}>
             <a
               href="#contacto"
@@ -26,7 +36,6 @@ const Hero: React.FC = () => {
               Reservar Primera Consulta
             </a>
           </div>
-
           <div className={styles.stats}>
             <div>
               <strong>800+</strong>
@@ -41,16 +50,15 @@ const Hero: React.FC = () => {
               <span>Satisfacción</span>
             </div>
           </div>
-
-          <p className={styles.signature}>Dr. Carlos Mendoza - Psicólogo</p>
+          <p className={styles.signature}>Dr. Ivan Waisman – Psicólogo</p>
         </div>
-
+        {/* Imagen a la derecha */}
         <div className={styles.imageContainer}>
           <Image
-            src="/image/dr-carlos-hero.jpg"
+            src="/images/psycology.png"
             alt="Dr. Carlos Mendoza"
-            width={800}
-            height={500}
+            width={600}
+            height={400}
             className={styles.image}
           />
         </div>

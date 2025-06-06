@@ -4,55 +4,158 @@
   text-align: center;
 }
 
+.badge {
+  display: inline-block;
+  background-color: #e6c87a;
+  color: #5a3921;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
 .heading {
   font-size: 2rem;
+  color: #5a3921;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #9ca97d, #e6c87a, #8b5e3c);
+  border-radius: 9999px;
+}
+
+.postSection {
+  margin-bottom: 4rem;
+}
+
+.postTitle {
+  font-size: 1.5rem;
+  color: #298513;
+  margin-bottom: 1.5rem;
+}
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  justify-content: center;
   margin-bottom: 2rem;
-  color: #5a3921; /* marrón suave */
+}
+
+.postCard {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.followButton,
+.instagramGradientButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(
+    135deg,
+    #9ca97d,
+    #e6c87a,
+    #8b5e3c
+  ); /* gradiente otoñal */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.followButton:hover,
+.instagramGradientButton:hover {
+  transform: translateY(-3px); /* efecto de elevación */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* sombra más profunda */
 }
 
 .instagramSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  align-items: center;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 3rem;
 }
 
 .instagramFollow {
+  flex: 1 1 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .instagramImage {
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  height: auto;
 }
 
 .qrText {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
   color: #555;
+  text-align: center;
 }
 
 .instagramCard {
-  max-width: 400px;
+  flex: 1 1 500px;
   background-color: #fffdf9;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .cardTitle {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #7c5318;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .cardText p {
   margin-bottom: 1rem;
   color: #444;
+  font-size: 1rem;
 }
 
 .cardList {
@@ -60,18 +163,10 @@
   color: #5a3921;
 }
 
-.instagramButton {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #88a14a; /* verde otoñal */
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  font-weight: 600;
-}
-
-.instagramButton:hover {
-  background-color: #6c8536;
+.cardList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
 }

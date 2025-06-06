@@ -1,4 +1,8 @@
 .navbar {
+  --brown: #8b5e3c;
+  --yellow: #ebac30;
+  --green: #298513;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -29,16 +33,61 @@
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  color: #4d6447; /* Verde otoñal */
-  text-decoration: none;
+  color: var(--green);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logoText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
 }
 
 .links {
   display: flex;
   gap: 1.5rem;
+}
+
+/* Hover colors cycling: 1→brown, 2→yellow, 3→green, repeat */
+.navLink:nth-child(3n + 1):hover {
+  color: var(--brown);
+}
+.navLink:nth-child(3n + 2):hover {
+  color: var(--yellow);
+}
+.navLink:nth-child(3n):hover {
+  color: var(--green);
+}
+
+/* Active link colors and underline cycling */
+.navLink.activeLink:nth-child(3n + 1),
+.navLink.activeLink:nth-child(3n + 1)::after {
+  color: var(--brown);
+}
+.navLink.activeLink:nth-child(3n + 1)::after {
+  background-color: var(--brown);
+}
+
+.navLink.activeLink:nth-child(3n + 2),
+.navLink.activeLink:nth-child(3n + 2)::after {
+  color: var(--yellow);
+}
+.navLink.activeLink:nth-child(3n + 2)::after {
+  background-color: var(--yellow);
+}
+
+.navLink.activeLink:nth-child(3n),
+.navLink.activeLink:nth-child(3n)::after {
+  color: var(--green);
+}
+.navLink.activeLink:nth-child(3n)::after {
+  background-color: var(--green);
 }
 
 .navLink {
@@ -51,12 +100,7 @@
   transition: color 0.2s;
 }
 
-.navLink:hover {
-  color: #0070f3;
-}
-
 .activeLink {
-  color: #0070f3;
   font-weight: 600;
   position: relative;
 }
@@ -68,7 +112,6 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #0070f3;
 }
 
 .menuButton {
@@ -80,7 +123,7 @@
 }
 
 .ctaButton {
-  background-color: #4d6447; /* Verde otoñal */
+  background-color: var(--green);
   color: white;
   padding: 0.6rem 1rem;
   border-radius: 9999px;
@@ -95,7 +138,7 @@
 }
 
 .mobileCtaButton {
-  background-color: #4d6447;
+  background-color: var(--green);
   color: white;
   padding: 0.75rem;
   border-radius: 8px;
@@ -106,7 +149,6 @@
   text-decoration: none;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .links {
     display: none;
@@ -139,14 +181,23 @@
     cursor: pointer;
     font-size: 1.1rem;
     color: #333;
+    transition: color 0.2s;
   }
 
-  .mobileLink:hover {
-    color: #0070f3;
+  .mobileLink:nth-child(3n + 1):hover,
+  .mobileLink.activeLink:nth-child(3n + 1) {
+    color: var(--brown);
+  }
+  .mobileLink:nth-child(3n + 2):hover,
+  .mobileLink.activeLink:nth-child(3n + 2) {
+    color: var(--yellow);
+  }
+  .mobileLink:nth-child(3n):hover,
+  .mobileLink.activeLink:nth-child(3n) {
+    color: var(--green);
   }
 
   .activeLink {
-    color: #0070f3;
     font-weight: 600;
   }
 }

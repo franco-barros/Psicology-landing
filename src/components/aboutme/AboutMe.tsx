@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
         {/* Imagen a la izquierda */}
         <div className={styles.imageWrapper}>
           <Image
-            src="/image/dr-carlos.jpg" // Reemplazar con la imagen real
+            src="/images/psycology1.png" // Reemplazar con la imagen real
             alt="Dr. Carlos Mendoza"
             width={500}
             height={600}

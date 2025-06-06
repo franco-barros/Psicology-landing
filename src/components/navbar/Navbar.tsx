@@ -54,9 +54,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => scrollToSection("hero")}>
+        <button className={styles.logo} onClick={() => scrollToSection("hero")}>
           <FaBrain size={32} color="#4d6447" />
-        </div>
+          <span className={styles.logoText}>Dr. Ivan Waisman</span>
+        </button>
 
         <div className={styles.links}>
           {navLinks.map((link) => (
