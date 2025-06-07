@@ -4,9 +4,27 @@
   text-align: center;
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff9c4;
+  color: #4b4b38;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.badgeIcon {
+  color: #c29d56;
+}
+
 .title {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #4b4b38;
 }
 
 .subtitle {
@@ -14,7 +32,6 @@
   margin-bottom: 2rem;
 }
 
-/* --- Testimonial Cards --- */
 .testimonialsGrid {
   display: grid;
   gap: 1.5rem;
@@ -25,9 +42,8 @@
 .card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #e6e4e0;
 }
@@ -39,33 +55,129 @@
   background-color: #fdfaf6;
 }
 
+/* Gradient top block */
+.gradientBlock {
+  position: relative;
+  background: linear-gradient(90deg, #a65a2a, #d4a11a);
+  padding: 1.5rem;
+  color: #fff;
+  text-align: left;
+}
+
+.bgIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  opacity: 0.1;
+  color: #fff;
+}
+
 .quote {
   font-style: italic;
   margin-bottom: 1rem;
 }
 
-.author {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+}
+
+.authorInfo {
+  text-align: left;
+}
+
+.authorName {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.verified {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .rating {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #c29d56; /* marrón amarillento otoñal */
+  gap: 0.25rem;
 }
 
 .star {
-  color: #c29d56;
+  color: #fff;
 }
 
-/* --- Stats Section --- */
+.resultCard {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e6e4e0;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resultCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.resultCard strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #4b4b38;
+  margin-bottom: 0.25rem;
+}
+
+.resultCard span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.statsWrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+}
+
+.statsTitle {
+  font-size: 1.75rem;
+  color: #4b4b38;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* Aquí asignamos colores otoñales a cada valor via CSS */
+.statCard:nth-child(1) .statValue {
+  color: #a65a2a;
+}
+.statCard:nth-child(2) .statValue {
+  color: #d4a11a;
+}
+.statCard:nth-child(3) .statValue {
+  color: #8b5e3c;
+}
+.statCard:nth-child(4) .statValue {
+  color: #c29d56;
 }
 
 .statCard {
@@ -82,7 +194,6 @@
 .statValue {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #4b4b38; /* tono marrón suave */
 }
 
 .statLabel {

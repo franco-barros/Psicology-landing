@@ -54,6 +54,16 @@
   font-size: 0.95rem;
 }
 
+.list li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.list li a:hover {
+  color: #e6c17e;
+}
+
 .contact {
   display: flex;
   align-items: center;

@@ -22,9 +22,19 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     hero?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleInternalLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <footer id="footer" className={`${styles.footer} ${className || ""}`}>
       <div className={styles.content}>
+        {/* Sección de presentación */}
         <div className={styles.section}>
           <h3 className={styles.title}>
             <FaLeaf className={styles.iconLeaf} />
@@ -36,27 +46,90 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </p>
         </div>
 
+        {/* Servicios con links internos */}
         <div className={styles.section}>
           <h4 className={styles.subtitle}>Servicios</h4>
           <ul className={styles.list}>
-            <li>Terapia Individual</li>
-            <li>Terapia de Pareja</li>
-            <li>Terapia Familiar</li>
-            <li>Consulta Online</li>
+            <li>
+              <a
+                href="#servicios"
+                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+              >
+                Terapia Individual
+              </a>
+            </li>
+            <li>
+              <a
+                href="#servicios"
+                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+              >
+                Terapia de Pareja
+              </a>
+            </li>
+            <li>
+              <a
+                href="#servicios"
+                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+              >
+                Terapia Familiar
+              </a>
+            </li>
+            <li>
+              <a
+                href="#servicios"
+                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+              >
+                Consulta Online
+              </a>
+            </li>
           </ul>
         </div>
 
+        {/* Enlaces navegables */}
         <div className={styles.section}>
           <h4 className={styles.subtitle}>Enlaces</h4>
           <ul className={styles.list}>
-            <li>Sobre Mí</li>
-            <li>Blog</li>
-            <li>Recursos</li>
-            <li>Preguntas Frecuentes</li>
-            <li>Contacto</li>
+            <li>
+              <a
+                href="#sobre-mi"
+                onClick={(e) => handleInternalLinkClick(e, "sobre-mi")}
+              >
+                Sobre Mí
+              </a>
+            </li>
+            <li>
+              <a
+                href="#blog"
+                onClick={(e) => handleInternalLinkClick(e, "blog")}
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href="#recursos"
+                onClick={(e) => handleInternalLinkClick(e, "recursos")}
+              >
+                Recursos
+              </a>
+            </li>
+            <li>
+              <a href="#faq" onClick={(e) => handleInternalLinkClick(e, "faq")}>
+                Preguntas Frecuentes
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={(e) => handleInternalLinkClick(e, "contact")}
+              >
+                Contacto
+              </a>
+            </li>
           </ul>
         </div>
 
+        {/* Información de contacto */}
         <div className={styles.section}>
           <h4 className={styles.subtitle}>Contacto</h4>
           <p className={styles.contact}>
@@ -71,6 +144,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         </div>
       </div>
 
+      {/* Barra inferior */}
       <div className={styles.bottomBar}>
         <div className={styles.socials}>
           <a

@@ -1,0 +1,147 @@
+.blogSection {
+  padding: 4rem 1.5rem;
+  background-color: #fffdf8;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #ffe0b2;
+  color: #5d4037;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: #5d4037;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #6d4c41;
+  margin-bottom: 3rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  max-width: 330px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: #ffcc80;
+  color: #5d4037;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center; /* Centrar ícono y texto */
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  color: #9e9e9e;
+}
+
+.cardContent {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  color: #4e342e;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #6d4c41;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #9e9e9e;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.readButton {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ffb74d, #ff8a65);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.readButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.viewAll {
+  margin-top: 3rem;
+}
+
+.viewAllButton {
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #a2c965, #fdd835, #ffb74d);
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  color: #5d4037;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.viewAllButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
