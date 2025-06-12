@@ -54,42 +54,6 @@
   gap: 1.5rem;
 }
 
-/* Hover colors cycling: 1→brown, 2→yellow, 3→green, repeat */
-.navLink:nth-child(3n + 1):hover {
-  color: var(--brown);
-}
-.navLink:nth-child(3n + 2):hover {
-  color: var(--yellow);
-}
-.navLink:nth-child(3n):hover {
-  color: var(--green);
-}
-
-/* Active link colors and underline cycling */
-.navLink.activeLink:nth-child(3n + 1),
-.navLink.activeLink:nth-child(3n + 1)::after {
-  color: var(--brown);
-}
-.navLink.activeLink:nth-child(3n + 1)::after {
-  background-color: var(--brown);
-}
-
-.navLink.activeLink:nth-child(3n + 2),
-.navLink.activeLink:nth-child(3n + 2)::after {
-  color: var(--yellow);
-}
-.navLink.activeLink:nth-child(3n + 2)::after {
-  background-color: var(--yellow);
-}
-
-.navLink.activeLink:nth-child(3n),
-.navLink.activeLink:nth-child(3n)::after {
-  color: var(--green);
-}
-.navLink.activeLink:nth-child(3n)::after {
-  background-color: var(--green);
-}
-
 .navLink {
   background: none;
   border: none;
@@ -100,6 +64,18 @@
   transition: color 0.2s;
 }
 
+/* Cíclico: hover por clase */
+.link1:hover {
+  color: var(--brown);
+}
+.link2:hover {
+  color: var(--yellow);
+}
+.link3:hover {
+  color: var(--green);
+}
+
+/* Cíclico: activo por clase */
 .activeLink {
   font-weight: 600;
   position: relative;
@@ -112,6 +88,13 @@
   left: 0;
   width: 100%;
   height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--brown),
+    var(--yellow),
+    var(--green)
+  );
+  border-radius: 2px;
 }
 
 .menuButton {
@@ -140,13 +123,16 @@
 .mobileCtaButton {
   background-color: var(--green);
   color: white;
-  padding: 0.75rem;
-  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
   margin-top: 1rem;
   font-weight: bold;
   text-align: center;
   width: 100%;
   text-decoration: none;
+  font-size: 1rem;
+  max-width: 300px;
+  align-self: center;
 }
 
 @media (max-width: 768px) {
@@ -184,20 +170,40 @@
     transition: color 0.2s;
   }
 
-  .mobileLink:nth-child(3n + 1):hover,
-  .mobileLink.activeLink:nth-child(3n + 1) {
+  /* Cíclico en mobile */
+  .mobileLink.link1:hover,
+  .mobileLink.activeLink.link1 {
     color: var(--brown);
   }
-  .mobileLink:nth-child(3n + 2):hover,
-  .mobileLink.activeLink:nth-child(3n + 2) {
+
+  .mobileLink.link2:hover,
+  .mobileLink.activeLink.link2 {
     color: var(--yellow);
   }
-  .mobileLink:nth-child(3n):hover,
-  .mobileLink.activeLink:nth-child(3n) {
+
+  .mobileLink.link3:hover,
+  .mobileLink.activeLink.link3 {
     color: var(--green);
   }
 
-  .activeLink {
+  .mobileLink.activeLink {
     font-weight: 600;
+    position: relative;
+  }
+
+  .mobileLink.activeLink::after {
+    content: "";
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      var(--brown),
+      var(--yellow),
+      var(--green)
+    );
+    border-radius: 2px;
   }
 }

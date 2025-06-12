@@ -13,7 +13,9 @@ const Navbar: React.FC = () => {
     () => [
       { id: "hero", label: "Inicio" },
       { id: "services", label: "Servicios" },
-      { id: "aboutme", label: "Sobre mi" },
+      { id: "aboutme", label: "Sobre mí" },
+      { id: "blog", label: "Blog" },
+      { id: "faq", label: "Preguntas" },
       { id: "testimonials", label: "Testimonios" },
       { id: "contact", label: "Contacto" },
     ],
@@ -60,12 +62,14 @@ const Navbar: React.FC = () => {
         </button>
 
         <div className={styles.links}>
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <button
               key={link.id}
-              className={`${styles.navLink} ${
-                activeSection === link.id ? styles.activeLink : ""
-              }`}
+              className={`
+                ${styles.navLink}
+                ${styles[`link${(index % 3) + 1}`]}
+                ${activeSection === link.id ? styles.activeLink : ""}
+              `}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}
@@ -93,12 +97,14 @@ const Navbar: React.FC = () => {
 
       {isOpen && (
         <div className={styles.mobileMenu}>
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <button
               key={link.id}
-              className={`${styles.mobileLink} ${
-                activeSection === link.id ? styles.activeLink : ""
-              }`}
+              className={`
+                ${styles.mobileLink}
+                ${styles[`link${(index % 3) + 1}`]}
+                ${activeSection === link.id ? styles.activeLink : ""}
+              `}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}

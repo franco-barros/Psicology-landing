@@ -15,17 +15,48 @@ import WhatsappButton from "../components/whatsappbutton";
 export default function HomePage() {
   return (
     <main>
-      <Hero />
-      <Service />
-      <Gallery />
-      <About />
-      <BlogSection />
-      <DigitalTherapy />
-      <FAQSection />
-      <PsychologicalTips />
+      <div id="hero">
+        <Hero />
+      </div>
+
+      <div id="services">
+        <Service />
+      </div>
+
+      <div id="gallery">
+        <Gallery />
+      </div>
+
+      <div id="aboutme">
+        <About />
+      </div>
+
+      <div id="blog">
+        <BlogSection />
+      </div>
+
+      <div id="digitaltherapy">
+        <DigitalTherapy />
+      </div>
+
+      <div id="faq">
+        <FAQSection />
+      </div>
+
+      <div id="psychotips">
+        <PsychologicalTips />
+      </div>
+
       <FreeEvaluation formularioUrl="" />
-      <Testimonials />
-      <ContactForm />
+
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
+      <div id="contact">
+        <ContactForm />
+      </div>
+
       <WhatsappButton phoneNumber="" />
     </main>
   );
