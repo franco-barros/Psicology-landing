@@ -52,32 +52,32 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <ul className={styles.list}>
             <li>
               <a
-                href="#servicios"
-                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+                href="#services"
+                onClick={(e) => handleInternalLinkClick(e, "services")}
               >
                 Terapia Individual
               </a>
             </li>
             <li>
               <a
-                href="#servicios"
-                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+                href="#services"
+                onClick={(e) => handleInternalLinkClick(e, "services")}
               >
                 Terapia de Pareja
               </a>
             </li>
             <li>
               <a
-                href="#servicios"
-                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+                href="#services"
+                onClick={(e) => handleInternalLinkClick(e, "services")}
               >
                 Terapia Familiar
               </a>
             </li>
             <li>
               <a
-                href="#servicios"
-                onClick={(e) => handleInternalLinkClick(e, "servicios")}
+                href="#digital-therapy"
+                onClick={(e) => handleInternalLinkClick(e, "digital-therapy")}
               >
                 Consulta Online
               </a>
@@ -91,8 +91,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <ul className={styles.list}>
             <li>
               <a
-                href="#sobre-mi"
-                onClick={(e) => handleInternalLinkClick(e, "sobre-mi")}
+                href="#aboutme"
+                onClick={(e) => handleInternalLinkClick(e, "aboutme")}
               >
                 Sobre Mí
               </a>
@@ -102,15 +102,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 href="#blog"
                 onClick={(e) => handleInternalLinkClick(e, "blog")}
               >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#recursos"
-                onClick={(e) => handleInternalLinkClick(e, "recursos")}
-              >
-                Recursos
+                Blog y recursos
               </a>
             </li>
             <li>

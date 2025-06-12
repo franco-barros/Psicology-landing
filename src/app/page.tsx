@@ -2,6 +2,8 @@ import Hero from "../components/hero";
 import Service from "../components/service";
 import About from "../components/aboutme";
 import { BlogSection } from "../components/blogsection";
+import { DigitalTherapy } from "../components/digitaltherapy";
+import { FAQSection } from "../components/FAQsection";
 import { PsychologicalTips } from "../components/psychologicaltips";
 import { Testimonials } from "../components/testimonials";
 import { FreeEvaluation } from "../components/freeevaluation";
@@ -18,6 +20,8 @@ export default function HomePage() {
       <Gallery />
       <About />
       <BlogSection />
+      <DigitalTherapy />
+      <FAQSection />
       <PsychologicalTips />
       <FreeEvaluation formularioUrl="" />
       <Testimonials />

@@ -1,0 +1,297 @@
+.digitalTherapySection {
+  padding: 4rem 1.5rem;
+  background-color: #fffdf8;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffe0b2;
+  color: #5d4037;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.title span:first-child {
+  color: #000;
+}
+
+.title span:last-child {
+  color: #8da65d;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #6d4c41;
+  margin-bottom: 3rem;
+}
+
+.cardsGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.card1 {
+  background-color: #fbe9e7;
+}
+
+.card2 {
+  background-color: #f1f8e9;
+}
+
+.card3 {
+  background-color: #e3f2fd;
+}
+
+.card4 {
+  background-color: #f9fbe7;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.cardItem {
+  margin-bottom: 1rem;
+}
+
+.cardItem strong {
+  color: #5d4037;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.iconWithText {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.roundIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  background-color: #fff;
+}
+
+.stepsList {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step;
+}
+
+.stepNumber {
+  background-color: #a2c965;
+  color: white;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.stepsList li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #6d4c41;
+}
+
+.checkIcon {
+  margin-right: 0.5rem;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+/* ---- TARIFAS ---- */
+
+.tarifasWrapperCard {
+  background-color: #fff;
+  padding: 2.5rem 1.5rem;
+  margin-top: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.tarifasWrapper {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarifaIntro {
+  color: #6d4c41;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tarifasGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch; /* fuerza igual altura */
+}
+
+.tarifaWrapperItem {
+  position: relative;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffb74d;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.tarifaCard {
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tarifaCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  border-color: #a2c965;
+  z-index: 2;
+}
+
+.popularBorder {
+  border-color: #ffeb3b !important;
+}
+
+.popularBorder:hover {
+  border-color: #ffeb3b;
+}
+
+.tarifaTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #5d4037;
+  margin-bottom: 0.5rem;
+}
+
+.tarifaDuration {
+  font-size: 0.95rem;
+  color: #6d4c41;
+  margin-bottom: 1rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.benefitsList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #6d4c41;
+}
+
+.agendarButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #a2c965, #fdd835, #ffb74d);
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  color: #5d4037;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agendarButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .tarifasGrid {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Nuevas clases para colores de fondo de las tarifas */
+.tarifa1 {
+  background-color: #f1f8e9;
+}
+
+.tarifa2 {
+  background-color: #fff9c4;
+}
+
+.tarifa3 {
+  background-color: #e6f4ea;
+}

@@ -1,4 +1,3 @@
-// src/data/servicesData.ts
 import { IconType } from "react-icons";
 import { FaBrain, FaUsers, FaPuzzlePiece } from "react-icons/fa";
 
