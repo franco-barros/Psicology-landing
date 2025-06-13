@@ -1,4 +1,7 @@
 // components/freeevaluation/FreeEvaluation.tsx
+
+"use client";
+
 import React from "react";
 import {
   Brain,
@@ -52,7 +55,6 @@ interface FreeEvaluationProps {
 }
 
 const FreeEvaluation: React.FC<FreeEvaluationProps> = ({ formularioUrl }) => {
-  // Usamos React.ReactNode en lugar de JSX.Element
   const iconMap: Record<string, React.ReactNode> = {
     "Análisis de Bienestar Emocional": (
       <HeartPulse className={styles.cardIcon} />
@@ -124,13 +126,19 @@ const FreeEvaluation: React.FC<FreeEvaluationProps> = ({ formularioUrl }) => {
         </div>
 
         <div className={styles.rightCard}>
-          {formularioUrl && (
-            <iframe
-              src={formularioUrl}
-              title="Formulario Evaluación Psicológica"
-              className={styles.formIframe}
-            />
-          )}
+          <div className={styles.formPreview}>
+            <Brain className={styles.previewIcon} />
+            <h4>Evaluación Psicológica Gratuita</h4>
+            <p>Haz click para comenzar tu evaluación rápida y confidencial</p>
+            <a
+              href={formularioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.startButton}
+            >
+              Comenzar Evaluación
+            </a>
+          </div>
         </div>
       </div>
 

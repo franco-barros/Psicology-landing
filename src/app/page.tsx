@@ -23,12 +23,12 @@ export default function HomePage() {
         <Service />
       </div>
 
-      <div id="gallery">
-        <Gallery />
-      </div>
-
       <div id="aboutme">
         <About />
+      </div>
+
+      <div id="gallery">
+        <Gallery />
       </div>
 
       <div id="blog">

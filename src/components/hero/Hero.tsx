@@ -1,11 +1,19 @@
 // components/Hero.tsx
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { UserCheck } from "lucide-react";
 import styles from "../../styles/Hero.module.css";
 
 const Hero: React.FC = () => {
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.container}>
@@ -29,12 +37,12 @@ const Hero: React.FC = () => {
             online.
           </p>
           <div className={styles.buttons}>
-            <a
-              href="#contacto"
-              className={`${styles.btn} ${styles.btnPrimary}`}
+            <button
+              onClick={scrollToContact}
+              className={`${styles.btn} ${styles.btnSecondary}`}
             >
               Reservar Primera Consulta
-            </a>
+            </button>
           </div>
           <div className={styles.stats}>
             <div>
