@@ -26,10 +26,12 @@ import {
 import styles from "../../styles/Gallery.module.css";
 
 const posts: string[] = [
-  "https://www.instagram.com/p/DKzZnENNiwt",
+  "https://www.instagram.com/p/C9SPTvMvsRX",
   "https://www.instagram.com/p/C-u59ITRwqg",
   "https://www.instagram.com/p/C-BxI5gqjQe",
   "https://www.instagram.com/p/C9tcuL4NbxC",
+  "https://www.instagram.com/p/C8-mr62MNVQ",
+  "https://www.instagram.com/p/C8xMZzrv72E",
 ];
 
 const Gallery: React.FC = () => {
@@ -62,12 +64,12 @@ const Gallery: React.FC = () => {
         </div>
 
         <a
-          href="https://www.instagram.com/dr.carlosguimenez"
+          href="https://www.instagram.com/creandocaminos__"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.followButton}
         >
-          <FaInstagram /> Seguir a Dr. Carlos Guimenez
+          <FaInstagram /> Seguir a Dr. Ivan Waisman
         </a>
       </div>
 
@@ -105,7 +107,7 @@ const Gallery: React.FC = () => {
             </ul>
           </div>
           <a
-            href="https://www.instagram.com/dr.carlosguimenez"
+            href="https://www.instagram.com/creandocaminos__"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.instagramGradientButton}

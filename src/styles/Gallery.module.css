@@ -53,7 +53,8 @@
 /* Grid: 2 columnas en desktop, 1 en móvil */
 .postGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* Centrado y ajuste óptimo de tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   justify-content: center;
   margin-bottom: 2rem;
@@ -61,12 +62,17 @@
 
 .postCard {
   position: relative;
-  aspect-ratio: 4 / 5;
+  /* Ratio más vertical para mayor altura */
+  aspect-ratio: 3 / 5;
   overflow: hidden;
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 8px 16px 8px 8px;
+  box-sizing: content-box;
 }
 
 .postCard:hover {
@@ -82,6 +88,9 @@
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
+  /* escalado interno para mostrar todo el post */
+  transform: scale(0.95);
+  transform-origin: top center;
 }
 
 .followButton,
