@@ -1,11 +1,21 @@
-// app/blog/[id]/page.tsx
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { FaCalendarAlt, FaClock, FaBookOpen } from "react-icons/fa";
-import styles from "../../../styles/BlogDetail.module.css"; // puedes crearlo
+import styles from "../../../styles/BlogDetail.module.css";
 
-const posts = [
-  {
+type Post = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  date: string;
+  time: string;
+  image: string;
+  content: string;
+};
+
+const posts: Record<string, Post> = {
+  "1": {
     id: "1",
     title: "Cómo Superar la Ansiedad en el Trabajo",
     category: "Ansiedad",
@@ -19,7 +29,7 @@ const posts = [
       [aquí puedes expandir el texto real]
     `,
   },
-  {
+  "2": {
     id: "2",
     title: "La Importancia del Autocuidado Mental",
     category: "Bienestar",
@@ -32,7 +42,7 @@ const posts = [
       El autocuidado mental implica reconocer nuestras emociones y necesidades...
     `,
   },
-  {
+  "3": {
     id: "3",
     title: "Técnicas de Comunicación Asertiva",
     category: "Relaciones",
@@ -45,15 +55,20 @@ const posts = [
       La comunicación asertiva se basa en el respeto mutuo...
     `,
   },
-];
+};
 
-export async function generateStaticParams() {
-  return posts.map((post) => ({ id: post.id }));
+// Genera parámetros estáticos para cada ID de post
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Object.keys(posts).map((id) => ({ id }));
 }
 
-export default function BlogDetail({ params }: { params: { id: string } }) {
-  const post = posts.find((p) => p.id === params.id);
-  if (!post) return notFound();
+// Página que recibe params como Promise, al estilo de tu ejemplo funcional
+type PageProps = Readonly<{ params: Promise<{ id: string }> }>;
+
+export default async function BlogDetail({ params }: PageProps) {
+  const { id } = await params;
+  const post = posts[id];
+  if (!post) notFound();
 
   return (
     <div className={styles.blogDetail}>
@@ -83,9 +98,12 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
       />
 
       <div className={styles.content}>
-        {post.content.split("\n").map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+        {post.content
+          .trim()
+          .split("\n")
+          .map((p, i) => (
+            <p key={i}>{p.trim()}</p>
+          ))}
       </div>
     </div>
   );
