@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "../../styles/BlogSection.module.css";
-
-// Íconos
+import Link from "next/link";
+import styles from "../../styles/BlogPage.module.css";
 import {
   FaBrain,
   FaBookOpen,
@@ -47,83 +45,59 @@ const posts = [
   },
 ];
 
-const BlogSection: React.FC = () => {
-  const router = useRouter();
-
+const BlogPage: React.FC = () => {
   return (
-    <section className={styles.blogSection} id="blog">
-      <div className={styles.badge}>
-        <FaBrain style={{ marginRight: 8, verticalAlign: "middle" }} />
-        Blog Psicológico
+    <main className={styles.blogPage}>
+      <div className={styles.header}>
+        <FaBrain className={styles.icon} />
+        <h1 className={styles.title}>Blog Psicológico</h1>
+        <p className={styles.subtitle}>
+          Artículos especializados para tu crecimiento personal y bienestar
+          mental
+        </p>
       </div>
 
-      <h2 className={styles.title}>Artículos y Recursos</h2>
-      <p className={styles.subtitle}>
-        Explora contenido especializado para tu crecimiento personal y bienestar
-        mental
-      </p>
-
-      <div className={styles.cardsContainer}>
+      <section className={styles.cardsContainer}>
         {posts.map((post) => (
           <div key={post.id} className={styles.card}>
             <div className={styles.imageWrapper}>
               <span className={styles.categoryBadge}>
-                <FaBookOpen
-                  style={{ marginRight: 6, verticalAlign: "middle" }}
-                />
+                <FaBookOpen style={{ marginRight: 6 }} />
                 {post.category}
               </span>
               <Image
                 src={post.image}
                 alt={post.title}
-                className={styles.image}
                 fill
-                sizes="(max-width: 768px) 100vw, 300px"
-                style={{ objectFit: "cover" }}
+                className={styles.image}
               />
             </div>
 
             <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>{post.title}</h3>
+              <h2 className={styles.cardTitle}>{post.title}</h2>
               <p className={styles.cardDescription}>{post.description}</p>
 
               <div className={styles.meta}>
                 <span>
-                  <FaCalendarAlt
-                    style={{ marginRight: 4, verticalAlign: "middle" }}
-                  />
+                  <FaCalendarAlt style={{ marginRight: 4 }} />
                   {post.date}
                 </span>
                 <span>•</span>
                 <span>
-                  <FaClock
-                    style={{ marginRight: 4, verticalAlign: "middle" }}
-                  />
+                  <FaClock style={{ marginRight: 4 }} />
                   {post.time}
                 </span>
               </div>
 
-              <button className={styles.readButton}>
-                Leer Artículo{" "}
-                <FaArrowRight
-                  style={{ marginLeft: 6, verticalAlign: "middle" }}
-                />
-              </button>
+              <Link href={`/blog/${post.id}`} className={styles.readButton}>
+                Leer Artículo <FaArrowRight style={{ marginLeft: 6 }} />
+              </Link>
             </div>
           </div>
         ))}
-      </div>
-
-      <div className={styles.viewAll}>
-        <button
-          className={styles.viewAllButton}
-          onClick={() => router.push("/blog")}
-        >
-          Ver Todos los Artículos
-        </button>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 
-export default BlogSection;
+export default BlogPage;

@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { ReactNode } from "react";
-import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
+import { ClientNavbarWrapper } from "../components/clientnavbarwrapper";
 
 export const metadata = {
   title: "Dr. Carlos Mendoza | Psicólogo Clínico",
@@ -21,7 +21,9 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es">
       <head>
@@ -29,8 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Navbar />
-        <div style={{ paddingTop: "64px" }}>{children}</div>
+        <ClientNavbarWrapper>{children}</ClientNavbarWrapper>
         <Footer />
       </body>
     </html>

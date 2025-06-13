@@ -10,13 +10,13 @@ import {
   FaEnvelope,
   FaLeaf,
 } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 import styles from "../../styles/Footer.module.css";
 
-interface FooterProps {
-  className?: string;
-}
+const Footer = () => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
-const Footer: React.FC<FooterProps> = ({ className }) => {
   const handleScrollTop = () => {
     const hero = document.getElementById("hero");
     hero?.scrollIntoView({ behavior: "smooth" });
@@ -32,9 +32,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   };
 
   return (
-    <footer id="footer" className={`${styles.footer} ${className || ""}`}>
+    <footer id="footer" className={styles.footer}>
       <div className={styles.content}>
-        {/* Sección de presentación */}
+        {/* Presentación (común en ambas versiones) */}
         <div className={styles.section}>
           <h3 className={styles.title}>
             <FaLeaf className={styles.iconLeaf} />
@@ -46,97 +46,104 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </p>
         </div>
 
-        {/* Servicios con links internos */}
-        <div className={styles.section}>
-          <h4 className={styles.subtitle}>Servicios</h4>
-          <ul className={styles.list}>
-            <li>
-              <a
-                href="#services"
-                onClick={(e) => handleInternalLinkClick(e, "services")}
-              >
-                Terapia Individual
-              </a>
-            </li>
-            <li>
-              <a
-                href="#services"
-                onClick={(e) => handleInternalLinkClick(e, "services")}
-              >
-                Terapia de Pareja
-              </a>
-            </li>
-            <li>
-              <a
-                href="#services"
-                onClick={(e) => handleInternalLinkClick(e, "services")}
-              >
-                Terapia Familiar
-              </a>
-            </li>
-            <li>
-              <a
-                href="#digital-therapy"
-                onClick={(e) => handleInternalLinkClick(e, "digital-therapy")}
-              >
-                Consulta Online
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Versión completa solo en home */}
+        {isHome && (
+          <>
+            <div className={styles.section}>
+              <h4 className={styles.subtitle}>Servicios</h4>
+              <ul className={styles.list}>
+                <li>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleInternalLinkClick(e, "services")}
+                  >
+                    Terapia Individual
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleInternalLinkClick(e, "services")}
+                  >
+                    Terapia de Pareja
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    onClick={(e) => handleInternalLinkClick(e, "services")}
+                  >
+                    Terapia Familiar
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#digital-therapy"
+                    onClick={(e) =>
+                      handleInternalLinkClick(e, "digital-therapy")
+                    }
+                  >
+                    Consulta Online
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-        {/* Enlaces navegables */}
-        <div className={styles.section}>
-          <h4 className={styles.subtitle}>Enlaces</h4>
-          <ul className={styles.list}>
-            <li>
-              <a
-                href="#aboutme"
-                onClick={(e) => handleInternalLinkClick(e, "aboutme")}
-              >
-                Sobre Mí
-              </a>
-            </li>
-            <li>
-              <a
-                href="#blog"
-                onClick={(e) => handleInternalLinkClick(e, "blog")}
-              >
-                Blog y recursos
-              </a>
-            </li>
-            <li>
-              <a href="#faq" onClick={(e) => handleInternalLinkClick(e, "faq")}>
-                Preguntas Frecuentes
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                onClick={(e) => handleInternalLinkClick(e, "contact")}
-              >
-                Contacto
-              </a>
-            </li>
-          </ul>
-        </div>
+            <div className={styles.section}>
+              <h4 className={styles.subtitle}>Enlaces</h4>
+              <ul className={styles.list}>
+                <li>
+                  <a
+                    href="#aboutme"
+                    onClick={(e) => handleInternalLinkClick(e, "aboutme")}
+                  >
+                    Sobre Mí
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#blog"
+                    onClick={(e) => handleInternalLinkClick(e, "blog")}
+                  >
+                    Blog y recursos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#faq"
+                    onClick={(e) => handleInternalLinkClick(e, "faq")}
+                  >
+                    Preguntas Frecuentes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={(e) => handleInternalLinkClick(e, "contact")}
+                  >
+                    Contacto
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-        {/* Información de contacto */}
-        <div className={styles.section}>
-          <h4 className={styles.subtitle}>Contacto</h4>
-          <p className={styles.contact}>
-            <FaPhoneAlt /> +1 (555) 123-4567
-          </p>
-          <p className={styles.contact}>
-            <FaEnvelope /> dr.carlosmendoza@email.com
-          </p>
-          <p className={styles.contact}>
-            <FaMapMarkerAlt /> Av. Principal 123, Ciudad
-          </p>
-        </div>
+            <div className={styles.section}>
+              <h4 className={styles.subtitle}>Contacto</h4>
+              <p className={styles.contact}>
+                <FaPhoneAlt /> +1 (555) 123-4567
+              </p>
+              <p className={styles.contact}>
+                <FaEnvelope /> dr.carlosmendoza@email.com
+              </p>
+              <p className={styles.contact}>
+                <FaMapMarkerAlt /> Av. Principal 123, Ciudad
+              </p>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Barra inferior */}
+      {/* Siempre visible */}
       <div className={styles.bottomBar}>
         <div className={styles.socials}>
           <a
@@ -161,13 +168,15 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           © 2024 Dr. Carlos Mendoza. Todos los derechos reservados.
         </p>
 
-        <button
-          onClick={handleScrollTop}
-          className={styles.backToTop}
-          aria-label="Volver arriba"
-        >
-          <FaArrowUp />
-        </button>
+        {isHome && (
+          <button
+            onClick={handleScrollTop}
+            className={styles.backToTop}
+            aria-label="Volver arriba"
+          >
+            <FaArrowUp />
+          </button>
+        )}
       </div>
     </footer>
   );

@@ -55,10 +55,10 @@ const Hero: React.FC = () => {
         {/* Imagen a la derecha */}
         <div className={styles.imageContainer}>
           <Image
-            src="/images/psycology.png"
+            src="/images/ivanpsicology1.png"
             alt="Dr. Carlos Mendoza"
-            width={600}
-            height={400}
+            width={400}
+            height={200}
             className={styles.image}
           />
         </div>

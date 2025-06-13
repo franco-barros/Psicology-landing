@@ -1,3 +1,5 @@
+/* styles/Gallery.module.css */
+
 .gallery {
   padding: 4rem 2rem;
   background-color: #fffaf3;
@@ -17,7 +19,7 @@
 
 .heading {
   font-size: 2rem;
-  color: #5a3921;
+  color: #3f6d4d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,17 +50,21 @@
   margin-bottom: 1.5rem;
 }
 
+/* Grid: 2 columnas en desktop, 1 en móvil */
 .postGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
 .postCard {
-  border-radius: 12px;
+  position: relative;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  border-radius: 12px;
+  background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -68,10 +74,14 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.postImage {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Forzamos el blockquote de Instagram a rellenar el contenedor */
+.postCard .instagram-media {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
 }
 
 .followButton,
@@ -80,12 +90,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(
-    135deg,
-    #9ca97d,
-    #e6c87a,
-    #8b5e3c
-  ); /* gradiente otoñal */
+  background: linear-gradient(135deg, #9ca97d, #e6c87a, #8b5e3c);
   color: white;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -100,8 +105,8 @@
 
 .followButton:hover,
 .instagramGradientButton:hover {
-  transform: translateY(-3px); /* efecto de elevación */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* sombra más profunda */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .instagramSection {
@@ -169,4 +174,32 @@
   gap: 0.5rem;
   margin-bottom: 0.75rem;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 3rem 1rem;
+  }
+
+  .postGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagramSection {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .instagramCard,
+  .instagramFollow {
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
 }

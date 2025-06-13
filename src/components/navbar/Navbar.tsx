@@ -65,11 +65,11 @@ const Navbar: React.FC = () => {
           {navLinks.map((link, index) => (
             <button
               key={link.id}
-              className={`
-                ${styles.navLink}
-                ${styles[`link${(index % 3) + 1}`]}
-                ${activeSection === link.id ? styles.activeLink : ""}
-              `}
+              className={[
+                styles.navLink,
+                styles[`link${(index % 3) + 1}`],
+                activeSection === link.id ? styles.activeLink : "",
+              ].join(" ")}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}
@@ -100,11 +100,11 @@ const Navbar: React.FC = () => {
           {navLinks.map((link, index) => (
             <button
               key={link.id}
-              className={`
-                ${styles.mobileLink}
-                ${styles[`link${(index % 3) + 1}`]}
-                ${activeSection === link.id ? styles.activeLink : ""}
-              `}
+              className={[
+                styles.mobileLink,
+                styles[`link${(index % 3) + 1}`],
+                activeSection === link.id ? styles.activeLink : "",
+              ].join(" ")}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}

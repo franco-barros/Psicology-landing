@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
         {/* Imagen */}
         <div className={styles.imageWrapper}>
           <Image
-            src="/images/psycology1.png"
+            src="/images/ivanpsicology.png"
             alt="Dr. Carlos Mendoza"
             width={500}
             height={600}
