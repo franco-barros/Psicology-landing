@@ -26,12 +26,9 @@ import {
 import styles from "../../styles/Gallery.module.css";
 
 const posts: string[] = [
-  "https://www.instagram.com/p/C9SPTvMvsRX",
-  "https://www.instagram.com/p/C-u59ITRwqg",
-  "https://www.instagram.com/p/C-BxI5gqjQe",
-  "https://www.instagram.com/p/C9tcuL4NbxC",
-  "https://www.instagram.com/p/C8-mr62MNVQ",
-  "https://www.instagram.com/p/C8xMZzrv72E",
+  "https://www.instagram.com/reel/DJ87KN1Nhdz",
+  "https://www.instagram.com/reel/DKKWOwutK7n",
+  "https://www.instagram.com/reel/DJ5CAiVNlBC",
 ];
 
 const Gallery: React.FC = () => {

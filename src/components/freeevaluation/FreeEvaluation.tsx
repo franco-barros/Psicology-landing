@@ -141,30 +141,6 @@ const FreeEvaluation: React.FC<FreeEvaluationProps> = ({ formularioUrl }) => {
           </div>
         </div>
       </div>
-
-      {/* CTA final */}
-      <div className={styles.contactCard}>
-        <div className={styles.contactContent}>
-          <h2 className={styles.contactTitle}>
-            ¿Prefieres hablar directamente conmigo?
-          </h2>
-          <h3 className={styles.contactSubtitle}>
-            Si tienes dudas sobre el formulario o prefieres una consulta
-            telefónica, no dudes en contactarme directamente.
-          </h3>
-          <div className={styles.contactButtons}>
-            <a href="tel:+123456789" className={styles.contactButton}>
-              Llamar Ahora
-            </a>
-            <a
-              href="mailto:contacto@drguimenez.com"
-              className={styles.contactButton}
-            >
-              Enviar Email
-            </a>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

@@ -46,66 +46,7 @@ const ContactForm: React.FC = () => {
             <FaInstagram className={styles.infoIcon} />
             <strong>Instagram:</strong> @dr.carlosmendoza.psi
           </p>
-
-          <div className={styles.freeSession}>
-            <h4 className={styles.infoTitle}>Primera Consulta Gratuita</h4>
-            <p className={styles.infoItem}>
-              Agenda una consulta inicial de 30 minutos sin costo para
-              conocernos y evaluar cómo puedo ayudarte.
-            </p>
-          </div>
         </div>
-
-        {/* Formulario */}
-        <form className={styles.form}>
-          <h3 className={styles.formTitle}>Envíame un Mensaje</h3>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="contact-name">Nombre</label>
-            <input
-              id="contact-name"
-              type="text"
-              placeholder="Tu nombre completo"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="contact-phone">Teléfono</label>
-            <input
-              id="contact-phone"
-              type="text"
-              placeholder="Tu número de teléfono"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="contact-email">Email</label>
-            <input id="contact-email" type="email" placeholder="tu@email.com" />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="contact-type">Tipo de Consulta</label>
-            <select id="contact-type">
-              <option value="">Seleccionar</option>
-              <option value="tcc">Terapia Cognitivo-Conductual</option>
-              <option value="sistemica">Terapia Sistémica Familiar</option>
-              <option value="neuro">Neuropsicología Clínica</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="contact-message">Mensaje</label>
-            <textarea
-              id="contact-message"
-              placeholder="Cuéntame brevemente sobre tu situación y cómo puedo ayudarte..."
-            />
-          </div>
-
-          <button type="submit" className={styles.submitButton}>
-            Enviar Mensaje y Agendar
-          </button>
-        </form>
       </div>
     </section>
   );

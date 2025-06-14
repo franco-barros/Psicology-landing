@@ -1,4 +1,3 @@
-// components/Services.tsx
 "use client";
 
 import React from "react";
@@ -6,7 +5,7 @@ import { Target } from "lucide-react";
 import styles from "../../styles/service/Services.module.css";
 import ServiceCard from "./ServiceCard";
 import type { Service } from "../../data/services";
-import { servicesData } from "../../data/services"; // ← Ruta al archivo .ts correcto
+import { servicesData } from "../../data/services";
 
 const Services: React.FC = () => (
   <section id="services" className={styles.servicesSection}>

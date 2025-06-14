@@ -1,0 +1,119 @@
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselInner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e6e4e0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border-color: #d6c1a8;
+  background-color: #fdfaf6;
+}
+
+.gradientBlock {
+  position: relative;
+  background: linear-gradient(90deg, #a65a2a, #d4a11a);
+  padding: 1.5rem;
+  color: #fff;
+  text-align: left;
+}
+
+.bgIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  opacity: 0.1;
+  color: #fff;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+}
+
+.authorInfo {
+  text-align: left;
+}
+
+.authorName {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.verified {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  color: #fff;
+}
+
+.resultCard {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e6e4e0;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resultCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.resultCard strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #4b4b38;
+  margin-bottom: 0.25rem;
+}
+
+.resultCard span {
+  font-size: 0.9rem;
+  color: #777;
+}

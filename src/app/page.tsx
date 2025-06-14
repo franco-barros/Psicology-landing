@@ -1,11 +1,10 @@
 import Hero from "../components/hero";
-import Service from "../components/service";
+import { Service } from "../components/service";
 import About from "../components/aboutme";
 import { BlogSection } from "../components/blogsection";
 import { DigitalTherapy } from "../components/digitaltherapy";
 import { FAQSection } from "../components/FAQsection";
 import { PsychologicalTips } from "../components/psychologicaltips";
-import { Testimonials } from "../components/testimonials";
 import { FreeEvaluation } from "../components/freeevaluation";
 import { Gallery } from "../components/gallery";
 import { ContactForm } from "../components/contact";
@@ -48,10 +47,6 @@ export default function HomePage() {
       </div>
 
       <FreeEvaluation formularioUrl="https://docs.google.com/forms/d/1cZXgeNQfwmVt-9WlPYR0ixRt1zXI5OYkPkHFnoncFvA/edit?usp=drivesdk" />
-
-      <div id="testimonials">
-        <Testimonials />
-      </div>
 
       <div id="contact">
         <ContactForm />

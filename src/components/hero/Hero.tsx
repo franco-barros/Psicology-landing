@@ -1,10 +1,11 @@
-// components/Hero.tsx
 "use client";
 
 import React from "react";
 import Image from "next/image";
 import { UserCheck } from "lucide-react";
+import { CarouselTestimonials } from "../carouseltestimonial";
 import styles from "../../styles/Hero.module.css";
+import { testimonials } from "@/data/testimonials"; // Importa los testimonios aquí
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -17,7 +18,6 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.container}>
-        {/* Área de texto */}
         <div className={styles.textArea}>
           <div className={styles.badge}>
             <UserCheck size={18} />
@@ -44,23 +44,14 @@ const Hero: React.FC = () => {
               Reservar Primera Consulta
             </button>
           </div>
-          <div className={styles.stats}>
-            <div>
-              <strong>800+</strong>
-              <span>Casos Exitosos</span>
-            </div>
-            <div>
-              <strong>12+</strong>
-              <span>Años de Experiencia</span>
-            </div>
-            <div>
-              <strong>98%</strong>
-              <span>Satisfacción</span>
-            </div>
+
+          <div className={styles.testimonialsWrapper}>
+            <CarouselTestimonials testimonials={testimonials} />
           </div>
-          <p className={styles.signature}>Dr. Ivan Waisman – Psicólogo</p>
+
+          <p className={styles.signature}>Lic. Ivan Waisman – Psicólogo</p>
         </div>
-        {/* Imagen a la derecha */}
+
         <div className={styles.imageContainer}>
           <Image
             src="/images/ivanpsicology1.png"
