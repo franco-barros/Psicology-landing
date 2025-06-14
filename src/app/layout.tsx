@@ -4,15 +4,15 @@ import { Footer } from "../components/footer";
 import { ClientNavbarWrapper } from "../components/clientnavbarwrapper";
 
 export const metadata = {
-  title: "Dr. Carlos Mendoza | Psicólogo Clínico",
+  title: "Lic. Iván Waisman | Psicólogo Clínico M.P. 14636",
   description:
-    "Terapia psicológica especializada en neuropsicología y trauma. Consulta presencial y online.",
-  authors: [{ name: "Dr. Carlos Mendoza" }],
+    "Mejores decisiones, relaciones más sanas y bienestar integral. Psicólogo clínico especializado en depresión, ansiedad, relaciones e intervenciones contextuales.",
+  authors: [{ name: "Lic. Iván Waisman" }],
   openGraph: {
-    title: "Dr. Carlos Mendoza | Psicólogo Clínico",
+    title: "Lic. Iván Waisman | Psicólogo Clínico M.P. 14636",
     description:
-      "Terapia psicológica especializada en neuropsicología y trauma. Consulta presencial y online.",
-    siteName: "Dr. Carlos Mendoza",
+      "Diplomado en Abordajes Comportamentales Contextuales (ACT, DBT). Experto en depresión, ansiedad, relaciones e intervenciones con Expats. Miembro de ACBS Chapter Argentina.",
+    siteName: "Lic. Iván Waisman",
     locale: "es_AR",
     type: "website",
   },
