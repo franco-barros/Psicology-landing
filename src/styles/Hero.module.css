@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  background-color: #faf3e0;
+  background-color: #fdf9f1; /* Más claro que #faf3e0 */
   padding: 4rem 1.5rem;
 }
 
@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #fff9c4;
+  background-color: #c8a2c8; /* Lavanda claro */
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -38,11 +38,11 @@
 }
 
 .highlightPrimary {
-  color: #298513;
+  color: #708238; /* Verde oliva */
 }
 
 .highlightSecondary {
-  color: #ebac30;
+  color: #ebac30; /* Naranja */
 }
 
 .description {
@@ -78,20 +78,20 @@
 }
 
 .btnSecondary {
-  background-color: #4caf50;
+  background-color: #708238; /* Verde oliva */
   color: white;
 }
 
 .btnSecondary:hover {
-  background-color: #388e3c;
+  background-color: #5a6a2e;
   transform: translateY(-3px);
 }
 
-/* Quité .stats porque ya no lo usamos */
-
 /* Estilo para el wrapper del carousel en hero */
 .testimonialsWrapper {
-  margin-bottom: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
 }
 
 /* Mantengo la firma */

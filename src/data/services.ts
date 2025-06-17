@@ -1,12 +1,9 @@
-import { IconType } from "react-icons";
-import { FaBrain, FaUsers, FaPuzzlePiece } from "react-icons/fa";
+import { GraduationCap, BookOpenCheck, Users, Globe2 } from "lucide-react";
 
 export interface Service {
   id: string;
-  icon: IconType;
+  icon: React.ElementType; // CAMBIADO
   title: string;
-  price: string;
-  duration: string;
   description: string;
   features: string[];
   cta: string;
@@ -15,51 +12,54 @@ export interface Service {
 
 export const servicesData: Service[] = [
   {
-    id: "tcc",
-    icon: FaBrain,
-    title: "Terapia Cognitivo-Conductual",
-    price: "Desde $80",
-    duration: "50 min",
+    id: "abordajes",
+    icon: BookOpenCheck, // sin <>
+    title: "Abordajes Terapéuticos",
     description:
-      "Sesiones estructuradas para modificar patrones de pensamiento y comportamiento disfuncionales.",
+      "Psicoterapia basada en ACT y DBT con enfoque contextual y científico.",
     features: [
-      "Evaluación inicial incluida",
-      "Seguimiento personalizado",
-      "Material de apoyo incluido",
+      "Diplomado en Abordajes Contextuales",
+      "ACT (Terapia de Aceptación y Compromiso)",
+      "DBT (Terapia Dialéctico Conductual)",
     ],
-    cta: "Más Información",
-    whatsappLink: "https://wa.me/5492645878987",
+    cta: "Consultar por terapia",
+    whatsappLink: "https://wa.me/xxxxxxxxxxx",
   },
   {
-    id: "sistemica",
-    icon: FaUsers,
-    title: "Terapia Sistémica Familiar",
-    price: "Desde $120",
-    duration: "60 min",
+    id: "formacion",
+    icon: GraduationCap,
+    title: "Formación Académica",
     description:
-      "Análisis de las dinámicas familiares para resolver conflictos y mejorar la comunicación.",
+      "Psicólogo M.P. 14636. Formación continua en intervenciones cognitivo-conductuales.",
     features: [
-      "Evaluación inicial incluida",
-      "Seguimiento personalizado",
-      "Material de apoyo incluido",
+      "Lic. en Psicología – UNC",
+      "Dip. en Psicoterapia Cognitiva (AldOEL)",
     ],
-    cta: "Más Información",
-    whatsappLink: "https://wa.me/5492645878987",
+    cta: "Saber más",
+    whatsappLink: "https://wa.me/xxxxxxxxxxx",
   },
   {
-    id: "neuro",
-    icon: FaPuzzlePiece,
-    title: "Neuropsicología Clínica",
-    price: "Desde $100",
-    duration: "60 min",
+    id: "membresias",
+    icon: Users,
+    title: "Membresías Profesionales",
     description:
-      "Evaluación y rehabilitación de funciones cognitivas afectadas por daño cerebral o trastornos del desarrollo.",
+      "Miembro activo de la comunidad de terapias contextuales en Argentina.",
+    features: ["ACBS Member", "Chapter Argentina", "Formación continua"],
+    cta: "Ver perfil profesional",
+    whatsappLink: "https://wa.me/xxxxxxxxxxx",
+  },
+  {
+    id: "intervencion",
+    icon: Globe2,
+    title: "Áreas de Intervención",
+    description:
+      "Experiencia clínica en ansiedad, depresión y desafíos relacionales.",
     features: [
-      "Evaluación inicial incluida",
-      "Seguimiento personalizado",
-      "Material de apoyo incluido",
+      "Dificultades académico-laborales",
+      "Relaciones interpersonales",
+      "Trabajo con Expats",
     ],
-    cta: "Más Información",
-    whatsappLink: "https://wa.me/5492645878987",
+    cta: "Solicitar entrevista",
+    whatsappLink: "https://wa.me/xxxxxxxxxxx",
   },
 ];

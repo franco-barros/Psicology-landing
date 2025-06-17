@@ -27,4 +27,25 @@ export const testimonials: Testimonial[] = [
     result: "Excelente",
     avatar: "/images/persona.png",
   },
+  {
+    name: "Luis Fernández",
+    quote:
+      "Gracias a la terapia superé una etapa muy difícil. Muy agradecido por el compromiso y la calidez.",
+    result: "Muy Bueno",
+    avatar: "/images/persona.png",
+  },
+  {
+    name: "Sofía Ramírez",
+    quote:
+      "Me sentí escuchada y comprendida desde la primera sesión. El cambio ha sido real.",
+    result: "Excelente",
+    avatar: "/images/persona.png",
+  },
+  {
+    name: "Julián Pérez",
+    quote:
+      "Atención profesional y cercana. Realmente marca la diferencia en la vida de uno.",
+    result: "Muy Bueno",
+    avatar: "/images/persona.png",
+  },
 ];

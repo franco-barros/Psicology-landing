@@ -34,22 +34,6 @@ const Services: React.FC = () => (
         />
       ))}
     </div>
-
-    <div className={styles.freeConsultation}>
-      <h3 className={styles.consultTitle}>
-        ¿No estás seguro cuál es el mejor tratamiento para ti?
-      </h3>
-      <p className={styles.consultText}>
-        Agenda una consulta inicial gratuita de 30 minutos donde evaluaremos tu
-        situación y diseñaremos un plan personalizado.
-      </p>
-      <button
-        className={styles.consultButton}
-        onClick={() => window.open(servicesData[0].whatsappLink, "_blank")}
-      >
-        Consulta Inicial Gratuita
-      </button>
-    </div>
   </section>
 );
 

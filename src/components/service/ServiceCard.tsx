@@ -1,13 +1,11 @@
-// components/ServiceCard.tsx
 "use client";
 
 import React from "react";
-import { FaCheck } from "react-icons/fa";
-import type { IconType } from "react-icons";
+import { Check } from "lucide-react";
 import styles from "../../styles/service/ServicesCard.module.css";
 
 interface ServiceCardProps {
-  icon: IconType;
+  icon: React.ElementType;
   title: string;
   description: string;
   features?: string[];
@@ -25,7 +23,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => (
   <div className={styles.card}>
     <div className={styles.header}>
-      <Icon size={20} color="#fff" className={styles.iconWrapper} />
+      <div className={styles.iconWrapper}>
+        <Icon size={20} color="#fff" />
+      </div>
       <h3 className={styles.title}>{title}</h3>
     </div>
     <div className={styles.body}>
@@ -34,7 +34,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <ul className={styles.featuresList}>
           {features.map((feat) => (
             <li key={`${title}-${feat}`} className={styles.featureItem}>
-              <FaCheck className={styles.checkIcon} />
+              <Check size={14} className={styles.checkIcon} />
               {feat}
             </li>
           ))}

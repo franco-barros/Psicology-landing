@@ -1,32 +1,29 @@
-.carouselWrapper {
+.carouselGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   width: 100%;
-  overflow: hidden;
-  position: relative;
 }
 
-.carouselInner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
+/* Responsive */
+@media (max-width: 1024px) {
+  .carouselGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .carouselGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
-  flex: 0 0 100%;
-  max-width: 100%;
-  box-sizing: border-box;
   background: white;
   border-radius: 12px;
   overflow: hidden;
+  border: 1px solid transparent;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e6e4e0;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  border-color: #d6c1a8;
-  background-color: #fdfaf6;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gradientBlock {
@@ -101,11 +98,6 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resultCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
 .resultCard strong {
   display: block;
   font-size: 1.1rem;
@@ -116,4 +108,10 @@
 .resultCard span {
   font-size: 0.9rem;
   color: #777;
+}
+
+/* Borde destacado en la tarjeta activa */
+.active {
+  border: 3px solid #b497bd; /* Lavanda más visible */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }

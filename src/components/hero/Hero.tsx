@@ -5,7 +5,7 @@ import Image from "next/image";
 import { UserCheck } from "lucide-react";
 import { CarouselTestimonials } from "../carouseltestimonial";
 import styles from "../../styles/Hero.module.css";
-import { testimonials } from "@/data/testimonials"; // Importa los testimonios aquí
+import { testimonials } from "@/data/testimonials";
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -45,10 +45,6 @@ const Hero: React.FC = () => {
             </button>
           </div>
 
-          <div className={styles.testimonialsWrapper}>
-            <CarouselTestimonials testimonials={testimonials} />
-          </div>
-
           <p className={styles.signature}>Lic. Ivan Waisman – Psicólogo</p>
         </div>
 
@@ -61,6 +57,10 @@ const Hero: React.FC = () => {
             className={styles.image}
           />
         </div>
+      </div>
+
+      <div className={styles.testimonialsWrapper}>
+        <CarouselTestimonials testimonials={testimonials} />
       </div>
     </section>
   );
