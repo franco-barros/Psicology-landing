@@ -10,26 +10,33 @@ interface Props {
 }
 
 const CarouselTestimonials: React.FC<Props> = ({ testimonials }) => {
-  const duplicated = [...testimonials, ...testimonials]; // Total: 6 items (2 bloques)
-  const groupSize = 3;
-  const totalGroups = Math.ceil(duplicated.length / groupSize);
-  const [groupIndex, setGroupIndex] = useState(0);
-  const [highlightIndex, setHighlightIndex] = useState(0);
+  // Duplicamos para tener suficiente contenido
+  const duplicated = [...testimonials, ...testimonials]; // 6 items
+  // Estado para detectar si estamos en móvil
+  const [isMobile, setIsMobile] = useState(false);
+  // Recalcular al cambiar tamaño de ventana
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
+  // Tamaño de grupo: 1 en móvil, 3 en desktop
+  const groupSize = isMobile ? 1 : 3;
+  const totalGroups = Math.ceil(duplicated.length / groupSize);
+
+  const [counter, setCounter] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setHighlightIndex((prev) => {
-        if (prev + 1 >= groupSize) {
-          setGroupIndex((g) => (g + 1) % totalGroups);
-          return 0;
-        }
-        return prev + 1;
-      });
+      setCounter((prev) => prev + 1);
     }, 4000);
-
     return () => clearInterval(interval);
-  }, [groupSize, totalGroups]);
+  }, []);
 
+  // Determinamos qué grupo e índice resaltar
+  const groupIndex = Math.floor(counter / groupSize) % totalGroups;
+  const highlightIndex = counter % groupSize;
   const currentGroup = duplicated.slice(
     groupIndex * groupSize,
     groupIndex * groupSize + groupSize

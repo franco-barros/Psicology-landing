@@ -1,5 +1,5 @@
 .section {
-  background-color: #fff8e1;
+  background-color: #f8f9fa;
   padding: 2rem 1.5rem; /* menos padding vertical */
   margin: 0 auto;
   color: #4e342e;
@@ -17,9 +17,9 @@
   gap: 0.5rem;
   font-weight: 700;
   font-size: 1.25rem;
-  color: #4e342e;
+  color: black;
   margin: 0 auto 1.5rem; /* centrado horizontal + separación */
-  background-color: #fff9c4; /* amarillo clarito */
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
   padding: 0.4rem 1rem;
   border-radius: 999px; /* píldora */
 }
@@ -27,7 +27,7 @@
 .badgeIcon {
   width: 28px;
   height: 28px;
-  color: #6d4c41;
+  color: black;
 }
 
 .title {
@@ -39,7 +39,7 @@
 }
 
 .titlePrimary {
-  color: #6d4c41;
+  color: #000;
 }
 
 .titleSecondary {
@@ -248,7 +248,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, #aed581, #fff176, #d7ccc8);
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   border: none;
   border-radius: 999px;
   cursor: pointer;

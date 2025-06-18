@@ -1,6 +1,6 @@
 .contactSection {
   padding: 4rem 1.5rem;
-  background-color: #faf1e6;
+  background-color: #f8f9fa;
   text-align: center;
 }
 
@@ -9,8 +9,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: #ffe0b2;
-  color: #5d4037;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  color: black;
   font-weight: 600;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
@@ -19,14 +19,14 @@
 }
 
 .badgeIcon {
-  color: #ffa726;
+  color: black;
   font-size: 1.5rem;
 }
 
 .title {
   text-align: center;
   font-size: 2rem;
-  color: #5d4037;
+  color: #000;
   margin-bottom: 1.25rem;
 }
 

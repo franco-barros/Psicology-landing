@@ -62,7 +62,6 @@ const PsychologicalTips = () => {
     return () => clearInterval(interval);
   }, [selected, getCurrentTips.length]);
 
-  // Función para obtener la clase de hover según categoría
   const getHoverClass = (cat: string) => {
     switch (cat) {
       case "Ansiedad":
@@ -85,7 +84,11 @@ const PsychologicalTips = () => {
         Tips Psicológicos
       </span>
 
-      <h1 className={styles.title}>Consejos para tu Bienestar Emocional</h1>
+      <h1 className={styles.title}>
+        <span className={styles.titleBlack}>Consejos para tu</span>{" "}
+        <span className={styles.titleGreen}>Bienestar Emocional</span>
+      </h1>
+
       <h2 className={styles.subtitle}>
         Encuentra aquí consejos prácticos para mejorar tu día a día
       </h2>
@@ -109,7 +112,6 @@ const PsychologicalTips = () => {
       </div>
 
       <div className={styles.tipBox}>
-        {/* Mostrar icono y nombre de la categoría en "Todos" */}
         {selected === "Todos" ? (
           <>
             <div className={styles.tipIcon}>

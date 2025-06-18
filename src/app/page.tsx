@@ -1,5 +1,5 @@
 import Hero from "../components/hero";
-import { Service } from "../components/service";
+import { Studies } from "../components/studies";
 import About from "../components/aboutme";
 import { BlogSection } from "../components/blogsection";
 import { DigitalTherapy } from "../components/digitaltherapy";
@@ -19,7 +19,7 @@ export default function HomePage() {
       </div>
 
       <div id="services">
-        <Service />
+        <Studies />
       </div>
 
       <div id="aboutme">

@@ -108,15 +108,6 @@ const FAQSection: React.FC = () => {
           );
         })}
       </ul>
-
-      <div className={styles.contactBox}>
-        <h3 className={styles.contactTitle}>¿No encontraste tu respuesta?</h3>
-        <p className={styles.contactSubtitle}>
-          Contáctame directamente y resolveré todas tus dudas de manera
-          personalizada.
-        </p>
-        <button className={styles.askButton}>Hacer una Pregunta</button>
-      </div>
     </section>
   );
 };

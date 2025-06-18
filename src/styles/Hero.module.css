@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  background-color: #fdf9f1; /* Más claro que #faf3e0 */
+  background-color: #f8f9fa; /* Más claro que #faf3e0 */
   padding: 4rem 1.5rem;
 }
 
@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #c8a2c8; /* Lavanda claro */
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -38,11 +38,11 @@
 }
 
 .highlightPrimary {
-  color: #708238; /* Verde oliva */
+  color: #000; /* Verde oliva */
 }
 
 .highlightSecondary {
-  color: #ebac30; /* Naranja */
+  color: #8da65d; /* Naranja */
 }
 
 .description {

@@ -1,8 +1,5 @@
-// components/Gallery.tsx
-
 "use client";
 
-// Extendemos globalmente el tipo de window para incluir instgrm
 declare global {
   interface Window {
     instgrm?: {
@@ -33,20 +30,20 @@ const posts: string[] = [
 
 const Gallery: React.FC = () => {
   useEffect(() => {
-    // Procesa los blockquotes de Instagram cuando el script cargue
     window.instgrm?.Embeds.process();
   }, []);
 
   return (
     <section id="gallery" className={styles.gallery}>
-      <span className={styles.badge}>Redes Sociales</span>
+      <span className={styles.badge}>
+        <FaInstagram /> Redes Sociales
+      </span>
 
       <h2 className={styles.heading}>
         <FaInstagram /> Nuestro Instagram
       </h2>
 
       <div className={styles.postSection}>
-        <h3 className={styles.postTitle}>Nuestras publicaciones</h3>
         <div className={styles.postGrid}>
           {posts.map((url) => (
             <div key={url} className={styles.postCard}>

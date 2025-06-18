@@ -12,11 +12,9 @@ const Navbar: React.FC = () => {
   const navLinks = useMemo(
     () => [
       { id: "hero", label: "Inicio" },
-      { id: "services", label: "Servicios" },
       { id: "aboutme", label: "Sobre mí" },
       { id: "blog", label: "Blog" },
       { id: "faq", label: "Preguntas" },
-      { id: "testimonials", label: "Testimonios" },
       { id: "contact", label: "Contacto" },
     ],
     []
@@ -58,7 +56,7 @@ const Navbar: React.FC = () => {
       <div className={styles.container}>
         <button className={styles.logo} onClick={() => scrollToSection("hero")}>
           <FaBrain size={32} color="#4d6447" />
-          <span className={styles.logoText}>Dr. Ivan Waisman</span>
+          <span className={styles.logoText}>Lic. Ivan Waisman</span>
         </button>
 
         <div className={styles.links}>

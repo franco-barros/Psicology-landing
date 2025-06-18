@@ -1,15 +1,15 @@
-/* styles/Gallery.module.css */
-
 .gallery {
   padding: 4rem 2rem;
-  background-color: #fffaf3;
+  background-color: #f8f9fa;
   text-align: center;
 }
 
 .badge {
-  display: inline-block;
-  background-color: #e6c87a;
-  color: #5a3921;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  color: black;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
@@ -19,13 +19,17 @@
 
 .heading {
   font-size: 2rem;
-  color: #3f6d4d;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   position: relative;
   margin-bottom: 2.5rem;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .heading::after {
@@ -44,16 +48,8 @@
   margin-bottom: 4rem;
 }
 
-.postTitle {
-  font-size: 1.5rem;
-  color: #298513;
-  margin-bottom: 1.5rem;
-}
-
-/* Grid: 2 columnas en desktop, 1 en móvil */
 .postGrid {
   display: grid;
-  /* Centrado y ajuste óptimo de tarjetas */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   justify-content: center;
@@ -62,8 +58,7 @@
 
 .postCard {
   position: relative;
-  /* Ratio más vertical para mayor altura */
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 3 / 5.8; /* más vertical */
   overflow: hidden;
   border-radius: 12px;
   background-color: white;
@@ -80,7 +75,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Forzamos el blockquote de Instagram a rellenar el contenedor */
 .postCard .instagram-media {
   position: absolute !important;
   top: 0 !important;
@@ -88,7 +82,6 @@
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
-  /* escalado interno para mostrar todo el post */
   transform: scale(0.95);
   transform-origin: top center;
 }
@@ -99,7 +92,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #9ca97d, #e6c87a, #8b5e3c);
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   color: white;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -162,7 +155,7 @@
 
 .cardTitle {
   font-size: 1.6rem;
-  color: #7c5318;
+  color: #8da65d;
   margin-bottom: 1.25rem;
 }
 

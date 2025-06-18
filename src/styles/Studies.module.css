@@ -1,0 +1,159 @@
+/* Studies.module.css */
+
+.studiesSection {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.badgeSection {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  margin: 0 auto 1rem; /* centra horizontalmente */
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4d392d;
+  margin: 0 auto 1rem; /* centra horizontalmente */
+  max-width: 600px;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 auto 3rem;
+  max-width: 600px;
+}
+
+/* Grid de tarjetas de estudio */
+.servicesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .servicesContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tarjeta individual */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff; /* fondo blanco */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+/* Header de tarjeta con gradiente lavanda */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.mainTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4d392d;
+  margin: 0 auto 1rem;
+  max-width: 600px;
+}
+
+.mainTitle span:first-child {
+  color: #000;
+}
+
+.mainTitle span:last-child {
+  color: #8da65d; /* verde oliva */
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Body de tarjeta */
+.body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.description {
+  font-size: 1rem;
+  color: #5c4a3d;
+  margin-bottom: 1rem;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #4d392d;
+  margin-bottom: 0.5rem;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+}
+
+/* Botón de cada tarjeta */
+.button {
+  margin-top: auto;
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}

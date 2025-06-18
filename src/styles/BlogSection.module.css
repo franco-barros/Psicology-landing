@@ -1,13 +1,13 @@
 .blogSection {
   padding: 4rem 1.5rem;
-  background-color: #fffdf8;
+  background-color: #f8f9fa;
   text-align: center;
 }
 
 .badge {
   display: inline-block;
-  background-color: #ffe0b2;
-  color: #5d4037;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  color: black;
   padding: 0.4rem 1rem;
   border-radius: 999px;
   font-weight: 600;
@@ -59,8 +59,8 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background-color: #ffcc80;
-  color: #5d4037;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  color: #000;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.75rem;
@@ -107,7 +107,7 @@
 .readButton {
   align-self: flex-start;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #ffb74d, #ff8a65);
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -131,11 +131,11 @@
 
 .viewAllButton {
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #a2c965, #fdd835, #ffb74d);
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   border: none;
   border-radius: 999px;
   font-weight: bold;
-  color: #5d4037;
+  color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;

@@ -28,7 +28,10 @@ const AboutMe: React.FC = () => {
               <FaUserGraduate className={styles.badgeIcon} />
               Sobre mí
             </span>
-            <h2 className={styles.title}>Conoce al Dr. Carlos Mendoza</h2>
+            <h2 className={styles.mainTitle}>
+              <span>Conoce al </span>
+              <span>Lic. Ivan Waisman</span>
+            </h2>
           </div>
 
           <p className={styles.paragraph}>
