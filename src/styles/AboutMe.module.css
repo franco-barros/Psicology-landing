@@ -1,6 +1,24 @@
 .aboutSection {
   padding: 4rem 1rem;
   background-color: #f8f9fa;
+  position: relative; /* para posicionar el badge fuera */
+}
+
+.badgeAbsolute {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  color: black;
+  padding: 0.4rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 10;
 }
 
 .container {
@@ -10,6 +28,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   align-items: stretch;
+  padding-top: 3.5rem; /* espacio para el badge flotante */
 }
 
 /* Imagen */
@@ -43,25 +62,7 @@
   position: relative;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  color: black;
-  padding: 0.3rem 1rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: -0.5rem;
-  z-index: 1;
-}
-
-.badgeIcon {
-  font-size: 1.2rem;
-}
-
-/* 🎯 Nuevo título con colores divididos */
+/* 🎯 Título con colores divididos */
 .mainTitle {
   font-size: 2rem;
   font-weight: 700;
@@ -70,11 +71,11 @@
 }
 
 .mainTitle span:first-child {
-  color: #333; /* negro */
+  color: #333;
 }
 
 .mainTitle span:last-child {
-  color: #8da65d; /* verde oliva */
+  color: #8da65d;
 }
 
 .paragraph {
@@ -138,6 +139,10 @@
 
   .textWrapper {
     padding: 0 1rem;
+  }
+
+  .badgeAbsolute {
+    top: 1.5rem;
   }
 }
 

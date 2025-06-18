@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+/* Badge con ícono de monitor */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -14,8 +15,10 @@
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  gap: 0.5rem;
 }
 
+/* Título principal */
 .title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -29,12 +32,14 @@
   color: #8da65d;
 }
 
+/* Descripción general */
 .description {
   font-size: 1.1rem;
-  color: #6d4c41;
+  color: #444;
   margin-bottom: 3rem;
 }
 
+/* Grid de tarjetas superiores */
 .cardsGrid {
   display: grid;
   gap: 1.5rem;
@@ -51,19 +56,43 @@
 }
 
 .card1 {
-  background-color: #fbe9e7;
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
 }
 
 .card2 {
-  background-color: #f1f8e9;
+  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
 }
 
 .card3 {
-  background-color: #e3f2fd;
+  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
 }
 
 .card4 {
-  background-color: #f9fbe7;
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+}
+
+/* Cards con fondo lavanda (card1 y card4) */
+.card1 .cardItem strong,
+.card4 .cardItem strong {
+  color: #5a3e6a; /* título morado oscuro */
+  font-weight: 700;
+}
+
+.card1 .cardItem p,
+.card4 .cardItem p {
+  color: #000; /* descripción gris oscuro */
+}
+
+/* Cards con fondo verde (card2 y card3) */
+.card2 .cardItem strong,
+.card3 .cardItem strong {
+  color: #3e4d21; /* título verde oscuro */
+  font-weight: 700;
+}
+
+.card2 .cardItem p,
+.card3 .cardItem p {
+  color: #000; /* descripción gris oscuro */
 }
 
 .cardTitle {
@@ -73,14 +102,9 @@
   margin-bottom: 1rem;
 }
 
+/* Ítem con ícono e info */
 .cardItem {
   margin-bottom: 1rem;
-}
-
-.cardItem strong {
-  color: #5d4037;
-  display: block;
-  margin-bottom: 0.25rem;
 }
 
 .iconWithText {
@@ -101,19 +125,11 @@
   background-color: #fff;
 }
 
+/* Listado de pasos numerados */
 .stepsList {
   list-style: none;
   padding-left: 0;
   counter-reset: step;
-}
-
-.stepNumber {
-  background-color: #a2c965;
-  color: white;
-  font-weight: bold;
-  border-radius: 999px;
-  padding: 0.4rem 0.8rem;
-  margin-right: 0.5rem;
 }
 
 .stepsList li {
@@ -122,6 +138,16 @@
   align-items: center;
 }
 
+.stepNumber {
+  background: linear-gradient(135deg, #ff9a3d 0%, #ff6f3d 100%);
+  color: white;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+}
+
+/* Lista con íconos tipo check */
 .checkList {
   list-style: none;
   padding: 0;
@@ -132,7 +158,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.75rem;
-  color: #6d4c41;
+  color: #000;
 }
 
 .checkIcon {
@@ -142,7 +168,6 @@
 }
 
 /* ---- TARIFAS ---- */
-
 .tarifasWrapperCard {
   background-color: #fff;
   padding: 2.5rem 1.5rem;
@@ -169,7 +194,8 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
-  align-items: stretch; /* fuerza igual altura */
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .tarifaWrapperItem {
@@ -250,6 +276,7 @@
   color: #6d4c41;
 }
 
+/* Botón agendar */
 .agendarButton {
   display: inline-flex;
   align-items: center;
@@ -270,6 +297,20 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
+/* Colores de fondo diferenciados para cada tarifa */
+.tarifa1 {
+  background-color: #f1f8e9;
+}
+
+.tarifa2 {
+  background-color: #fff9c4;
+}
+
+.tarifa3 {
+  background-color: #e6f4ea;
+}
+
+/* RESPONSIVE */
 @media (min-width: 768px) {
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -281,17 +322,4 @@
     overflow-x: auto;
     padding-bottom: 0.5rem;
   }
-}
-
-/* Nuevas clases para colores de fondo de las tarifas */
-.tarifa1 {
-  background-color: #f1f8e9;
-}
-
-.tarifa2 {
-  background-color: #fff9c4;
-}
-
-.tarifa3 {
-  background-color: #e6f4ea;
 }

@@ -108,7 +108,7 @@
 
 /* CTA desktop */
 .ctaButton {
-  background-color: var(--green);
+  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   color: white;
   padding: 0.6rem 1rem;
   border-radius: 9999px;

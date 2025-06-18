@@ -3,9 +3,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "../../styles/BlogSection.module.css";
+import styles from "../../styles/blogsection/BlogSection.module.css";
 
-// Íconos
 import {
   FaBrain,
   FaBookOpen,
@@ -57,7 +56,10 @@ const BlogSection: React.FC = () => {
         Blog Psicológico
       </div>
 
-      <h2 className={styles.title}>Artículos y Recursos</h2>
+      <h2 className={styles.title}>
+        <span>Artículos</span> / <span>Recursos</span>
+      </h2>
+
       <p className={styles.subtitle}>
         Explora contenido especializado para tu crecimiento personal y bienestar
         mental
@@ -78,7 +80,7 @@ const BlogSection: React.FC = () => {
                 alt={post.title}
                 className={styles.image}
                 fill
-                sizes="(max-width: 768px) 100vw, 300px"
+                sizes="(max-width: 768px) 100vw, 330px"
                 style={{ objectFit: "cover" }}
               />
             </div>

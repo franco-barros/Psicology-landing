@@ -9,6 +9,12 @@ import { FaUserGraduate } from "react-icons/fa";
 const AboutMe: React.FC = () => {
   return (
     <section id="aboutme" className={styles.aboutSection}>
+      {/* Badge fuera del componente principal */}
+      <div className={styles.badgeAbsolute}>
+        <FaUserGraduate className={styles.badgeIcon} />
+        Sobre mí
+      </div>
+
       <div className={styles.container}>
         {/* Imagen */}
         <div className={styles.imageWrapper}>
@@ -24,10 +30,6 @@ const AboutMe: React.FC = () => {
         {/* Texto */}
         <div className={styles.textWrapper}>
           <div className={styles.titleWrapper}>
-            <span className={styles.badge}>
-              <FaUserGraduate className={styles.badgeIcon} />
-              Sobre mí
-            </span>
             <h2 className={styles.mainTitle}>
               <span>Conoce al </span>
               <span>Lic. Ivan Waisman</span>
