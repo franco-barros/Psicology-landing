@@ -38,7 +38,7 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>
             <FaLeaf className={styles.iconLeaf} />
-            Dr. Carlos Mendoza
+            Lic. Ivan Waisman
           </h3>
           <p className={styles.description}>
             Psicólogo clínico especializado en bienestar mental y crecimiento
@@ -49,46 +49,6 @@ const Footer = () => {
         {/* Versión completa solo en home */}
         {isHome && (
           <>
-            <div className={styles.section}>
-              <h4 className={styles.subtitle}>Servicios</h4>
-              <ul className={styles.list}>
-                <li>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleInternalLinkClick(e, "services")}
-                  >
-                    Terapia Individual
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleInternalLinkClick(e, "services")}
-                  >
-                    Terapia de Pareja
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    onClick={(e) => handleInternalLinkClick(e, "services")}
-                  >
-                    Terapia Familiar
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#digital-therapy"
-                    onClick={(e) =>
-                      handleInternalLinkClick(e, "digital-therapy")
-                    }
-                  >
-                    Consulta Online
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             <div className={styles.section}>
               <h4 className={styles.subtitle}>Enlaces</h4>
               <ul className={styles.list}>
@@ -165,7 +125,7 @@ const Footer = () => {
         </div>
 
         <p className={styles.copy}>
-          © 2024 Dr. Carlos Mendoza. Todos los derechos reservados.
+          © 2024 Lic. Ivan Waisman Todos los derechos reservados.
         </p>
 
         {isHome && (

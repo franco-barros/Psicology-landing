@@ -81,7 +81,6 @@
   font-weight: 600;
   position: relative;
 }
-
 .activeLink::after {
   content: "";
   position: absolute;
@@ -98,6 +97,7 @@
   border-radius: 2px;
 }
 
+/* Botón de menú (solo visible en mobile) */
 .menuButton {
   display: none;
   background: none;
@@ -121,93 +121,15 @@
   background-color: #3c4f36;
 }
 
-/* CTA dentro del menú móvil */
-.mobileCtaButton {
-  background-color: var(--green);
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 9999px;
-  margin-top: 1rem;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  text-decoration: none;
-  font-size: 1rem;
-  max-width: 300px;
-  align-self: center;
-}
-
-/* Móvil */
+/* Responsive: en mobile ocultamos links desktop y CTA, mostramos botón */
 @media (max-width: 768px) {
   .links {
     display: none;
   }
-  .menuButton {
-    display: block;
-  }
-  /* Oculta CTA principal en móvil */
   .ctaButton {
     display: none;
   }
-
-  .mobileMenu {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .mobileLink {
-    background: none;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: #333;
-    transition: color 0.2s;
-  }
-
-  /* Hover y activo cíclico en mobile */
-  .mobileLink.link1:hover,
-  .mobileLink.activeLink.link1 {
-    color: var(--brown);
-  }
-  .mobileLink.link2:hover,
-  .mobileLink.activeLink.link2 {
-    color: var(--yellow);
-  }
-  .mobileLink.link3:hover,
-  .mobileLink.activeLink.link3 {
-    color: var(--green);
-  }
-
-  /* Línea inferior en mobile */
-  .mobileLink.activeLink {
-    font-weight: 600;
-    position: relative;
-  }
-  .mobileLink.activeLink::after {
-    content: "";
-    position: absolute;
-    bottom: -0.2rem;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-      to right,
-      var(--brown),
-      var(--yellow),
-      var(--green)
-    );
-    border-radius: 2px;
+  .menuButton {
+    display: block;
   }
 }

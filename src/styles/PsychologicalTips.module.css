@@ -9,6 +9,7 @@
 .badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
   border-radius: 9999px;
@@ -16,12 +17,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: black;
-  margin-bottom: 1.5rem;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
+  margin: 0 auto 1rem; /* centra horizontalmente */
 }
 
 .title {

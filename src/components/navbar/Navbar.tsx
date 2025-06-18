@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { FaBrain } from "react-icons/fa";
+import AnimatedMenuOverlay from "../animatedmenuoverlay";
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar: React.FC = () => {
@@ -86,7 +87,7 @@ const Navbar: React.FC = () => {
 
         <button
           className={styles.menuButton}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           ☰
@@ -94,30 +95,15 @@ const Navbar: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className={styles.mobileMenu}>
-          {navLinks.map((link, index) => (
-            <button
-              key={link.id}
-              className={[
-                styles.mobileLink,
-                styles[`link${(index % 3) + 1}`],
-                activeSection === link.id ? styles.activeLink : "",
-              ].join(" ")}
-              onClick={() => scrollToSection(link.id)}
-            >
-              {link.label}
-            </button>
-          ))}
-
-          <a
-            href="https://wa.me/5491123456789"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.mobileCtaButton}
-          >
-            Agendar una cita
-          </a>
-        </div>
+        <AnimatedMenuOverlay
+          onClose={() => setIsOpen(false)}
+          scrollToSection={scrollToSection}
+          navLinks={navLinks.map(({ id, label }) => ({
+            href: id,
+            label,
+          }))}
+          activeSection={activeSection}
+        />
       )}
     </nav>
   );

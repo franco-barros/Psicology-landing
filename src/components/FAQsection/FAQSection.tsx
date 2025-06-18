@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/FAQSection.module.css";
 import { MessageCircle, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { FadeInOnScroll } from "../fadeInonscroll";
 
 const faqItems = [
   {
@@ -55,60 +55,60 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className={styles.faqSection} id="faq">
-      <div className={styles.badge}>
-        <MessageCircle size={16} style={{ marginRight: "0.4rem" }} />
-        Preguntas Frecuentes
-      </div>
+    <FadeInOnScroll>
+      <section className={styles.faqSection} id="faq">
+        <div className={styles.badge}>
+          <MessageCircle size={16} style={{ marginRight: "0.4rem" }} />
+          Preguntas Frecuentes
+        </div>
 
-      <h2 className={styles.title}>
-        <span>Resuelve tus</span> <span>Dudas</span>
-      </h2>
+        <h2 className={styles.title}>
+          <span>Resuelve tus</span> <span>Dudas</span>
+        </h2>
 
-      <p className={styles.description}>
-        Encuentra respuestas a las preguntas más comunes sobre terapia
-        psicológica
-      </p>
+        <p className={styles.description}>
+          Encuentra respuestas a las preguntas más comunes sobre terapia
+          psicológica
+        </p>
 
-      <ul className={styles.questionList}>
-        {faqItems.map((item, index) => {
-          const isActive = activeIndex === index;
+        <ul className={styles.questionList}>
+          {faqItems.map((item, index) => {
+            const isActive = activeIndex === index;
 
-          return (
-            <li
-              key={item.question}
-              className={styles.questionItem}
-              onClick={() => toggleIndex(index)}
-            >
-              <div className={styles.questionHeader}>
-                {item.question}
-                <ChevronDown
-                  size={20}
-                  className={`${styles.chevron} ${
-                    isActive ? styles.chevronOpen : ""
-                  }`}
-                />
-              </div>
+            return (
+              <FadeInOnScroll key={item.question} delay={index * 0.1}>
+                <button
+                  className={styles.questionItem}
+                  tabIndex={0}
+                  onClick={() => toggleIndex(index)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") toggleIndex(index);
+                  }}
+                >
+                  <div className={styles.questionHeader}>
+                    {item.question}
+                    <ChevronDown
+                      size={20}
+                      className={`${styles.chevron} ${
+                        isActive ? styles.chevronOpen : ""
+                      }`}
+                    />
+                  </div>
 
-              <AnimatePresence initial={false}>
-                {isActive && (
-                  <motion.div
-                    key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className={styles.answerWrapper}
+                  <div
+                    className={`${styles.answerWrapper} ${
+                      isActive ? styles.open : ""
+                    }`}
                   >
                     <div className={styles.answer}>{item.answer}</div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+                  </div>
+                </button>
+              </FadeInOnScroll>
+            );
+          })}
+        </ul>
+      </section>
+    </FadeInOnScroll>
   );
 };
 

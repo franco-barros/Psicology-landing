@@ -9,6 +9,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 import styles from "../../styles/PsychologicalTips.module.css";
+import { FadeInOnScroll } from "../fadeInonscroll";
 
 const categories = ["Todos", "Ansiedad", "Estrés", "Relaciones", "Autoestima"];
 
@@ -78,66 +79,68 @@ const PsychologicalTips = () => {
   };
 
   return (
-    <section className={styles.container}>
-      <span className={styles.badge}>
-        <FaLightbulb className={styles.icon} />
-        Tips Psicológicos
-      </span>
+    <FadeInOnScroll>
+      <section className={styles.container}>
+        <span className={styles.badge}>
+          <FaLightbulb />
+          Tips Psicológicos
+        </span>
 
-      <h1 className={styles.title}>
-        <span className={styles.titleBlack}>Consejos para tu</span>{" "}
-        <span className={styles.titleGreen}>Bienestar Emocional</span>
-      </h1>
+        <h1 className={styles.title}>
+          <span className={styles.titleBlack}>Consejos para tu</span>{" "}
+          <span className={styles.titleGreen}>Bienestar Emocional</span>
+        </h1>
 
-      <h2 className={styles.subtitle}>
-        Encuentra aquí consejos prácticos para mejorar tu día a día
-      </h2>
+        <h2 className={styles.subtitle}>
+          Encuentra aquí consejos prácticos para mejorar tu día a día
+        </h2>
 
-      <div className={styles.categories}>
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`${styles.categoryBtn} ${getHoverClass(cat)} ${
-              selected === cat ? `${styles.active} ${getHoverClass(cat)}` : ""
-            }`}
-            onClick={() => {
-              setSelected(cat);
-              setCurrentIndex(0);
-            }}
-            type="button"
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+        <div className={styles.categories}>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`${styles.categoryBtn} ${getHoverClass(cat)} ${
+                selected === cat ? `${styles.active} ${getHoverClass(cat)}` : ""
+              }`}
+              onClick={() => {
+                setSelected(cat);
+                setCurrentIndex(0);
+              }}
+              type="button"
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      <div className={styles.tipBox}>
-        {selected === "Todos" ? (
-          <>
-            <div className={styles.tipIcon}>
-              {
-                icons[
-                  getCurrentTips[currentIndex].category as keyof typeof icons
-                ]
-              }
-            </div>
-            <p>
-              <strong>{getCurrentTips[currentIndex].category}:</strong>{" "}
-              {getCurrentTips[currentIndex].tip}
-            </p>
-          </>
-        ) : (
-          <>
-            {icons[selected as keyof typeof icons] && (
+        <div className={styles.tipBox}>
+          {selected === "Todos" ? (
+            <>
               <div className={styles.tipIcon}>
-                {icons[selected as keyof typeof icons]}
+                {
+                  icons[
+                    getCurrentTips[currentIndex].category as keyof typeof icons
+                  ]
+                }
               </div>
-            )}
-            <p>{getCurrentTips[currentIndex].tip}</p>
-          </>
-        )}
-      </div>
-    </section>
+              <p>
+                <strong>{getCurrentTips[currentIndex].category}:</strong>{" "}
+                {getCurrentTips[currentIndex].tip}
+              </p>
+            </>
+          ) : (
+            <>
+              {icons[selected as keyof typeof icons] && (
+                <div className={styles.tipIcon}>
+                  {icons[selected as keyof typeof icons]}
+                </div>
+              )}
+              <p>{getCurrentTips[currentIndex].tip}</p>
+            </>
+          )}
+        </div>
+      </section>
+    </FadeInOnScroll>
   );
 };
 

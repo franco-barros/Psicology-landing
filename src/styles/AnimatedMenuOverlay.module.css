@@ -1,0 +1,122 @@
+/* AnimatedMenuOverlay.module.css */
+
+/* El overlay cubre toda la pantalla */
+.menuOverlayContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* Close “×” button */
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #000; /* ahora negro para verse sobre panel claro */
+  cursor: pointer;
+  z-index: 1010;
+  transition: transform 0.2s ease;
+}
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+/* The sliding panel ahora ocupa toda la pantalla */
+.animatedMenu {
+  position: relative;
+  width: 100%; /* full width */
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #a9b987 0%,
+    #b8c28f 50%,
+    #c9cd9c 100%
+  ); /* degradado verde oliva */
+  box-shadow: none;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Keyframes de entrada/salida */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.open {
+  animation: slideIn 0.5s ease forwards;
+}
+.closing {
+  animation: slideOut 0.5s ease forwards;
+}
+
+/* Contenedor de ítems */
+.menuItemsContainer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Cada opción */
+.menuItem {
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 1.25rem;
+  color: #333;
+  padding: 0.75rem 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 0.5rem;
+}
+.menuItem:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Activo */
+.activeItem {
+  color: #4d6447; /* verde oscuro */
+  font-weight: 600;
+}
+
+/* Indicador de galleta */
+.cookie {
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.3s ease;
+}
+.cookieVisible {
+  transform: translateY(-50%) scale(1);
+}

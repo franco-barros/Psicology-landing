@@ -1,6 +1,6 @@
 .section {
   background-color: #f8f9fa;
-  padding: 2rem 1.5rem; /* menos padding vertical */
+  padding: 2rem 1.5rem;
   margin: 0 auto;
   color: #4e342e;
 }
@@ -15,19 +15,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: black;
-  margin: 0 auto 1.5rem; /* centrado horizontal + separación */
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  padding: 0.4rem 1rem;
-  border-radius: 999px; /* píldora */
-}
-
-.badgeIcon {
-  width: 28px;
-  height: 28px;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: black;
+  margin: 0 auto 1rem; /* centra horizontalmente */
 }
 
 .title {
@@ -43,7 +37,7 @@
 }
 
 .titleSecondary {
-  color: #9ccc65;
+  color: #8da65d; /* verde oliva */
 }
 
 .subtitle {
@@ -84,7 +78,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #9ccc65;
+  border-bottom: 2px solid #7a946c;
   padding-bottom: 0.3rem;
 }
 
@@ -107,13 +101,13 @@
 
 .icon {
   flex-shrink: 0;
-  color: #9ccc65;
+  color: #7a946c;
   width: 22px;
   height: 22px;
   margin-top: 0.2rem;
 }
 .iconCircle {
-  background-color: #f1f8e9;
+  background-color: #e3f1d6;
   border-radius: 50%;
   padding: 0.5rem;
   display: flex;
@@ -127,11 +121,11 @@
 .cardIcon {
   width: 22px;
   height: 22px;
-  color: #8bc34a;
+  color: #7a946c;
 }
 
 .cardYellow {
-  background-color: #fff;
+  background-color: #f0f4e8;
 }
 
 .cardDesc {
@@ -152,78 +146,6 @@
   justify-content: center;
   align-items: center;
   min-height: 380px;
-}
-
-.formIframe {
-  width: 100%;
-  height: 360px;
-  border: none;
-  border-radius: 10px;
-}
-
-.contactCard {
-  margin-top: 3rem;
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-.contactTitle {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #212121; /* negro */
-  margin: 0;
-  text-align: center;
-}
-
-.contactSubtitle {
-  font-size: 1.2rem;
-  color: #616161; /* gris */
-  font-weight: 500;
-  margin: 0;
-  max-width: 700px;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.contactContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-}
-
-.contactText {
-  font-size: 1.2rem;
-  color: #4e342e;
-  font-weight: 600;
-  line-height: 1.4;
-  max-width: 700px;
-}
-
-.contactButtons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.contactButton {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #4e342e;
-  background: linear-gradient(135deg, #aed581, #fff176, #d7ccc8);
-  border-radius: 999px;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.contactButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .formPreview {
@@ -253,6 +175,7 @@
   border-radius: 999px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
 }
 
 .startButton:hover {

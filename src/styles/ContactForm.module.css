@@ -1,11 +1,36 @@
 .contactSection {
+  position: relative;
   padding: 4rem 1.5rem;
   background-color: #f8f9fa;
   text-align: center;
+  overflow: hidden;
 }
 
-/* Badge va arriba del título */
+/* Iconos decorativos */
+.decorativeLeaf1,
+.decorativeLeaf2 {
+  position: absolute;
+  color: #c8a2c8;
+  opacity: 0.1;
+  font-size: 10rem;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+.decorativeLeaf1 {
+  top: 10%;
+  left: 5%;
+  transform: rotate(-15deg);
+}
+.decorativeLeaf2 {
+  bottom: 5%;
+  right: 10%;
+  transform: rotate(25deg);
+}
+
+/* Badge */
 .badge {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -16,65 +41,146 @@
   border-radius: 999px;
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
+  z-index: 1;
 }
-
 .badgeIcon {
-  color: black;
   font-size: 1.5rem;
 }
 
+/* Textos */
 .title {
-  text-align: center;
   font-size: 2rem;
   color: #000;
   margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
 }
-
 .subtitle {
-  text-align: center;
   font-size: 1.1rem;
   color: #6d4c41;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Contenedor principal */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
   justify-content: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  z-index: 1;
 }
 
+/* Tarjeta de contacto */
 .contactInfo {
-  flex: 1 1 480px;
+  width: 100%;
+  max-width: 500px;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-}
-
-.autumnCard {
   background: #fff3e0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  z-index: 1;
 }
 
+/* Título interno */
 .infoTitle {
-  margin-bottom: 1.5rem;
-  color: #5d4037;
   font-size: 1.5rem;
+  color: #5d4037;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
-.infoItem {
+/* Cada bloque alineado en línea y centrado */
+.infoBlock {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
-  color: #4e342e;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.infoIcon {
+  font-size: 1.3rem;
+  color: #ff7043;
+  margin-bottom: 0.5rem;
+}
+.infoItem {
   font-size: 1.1rem;
+  color: #4e342e;
+  font-weight: 600;
+  text-align: center;
+}
+.microcopy {
+  font-size: 0.85rem;
+  color: #8a6b47;
+  font-style: italic;
+  margin-top: 0.25rem;
 }
 
-.infoIcon {
-  flex-shrink: 0;
-  color: #ff7043;
-  font-size: 1.3rem;
+/* Separador */
+.separator {
+  border: none;
+  border-top: 1px solid #d7c4a3;
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+/* Redes sociales */
+.socialContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.socialIcon {
+  font-size: 1.8rem;
+  color: #5d4037;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+}
+.socialIcon:hover {
+  color: #8da65d;
+  background: #f0e8d0;
+}
+
+/* Frase inspiradora */
+.inspirationalQuote {
+  font-style: italic;
+  color: #8a6b47;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 3rem auto 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Ocultar fondo decorativo */
+  .decorativeLeaf1,
+  .decorativeLeaf2 {
+    display: none;
+  }
+
+  /* Reducir padding de la tarjeta */
+  .contactInfo {
+    padding: 1.5rem;
+  }
+
+  /* Ajustar textos */
+  .title {
+    font-size: 1.75rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .badge {
+    margin-bottom: 1rem;
+  }
+  .socialIcon {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+  .inspirationalQuote {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
 }

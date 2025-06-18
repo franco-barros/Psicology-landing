@@ -1,24 +1,27 @@
 .aboutSection {
   padding: 4rem 1rem;
   background-color: #f8f9fa;
-  position: relative; /* para posicionar el badge fuera */
 }
 
-.badgeAbsolute {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+/* Nuevo wrapper para centrar el badge */
+.badgeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Badge */
+.badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  color: black;
-  padding: 0.4rem 1.2rem;
   border-radius: 9999px;
-  font-weight: 600;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
-  z-index: 10;
+  font-weight: 600;
+  color: black;
 }
 
 .container {
@@ -28,7 +31,6 @@
   flex-wrap: wrap;
   gap: 2rem;
   align-items: stretch;
-  padding-top: 3.5rem; /* espacio para el badge flotante */
 }
 
 /* Imagen */
@@ -51,6 +53,7 @@
   flex: 2 1 300px;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .titleWrapper {
@@ -59,15 +62,16 @@
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-  position: relative;
 }
 
-/* 🎯 Título con colores divididos */
 .mainTitle {
   font-size: 2rem;
   font-weight: 700;
   padding-top: 0.5rem;
   margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mainTitle span:first-child {
@@ -83,6 +87,9 @@
   color: #444;
   margin-bottom: 1rem;
   line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .list {
@@ -117,7 +124,7 @@
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  align-self: flex-start;
+  align-self: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -135,14 +142,6 @@
   .mainTitle {
     font-size: 1.75rem;
     text-align: center;
-  }
-
-  .textWrapper {
-    padding: 0 1rem;
-  }
-
-  .badgeAbsolute {
-    top: 1.5rem;
   }
 }
 

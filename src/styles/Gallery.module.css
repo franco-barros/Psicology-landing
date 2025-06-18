@@ -7,14 +7,15 @@
 .badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  color: black;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
   border-radius: 9999px;
-  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  margin: 0 auto 1rem; /* centra horizontalmente */
 }
 
 .heading {

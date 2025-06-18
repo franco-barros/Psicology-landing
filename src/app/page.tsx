@@ -5,7 +5,7 @@ import { BlogSection } from "../components/blogsection";
 import { DigitalTherapy } from "../components/digitaltherapy";
 import { FAQSection } from "../components/FAQsection";
 import { PsychologicalTips } from "../components/psychologicaltips";
-import { FreeEvaluation } from "../components/freeevaluation";
+import { ProfessionalReview } from "../components/professionalreview";
 import { Gallery } from "../components/gallery";
 import { ContactForm } from "../components/contact";
 
@@ -45,8 +45,7 @@ export default function HomePage() {
       <div id="psychotips">
         <PsychologicalTips />
       </div>
-
-      <FreeEvaluation formularioUrl="https://docs.google.com/forms/d/1cZXgeNQfwmVt-9WlPYR0ixRt1zXI5OYkPkHFnoncFvA/edit?usp=drivesdk" />
+      <ProfessionalReview formularioUrl="https://docs.google.com/forms/d/1cZXgeNQfwmVt-9WlPYR0ixRt1zXI5OYkPkHFnoncFvA/edit?usp=drivesdk" />
 
       <div id="contact">
         <ContactForm />
