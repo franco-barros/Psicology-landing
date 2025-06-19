@@ -51,7 +51,8 @@
   border-radius: 1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  max-width: 330px;
+  width: 330px; /* ancho fijo */
+  height: 420px; /* altura fija */
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -64,6 +65,7 @@
   overflow: hidden;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  flex-shrink: 0;
 }
 
 .image {
@@ -93,7 +95,7 @@
 
 .cardContent {
   padding: 1.25rem;
-  flex: 1;
+  flex: 1; /* ocupa todo el espacio vertical disponible */
   display: flex;
   flex-direction: column;
 }
@@ -108,7 +110,8 @@
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 1rem;
-  flex: 1;
+  flex-grow: 1; /* hace que el texto ocupe espacio para empujar el botón abajo */
+  overflow: hidden;
 }
 
 .meta {

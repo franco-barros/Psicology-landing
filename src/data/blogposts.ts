@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     title: "Técnicas de Comunicación Asertiva",
     category: "Relaciones",
     description:
-      "Aprende a expresar tus ideas y sentimientos de manera clara y respetuosa para mejorar tus relaciones interpersonales.",
+      "Aprende a expresar tus ideas y sentimientos de manera clara y respetuosa.",
     date: "8 Nov 2024",
     time: "6 min",
     image: "/images/psycology.png",
