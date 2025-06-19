@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             <p className={styles.description}>
               Acompañamiento profesional para superar desafíos emocionales,
               mejorar relaciones y alcanzar tu mejor versión. Terapia presencial
-              y online.
+              y online, siempre intentando mejorar.
             </p>
             <div className={styles.buttons}>
               <button

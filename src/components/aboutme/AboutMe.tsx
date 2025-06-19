@@ -4,10 +4,27 @@ import React from "react";
 import styles from "../../styles/AboutMe.module.css";
 import Image from "next/image";
 import { FadeInOnScroll } from "../fadeInonscroll";
-import { FiCheckCircle } from "react-icons/fi";
 import { FaUserGraduate } from "react-icons/fa";
+import {
+  Award,
+  Brain,
+  Heart,
+  Shield,
+  Users,
+  Zap,
+  ArrowRight,
+} from "lucide-react";
 
 const AboutMe: React.FC = () => {
+  const credentials = [
+    { icon: Award, text: "Licenciado en Psicología - Universidad Nacional" },
+    { icon: Brain, text: "Especialista en Neuropsicología Clínica" },
+    { icon: Heart, text: "Certificación en EMDR y Trauma" },
+    { icon: Shield, text: "Miembro del Colegio de Psicólogos" },
+    { icon: Users, text: "Máster en Psicología Forense" },
+    { icon: Zap, text: "Especialización en Terapia Breve Estratégica" },
+  ];
+
   return (
     <section id="aboutme" className={styles.aboutSection}>
       <FadeInOnScroll>
@@ -45,30 +62,34 @@ const AboutMe: React.FC = () => {
               desafíos emocionales y alcanzar una vida más plena y equilibrada.
             </p>
 
+            {/* Subtítulo */}
+            <h3 className={styles.subTitle}>Formación y Especialidades</h3>
+
             <ul className={styles.list}>
-              {[
-                "Licenciado en Psicología - Universidad Nacional",
-                "Especialista en Neuropsicología Clínica",
-                "Certificación en EMDR y Trauma",
-                "Miembro del Colegio de Psicólogos",
-                "Máster en Psicología Forense",
-                "Especialización en Terapia Breve Estratégica",
-              ].map((text) => (
-                <li key={text}>
-                  <FiCheckCircle className={styles.listIcon} />
-                  {text}
+              {credentials.map(({ icon: Icon, text }) => (
+                <li key={text} className={styles.featureItem}>
+                  <span className={styles.iconCircle}>
+                    <Icon size={14} color="#8da65d" />
+                  </span>
+                  <span className={styles.featureText}>{text}</span>
                 </li>
               ))}
             </ul>
 
-            <p className={styles.paragraph}>
-              Mi metodología integra técnicas de vanguardia en neuropsicología,
-              EMDR y terapia sistémica para abordar desde la raíz los desafíos
-              psicológicos más complejos.
-            </p>
+            {/* Card Enfoque Terapéutico */}
+            <div className={styles.focusCard}>
+              <h3 className={styles.focusTitle}>Mi Enfoque Terapéutico</h3>
+              <p className={styles.focusText}>
+                Mi metodología integra técnicas de vanguardia en
+                neuropsicología, EMDR y terapia sistémica para abordar desde la
+                raíz los desafíos psicológicos más complejos.
+              </p>
+            </div>
 
+            {/* Botón con ícono */}
             <a href="#blog" className={styles.button}>
-              Conoce Más Sobre Mi Enfoque →
+              Sobre Mi Enfoque
+              <ArrowRight size={16} className={styles.arrowIcon} />
             </a>
           </div>
         </div>

@@ -37,6 +37,7 @@
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
   color: black;
   font-weight: 600;
+  font-family: var(--font-badge);
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -45,11 +46,13 @@
 }
 .badgeIcon {
   font-size: 1.5rem;
+  font-family: var(--font-badge);
 }
 
 /* Textos */
 .title {
   font-size: 2rem;
+  font-family: var(--font-title);
   color: #000;
   margin-bottom: 1.25rem;
   position: relative;
@@ -57,7 +60,7 @@
 }
 .subtitle {
   font-size: 1.1rem;
-  color: #6d4c41;
+  color: #444;
   margin-bottom: 3rem;
   position: relative;
   z-index: 1;

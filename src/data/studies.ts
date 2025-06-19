@@ -1,24 +1,17 @@
 import { GraduationCap, BookOpenCheck, ClipboardX } from "lucide-react";
-
-export interface Study {
-  id: string;
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  features?: string[];
-  cta?: string;
-  onClick?: () => void;
-}
+import type { Study } from "../types/study";
 
 export const studiesData: Study[] = [
   {
     id: "abordajes-contextuales",
+    type: "Diplomado",
+    date: "2023",
     icon: BookOpenCheck,
     title: "Abordajes Contextuales",
     description:
       "Psicoterapia basada en ACT y DBT con enfoque contextual y científico.",
     features: [
-      "Diplomado en Abordajes Comportamentales Contextuales",
+      "Abordajes Comportamentales Contextuales",
       "Fundación CIPCO",
       "Diplomado — 2023",
     ],
@@ -27,6 +20,8 @@ export const studiesData: Study[] = [
   },
   {
     id: "formacion-academica",
+    type: "Licenciatura",
+    date: "2018",
     icon: GraduationCap,
     title: "Formación Académica",
     description:
@@ -41,6 +36,8 @@ export const studiesData: Study[] = [
   },
   {
     id: "psicoterapia-cognitiva",
+    type: "Diplomado",
+    date: "2020",
     icon: ClipboardX,
     title: "Psicoterapia Cognitiva",
     description:

@@ -1,12 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@600&family=Open+Sans&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Definición de variables para fuentes */
+  --font-badge: "Montserrat", sans-serif; /* Para badges y elementos destacados */
+  --font-title: "Merriweather", serif; /* Para títulos principales */
+  --font-button: "Montserrat", sans-serif; /* Para botones: igual que badge pero puede ser cambiado si querés */
+  --font-body: "Open Sans", sans-serif; /* Para texto normal / cuerpo */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Las fuentes se mantienen, no es necesario cambiar */
   }
 }
 
@@ -19,7 +28,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

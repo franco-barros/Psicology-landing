@@ -2,7 +2,7 @@
   background-color: #f8f9fa;
   padding: 2rem 1.5rem;
   margin: 0 auto;
-  color: #4e342e;
+  color: #444;
 }
 
 .headerWrapper {
@@ -20,12 +20,14 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
+  font-family: var(--font-badge);
   color: black;
-  margin: 0 auto 1rem; /* centra horizontalmente */
+  margin: 0 auto 1rem;
 }
 
 .title {
   font-weight: 800;
+  font-family: var(--font-title);
   font-size: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -43,7 +45,7 @@
 .subtitle {
   font-weight: 600;
   font-size: 1.25rem;
-  color: #5d4037;
+  color: #444;
   margin-bottom: 2rem;
   max-width: 600px;
   line-height: 1.3;
@@ -71,7 +73,7 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 1.5rem 2rem;
-  color: #4e342e;
+  color: #444;
 }
 
 .cardTitle {
@@ -96,7 +98,7 @@
   align-items: flex-start;
   gap: 0.8rem;
   font-size: 1rem;
-  color: #5d4037;
+  color: #444;
 }
 
 .icon {
@@ -131,7 +133,7 @@
 .cardDesc {
   margin: 0.2rem 0 0 0;
   font-weight: 400;
-  color: #6d4c41;
+  color: #444;
   font-size: 0.9rem;
   line-height: 1.25;
 }
@@ -160,7 +162,7 @@
 .previewIcon {
   width: 48px;
   height: 48px;
-  color: #6d4c41;
+  color: #444;
   margin-bottom: 1rem;
 }
 
@@ -168,6 +170,7 @@
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
+  font-family: var(--font-button);
   font-weight: 700;
   color: white;
   background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);

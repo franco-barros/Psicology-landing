@@ -1,16 +1,16 @@
+/* AboutMe.module.css */
+
 .aboutSection {
   padding: 4rem 1rem;
   background-color: #f8f9fa;
 }
 
-/* Nuevo wrapper para centrar el badge */
 .badgeWrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
 }
 
-/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -21,6 +21,7 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
+  font-family: var(--font-badge);
   color: black;
 }
 
@@ -33,7 +34,6 @@
   align-items: stretch;
 }
 
-/* Imagen */
 .imageWrapper {
   flex: 1 1 300px;
   max-width: 500px;
@@ -48,7 +48,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Texto */
 .textWrapper {
   flex: 2 1 300px;
   display: flex;
@@ -67,6 +66,7 @@
 .mainTitle {
   font-size: 2rem;
   font-weight: 700;
+  font-family: var(--font-title);
   padding-top: 0.5rem;
   margin-bottom: 1rem;
   max-width: 600px;
@@ -82,6 +82,17 @@
   color: #8da65d;
 }
 
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-title);
+  color: #333;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .paragraph {
   font-size: 1.05rem;
   color: #444;
@@ -95,37 +106,88 @@
 .list {
   list-style: none;
   margin-bottom: 1.5rem;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  padding-left: 0;
 }
 
-.list li {
+.featureItem {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1rem;
+  font: 400 1rem var(--font-body);
   color: #333;
+  margin-bottom: 0.5rem;
+  cursor: default;
+  transition: background-color 0.3s ease;
 }
 
-.listIcon {
-  color: #298513;
-  font-size: 1.25rem;
+.featureItem:hover {
+  background-color: #e6f0c4;
+  border-radius: 0.5rem;
+}
+
+.iconCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #d3e0b9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
+.featureText {
+  flex: 1;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.focusCard {
+  background-color: #f1f5eb;
+  border: 1px solid #d3e0b9;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 2px 8px rgba(141, 166, 93, 0.15);
+}
+
+.focusTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-title);
+  color: #496422;
+  margin-bottom: 0.75rem;
+}
+
+.focusText {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
   color: white;
   padding: 0.8rem 1.6rem;
   border-radius: 9999px;
   font-weight: 600;
+  font-family: var(--font-button);
   font-size: 1rem;
   text-decoration: none;
   align-self: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button:hover {
@@ -133,7 +195,15 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
-/* 📱 Responsive */
+.arrowIcon {
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+
+.button:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
 @media (max-width: 1024px) {
   .container {
     gap: 1.5rem;
@@ -141,6 +211,10 @@
 
   .mainTitle {
     font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .subTitle {
     text-align: center;
   }
 }

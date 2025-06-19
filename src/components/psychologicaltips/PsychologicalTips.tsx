@@ -58,7 +58,7 @@ const PsychologicalTips = () => {
       setCurrentIndex((prev) =>
         prev + 1 < getCurrentTips.length ? prev + 1 : 0
       );
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [selected, getCurrentTips.length]);

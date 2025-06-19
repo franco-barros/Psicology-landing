@@ -14,12 +14,14 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
+  font-family: var(--font-badge);
   color: black;
-  margin: 0 auto 1rem; /* centra horizontalmente */
+  margin: 0 auto 1rem;
 }
 
 .title {
   font-size: 2rem;
+  font-family: var(--font-title);
   margin-bottom: 0.5rem;
 }
 
@@ -125,6 +127,7 @@
   border: none;
   border-radius: 999px;
   font-size: 0.9rem;
+  font-family: var(--font-button);
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
