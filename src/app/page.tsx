@@ -7,9 +7,8 @@ import { FAQSection } from "../components/FAQsection";
 import { PsychologicalTips } from "../components/psychologicaltips";
 import { ProfessionalReview } from "../components/professionalreview";
 import { Gallery } from "../components/gallery";
-import { ContactForm } from "../components/contact";
-
 import WhatsappButton from "../components/whatsappbutton";
+import BackToTopButton from "../components/backtotopbutton";
 
 export default function HomePage() {
   return (
@@ -47,11 +46,8 @@ export default function HomePage() {
       </div>
       <ProfessionalReview formularioUrl="https://docs.google.com/forms/d/1cZXgeNQfwmVt-9WlPYR0ixRt1zXI5OYkPkHFnoncFvA/edit?usp=drivesdk" />
 
-      <div id="contact">
-        <ContactForm />
-      </div>
-
       <WhatsappButton phoneNumber="" />
+      <BackToTopButton />
     </main>
   );
 }

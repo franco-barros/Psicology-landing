@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Brain, HeartHandshake, Users, Star } from "lucide-react";
+import { FaLeaf } from "react-icons/fa";
 import styles from "../../styles/ProfessionalReview.module.css";
 import { FadeInOnScroll } from "../fadeInonscroll";
 
@@ -145,6 +146,11 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
               )}
             </div>
           </div>
+        </div>
+        {/* Badge */}
+        <div className={styles.badge}>
+          <FaLeaf className={styles.badgeIcon} />
+          Agenda Tu Primera Consulta
         </div>
       </section>
     </FadeInOnScroll>

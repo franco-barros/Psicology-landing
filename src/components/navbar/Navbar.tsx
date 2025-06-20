@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
       { id: "aboutme", label: "Sobre mí" },
       { id: "blog", label: "Blog" },
       { id: "faq", label: "Preguntas" },
-      { id: "contact", label: "Contacto" },
+      { id: "footer", label: "Contacto" },
     ],
     []
   );

@@ -83,15 +83,29 @@
   gap: 1rem;
 }
 
-.socials a {
-  color: #d9a75f;
-  margin-right: 1rem;
-  font-size: 1.2rem;
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socialLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #f2f2f2;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-.socials a:hover {
+.socialLinks a:hover {
   color: #e6c17e;
+}
+
+.socialLinks svg {
+  font-size: 1.2rem;
+  color: #d9a75f;
 }
 
 .copy {

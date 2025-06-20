@@ -47,90 +47,64 @@
   border-radius: 9999px;
 }
 
-.postSection {
-  margin-bottom: 4rem;
+.sharedContent {
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  text-align: left;
 }
 
-.postGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 2rem;
+.sharedContent .cardTitle {
+  font-size: 1.6rem;
+  color: #8da65d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.postCard {
-  position: relative;
-  aspect-ratio: 3 / 5.8;
-  overflow: hidden;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 320px;
-  margin: 0 auto;
-  padding: 8px 16px 8px 8px;
-  box-sizing: content-box;
-}
-
-.postCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-.postCard .instagram-media {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  transform: scale(0.95);
-  transform-origin: top center;
-}
-
-.followButton,
-.instagramGradientButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
-  color: white;
-  padding: 0.75rem 1.5rem;
+.sharedText {
   font-size: 1rem;
-  font-family: var(--font-button);
-  font-weight: 600;
-  border: none;
-  border-radius: 9999px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: #444;
+  margin-bottom: 1rem;
 }
 
-.followButton:hover,
-.instagramGradientButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+.sharedContent .cardList {
+  padding-left: 1rem;
+  color: #5a3921;
 }
 
-.instagramSection {
+.sharedContent .cardList li {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Layout QR + carousel */
+.instagramLayout {
+  display: flex;
   justify-content: center;
-  gap: 3rem;
-  align-items: stretch;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
-.instagramFollow,
-.instagramCard {
-  flex: 1 1 500px;
-  align-self: stretch;
+.leftColumn {
+  flex: 1 1 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.rightColumn {
+  flex: 0 0 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.instagramFollow {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Cambiado para no alargar */
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2.5rem;
@@ -138,8 +112,8 @@
   border-radius: 16px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
   box-sizing: border-box;
-  min-height: 400px; /* Reducido para menos altura */
-  height: 100%;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .instagramImage {
@@ -161,50 +135,26 @@
   max-width: 240px;
 }
 
-.cardTitle {
-  font-size: 1.6rem;
-  color: #8da65d;
-  margin-bottom: 1.25rem;
-}
-
-.cardText p {
-  margin-bottom: 1rem;
-  color: #444;
-  font-size: 1rem;
-}
-
-.cardList {
-  padding-left: 1rem;
-  color: #5a3921;
-}
-
-.cardList li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .gallery {
     padding: 3rem 1rem;
   }
 
-  .postGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .instagramSection {
+  .instagramLayout {
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
   }
 
-  .instagramCard,
-  .instagramFollow {
+  .leftColumn,
+  .rightColumn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .instagramFollow {
+    max-width: 100%;
     padding: 2rem;
-    min-height: 400px;
   }
 
   .instagramImage {
@@ -212,8 +162,19 @@
     max-width: 240px;
   }
 
-  .cardTitle {
+  .sharedContent {
+    margin: 1.5rem auto 0 auto;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .sharedContent .cardTitle {
     font-size: 1.4rem;
+  }
+
+  .sharedText,
+  .sharedContent .cardList li {
+    font-size: 0.9rem;
   }
 
   .heading {

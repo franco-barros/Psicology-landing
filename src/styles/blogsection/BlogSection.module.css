@@ -39,20 +39,56 @@
   margin-bottom: 3rem;
 }
 
-.cardsContainer {
+/* Card contenedor */
+.cardWrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
+/* Botones del carrusel */
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+.navButton {
+  background-color: #f0f0f0;
+  border: 1px solid #8a9650;
+  color: #8a9650;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navButton:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.navButton:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.navButton:hover {
+  background-color: #8a9650;
+  color: #fff;
+}
+
+/* Card */
 .card {
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  width: 330px; /* ancho fijo */
-  height: 420px; /* altura fija */
+  width: 330px;
+  height: 420px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -87,15 +123,9 @@
   align-items: center;
 }
 
-.meta span {
-  display: inline-flex;
-  align-items: center;
-  color: #9e9e9e;
-}
-
 .cardContent {
   padding: 1.25rem;
-  flex: 1; /* ocupa todo el espacio vertical disponible */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -110,7 +140,7 @@
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 1rem;
-  flex-grow: 1; /* hace que el texto ocupe espacio para empujar el botón abajo */
+  flex-grow: 1;
   overflow: hidden;
 }
 
@@ -120,6 +150,12 @@
   margin-bottom: 1rem;
   display: flex;
   gap: 0.5rem;
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  color: #9e9e9e;
 }
 
 .readButton {
@@ -144,6 +180,7 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
+/* Botón ver todos */
 .viewAll {
   margin-top: 3rem;
 }
@@ -163,4 +200,23 @@
 .viewAllButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+  }
+
+  .carouselControls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navButton {
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+  }
 }

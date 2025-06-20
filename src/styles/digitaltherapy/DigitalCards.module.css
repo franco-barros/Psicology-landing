@@ -1,0 +1,154 @@
+/* Gradientes por tarjeta */
+.card1 {
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+}
+
+.card2,
+.card3 {
+  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
+}
+
+.card4 {
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+}
+
+.carouselCard {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 350px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.carouselTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.25rem;
+}
+
+.motionDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.carouselItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 60px;
+}
+
+.carouselItem strong {
+  color: #000;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.carouselItem p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.controls button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  color: #5a5a5a;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #8a9650;
+  color: white;
+}
+
+/* Colores específicos para los textos según tarjeta */
+.card1 .carouselItem strong,
+.card4 .carouselItem strong {
+  color: #5a3e6a;
+  font-weight: 700;
+}
+
+.card2 .carouselItem strong,
+.card3 .carouselItem strong {
+  color: #3e4d21;
+  font-weight: 700;
+}
+
+.card1 .carouselItem p,
+.card2 .carouselItem p,
+.card3 .carouselItem p,
+.card4 .carouselItem p {
+  color: #000;
+}
+
+/* GRID en desktop */
+.cardsGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.cardsDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .carouselMobile {
+    display: none;
+  }
+
+  .cardsDesktop {
+    display: block;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  }
+
+  .carouselCard {
+    height: 100%;
+    min-height: 500px;
+    max-width: none;
+    margin: 0;
+  }
+}

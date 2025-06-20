@@ -1,0 +1,55 @@
+.carouselWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.postGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Card base */
+.postCard {
+  position: relative;
+  width: 320px;
+  height: 580px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  padding: 8px 16px 8px 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transform: scale(0.97);
+}
+
+/* Cuando el contenido ya fue cargado */
+.postCard.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.postCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Embed Instagram */
+.postCard .instagram-media {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: scale(0.95);
+  transform-origin: top center;
+}

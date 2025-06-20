@@ -1,15 +1,10 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, Calendar, ArrowRight, Check } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import styles from "../../styles/Studies.module.css";
 import { FadeInOnScroll } from "../fadeInonscroll";
-import { studiesData } from "../../data/studies";
-
-const scrollToAbout = () => {
-  const section = document.getElementById("aboutme");
-  if (section) section.scrollIntoView({ behavior: "smooth" });
-};
+import { StudiesSlider } from "../studiesslider";
 
 const Studies: React.FC = () => (
   <section id="studies" className={styles.studiesSection}>
@@ -29,42 +24,9 @@ const Studies: React.FC = () => (
       </p>
     </FadeInOnScroll>
 
-    <div className={styles.servicesContainer}>
-      {studiesData.map((item, index) => (
-        <FadeInOnScroll key={item.id} delay={index * 0.1}>
-          <article className={styles.card}>
-            <div className={styles.header}>
-              <div className={styles.typeBadge}>
-                <item.icon size={14} className={styles.badgeIcon} />
-                {item.type}
-              </div>
-              <h3 className={styles.title}>{item.title}</h3>
-              <div className={styles.dateRow}>
-                <Calendar size={16} />
-                <span>{item.date}</span>
-              </div>
-            </div>
-
-            <div className={styles.body}>
-              <ul className={styles.featuresList}>
-                {item.features.map((feat) => (
-                  <li key={`${item.id}-${feat}`} className={styles.featureItem}>
-                    <span className={styles.iconCircle}>
-                      <Check size={14} color="#8da65d" />
-                    </span>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-              <button onClick={scrollToAbout} className={styles.button}>
-                <ArrowRight size={16} />
-                <span>Ver Perfil Profesional</span>
-              </button>
-            </div>
-          </article>
-        </FadeInOnScroll>
-      ))}
-    </div>
+    <FadeInOnScroll delay={0.2}>
+      <StudiesSlider />
+    </FadeInOnScroll>
   </section>
 );
 

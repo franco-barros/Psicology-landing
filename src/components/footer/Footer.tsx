@@ -5,8 +5,6 @@ import {
   FaInstagram,
   FaTiktok,
   FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaArrowUp,
   FaEnvelope,
   FaLeaf,
 } from "react-icons/fa";
@@ -16,11 +14,6 @@ import styles from "../../styles/Footer.module.css";
 const Footer = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
-
-  const handleScrollTop = () => {
-    const hero = document.getElementById("hero");
-    hero?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const handleInternalLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -34,7 +27,7 @@ const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.content}>
-        {/* Presentación (común en ambas versiones) */}
+        {/* Presentación */}
         <div className={styles.section}>
           <h3 className={styles.title}>
             <FaLeaf className={styles.iconLeaf} />
@@ -46,7 +39,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Versión completa solo en home */}
+        {/* Enlaces y redes sociales */}
         {isHome && (
           <>
             <div className={styles.section}>
@@ -76,15 +69,31 @@ const Footer = () => {
                     Preguntas Frecuentes
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#contact"
-                    onClick={(e) => handleInternalLinkClick(e, "contact")}
-                  >
-                    Contacto
-                  </a>
-                </li>
               </ul>
+            </div>
+
+            <div className={styles.section}>
+              <h4 className={styles.subtitle}>Redes Sociales</h4>
+              <div className={styles.socialLinks}>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://www.tiktok.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                >
+                  <FaTiktok />
+                  <span>TikTok</span>
+                </a>
+              </div>
             </div>
 
             <div className={styles.section}>
@@ -95,48 +104,16 @@ const Footer = () => {
               <p className={styles.contact}>
                 <FaEnvelope /> dr.carlosmendoza@email.com
               </p>
-              <p className={styles.contact}>
-                <FaMapMarkerAlt /> Av. Principal 123, Ciudad
-              </p>
             </div>
           </>
         )}
       </div>
 
-      {/* Siempre visible */}
+      {/* Pie común */}
       <div className={styles.bottomBar}>
-        <div className={styles.socials}>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://www.tiktok.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-          >
-            <FaTiktok />
-          </a>
-        </div>
-
         <p className={styles.copy}>
           © 2024 Lic. Ivan Waisman Todos los derechos reservados.
         </p>
-
-        {isHome && (
-          <button
-            onClick={handleScrollTop}
-            className={styles.backToTop}
-            aria-label="Volver arriba"
-          >
-            <FaArrowUp />
-          </button>
-        )}
       </div>
     </footer>
   );

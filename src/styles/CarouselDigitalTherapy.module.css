@@ -1,0 +1,95 @@
+.carouselCard {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+/* Título del carrusel */
+.carouselTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.25rem;
+}
+
+/* Contenido visible del carrusel */
+.carouselItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  min-height: 120px;
+}
+
+.carouselItem strong {
+  color: #000;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.carouselItem p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Contenedor icono redondeado */
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Botones de navegación */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.controls button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  color: #5a5a5a;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #8a9650;
+  color: white;
+}
+
+/* Gradientes para diferentes tarjetas */
+.card1 {
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+}
+
+.card2 {
+  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
+}
+
+.card3 {
+  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
+}
+
+.card4 {
+  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+}

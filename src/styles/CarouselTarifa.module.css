@@ -1,0 +1,102 @@
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #5d4037;
+  margin-bottom: 0.5rem;
+}
+
+.duration {
+  font-size: 0.95rem;
+  color: #6d4c41;
+  margin-bottom: 1rem;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.controls button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #8a9650;
+  color: white;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffb74d;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.popularBorder {
+  border-color: #ffeb3b;
+}
+
+/* Fondos de tarifa */
+.tarifa1 {
+  background-color: #f1f8e9;
+}
+
+.tarifa2 {
+  background-color: #fff9c4;
+}
+
+.tarifa3 {
+  background-color: #e6f4ea;
+}
