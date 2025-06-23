@@ -65,16 +65,18 @@ const AboutMe: React.FC = () => {
             {/* Subtítulo */}
             <h3 className={styles.subTitle}>Formación y Especialidades</h3>
 
-            <ul className={styles.list}>
-              {credentials.map(({ icon: Icon, text }) => (
-                <li key={text} className={styles.featureItem}>
-                  <span className={styles.iconCircle}>
-                    <Icon size={14} color="#8da65d" />
-                  </span>
-                  <span className={styles.featureText}>{text}</span>
-                </li>
-              ))}
-            </ul>
+            <div className={styles.credentialsCard}>
+              <ul className={styles.list}>
+                {credentials.map(({ icon: Icon, text }) => (
+                  <li key={text} className={styles.featureItem}>
+                    <span className={styles.iconCircle}>
+                      <Icon size={14} color="#8da65d" />
+                    </span>
+                    <span className={styles.featureText}>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Card Enfoque Terapéutico */}
             <div className={styles.focusCard}>

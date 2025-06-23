@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -19,6 +20,7 @@
   margin: 0 auto 1rem;
 }
 
+/* Heading principal */
 .heading {
   font-size: 2rem;
   font-family: var(--font-title);
@@ -47,6 +49,7 @@
   border-radius: 9999px;
 }
 
+/* Texto de qué compartimos */
 .sharedContent {
   max-width: 600px;
   margin: 2rem auto 0 auto;
@@ -79,40 +82,54 @@
   font-size: 1rem;
 }
 
-/* Layout QR + carousel */
+/* Layout general para posts y QR */
 .instagramLayout {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex-direction: column; /* Mobile default: columna */
+  align-items: center;
   margin-top: 3rem;
+  gap: 2rem;
 }
 
-.leftColumn {
-  flex: 1 1 340px;
+/* Wrapper posts */
+.postsWrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.rightColumn {
-  flex: 0 0 340px;
+/* Desktop: grid 3 columnas para posts */
+.desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1080px;
+}
+
+/* Wrapper individual embed */
+.embedWrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
+/* Instagram Follow (QR + texto) */
 .instagramFollow {
+  max-width: 350px;
+  width: 90%;
+  background-color: #fffdf9;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2.5rem;
-  background-color: #fffdf9;
-  border-radius: 16px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
-  box-sizing: border-box;
-  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -129,13 +146,32 @@
 .qrText {
   font-size: 1rem;
   color: #555;
-  text-align: center;
   margin: 0;
   line-height: 1.3;
   max-width: 240px;
 }
 
-/* Responsive */
+/* === MEDIA QUERIES === */
+@media (min-width: 769px) {
+  /* En desktop: posts arriba en fila, QR abajo */
+  .instagramLayout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .postsWrapper {
+    width: 100%;
+  }
+
+  .desktopGrid {
+    display: grid;
+  }
+
+  .instagramFollow {
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .gallery {
     padding: 3rem 1rem;
@@ -146,20 +182,25 @@
     align-items: center;
   }
 
-  .leftColumn,
-  .rightColumn {
+  .postsWrapper {
     width: 100%;
-    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .desktopGrid {
+    display: none;
   }
 
   .instagramFollow {
     max-width: 100%;
+    width: 70%;
     padding: 2rem;
+    margin: 0 auto;
   }
 
   .instagramImage {
-    width: 70%;
-    max-width: 240px;
+    width: 100%;
+    max-width: none;
   }
 
   .sharedContent {

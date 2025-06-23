@@ -185,7 +185,7 @@
   color: #444;
   background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   border: none;
-  border-radius: 999px;
+  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;

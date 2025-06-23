@@ -38,6 +38,7 @@
   max-width: 600px;
 }
 
+/* Grid para desktop */
 .servicesContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,7 +53,22 @@
 
 @media (max-width: 768px) {
   .servicesContainer {
-    grid-template-columns: 1fr;
+    display: none; /* Ocultar el grid en mobile */
+  }
+}
+
+/* Slider en mobile */
+.sliderContainer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    height: auto;
   }
 }
 
@@ -152,11 +168,11 @@
   padding: 0.75rem 1.5rem;
   font: 600 1rem var(--font-button);
   border: none;
-  border-radius: 9999px;
+  border-radius: 12px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .button:hover {
-  background: linear-gradient(135deg, #5a6a2e 0%, #60732a 100%);
+  background: linear-gradient(135deg, #c4f370 0%, #b3e974 50%, #e6ffc4 100%);
 }

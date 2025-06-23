@@ -1,48 +1,36 @@
 .carouselWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
+  position: relative;
+  padding: 10px 0;
 }
 
-.postGrid {
+.carousel {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  transition: transform 0.5s ease-in-out;
+  gap: 1.5rem;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
 }
 
-/* Card base */
 .postCard {
   position: relative;
   width: 320px;
   height: 580px;
-  overflow: hidden;
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
-  margin: 0 auto;
-  padding: 8px 16px 8px 8px;
-  box-sizing: border-box;
   flex-shrink: 0;
-  opacity: 0.4;
-  transform: scale(0.97);
-}
-
-/* Cuando el contenido ya fue cargado */
-.postCard.loaded {
+  padding: 8px 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* para recortar contenido que sobresalga */
   opacity: 1;
-  transform: scale(1);
+  transform: none;
+  transition: none;
 }
 
-.postCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-/* Embed Instagram */
+/* Eliminamos hover y opacidad */
 .postCard .instagram-media {
   position: absolute !important;
   top: 0 !important;
@@ -52,4 +40,41 @@
   margin: 0 !important;
   transform: scale(0.95);
   transform-origin: top center;
+  max-width: 100%; /* para no salir horizontalmente */
+  max-height: 100%; /* para no salir verticalmente */
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .carouselWrapper {
+    overflow-x: auto;
+    padding: 10px 2rem 10px 1rem; /* padding-right aumentado para evitar corte */
+  }
+
+  .carousel {
+    gap: 2.5rem;
+    padding-right: 2rem; /* espacio extra para último item */
+  }
+
+  .postCard {
+    width: 100%; /* full width en móvil */
+    max-width: 320px; /* max ancho fijo */
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselWrapper {
+    padding: 10px 0.75rem;
+  }
+
+  .carousel {
+    gap: 2rem; /* un poco más de espacio en móvil pequeño */
+    padding-right: 1.5rem; /* ajustado para móvil pequeño */
+  }
+
+  .postCard {
+    max-width: 280px;
+    height: 440px;
+  }
 }

@@ -23,7 +23,7 @@
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  border-radius: 9999px;
+  border-radius: 30px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
@@ -73,7 +73,7 @@
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-button);
-  border-radius: 9999px;
+  border-radius: 12px;
   cursor: pointer;
   text-align: center;
   border: none;

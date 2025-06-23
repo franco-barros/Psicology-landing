@@ -11,7 +11,7 @@ export const studiesData: Study[] = [
     description:
       "Psicoterapia basada en ACT y DBT con enfoque contextual y científico.",
     features: [
-      "Abordajes Comportamentales Contextuales",
+      "Comportamentales Contextuales",
       "Fundación CIPCO",
       "Diplomado — 2023",
     ],

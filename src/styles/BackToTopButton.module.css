@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 5.5rem; /* espacio por encima del WhatsApp */
   right: 1.5rem;
-  background-color: #d9a75f;
+  background-color: #a8e063;
   color: #1d2b53;
   border: none;
   padding: 0.75rem;
@@ -17,7 +17,7 @@
 }
 
 .backToTopButton:hover {
-  background-color: #e6c17e;
+  background-color: #a8e069;
   color: #1a1a1a;
 }
 

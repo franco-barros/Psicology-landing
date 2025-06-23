@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { FaCalendarAlt, FaClock, FaBookOpen } from "react-icons/fa";
-import styles from "../../../styles/blogsection/BlogDetail.module.css";
+import styles from "../../../styles/blog/BlogDetail.module.css";
 
 type Post = {
   id: string;
