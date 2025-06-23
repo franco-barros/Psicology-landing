@@ -1,8 +1,15 @@
 "use client";
 
 import React from "react";
-import { Brain, HeartHandshake, Users, Star } from "lucide-react";
-import { FaLeaf } from "react-icons/fa";
+import {
+  Brain,
+  HeartHandshake,
+  Users,
+  Star,
+  Lock,
+  ShieldCheck,
+} from "lucide-react";
+import { FaLeaf, FaSeedling } from "react-icons/fa";
 import styles from "../../styles/ProfessionalReview.module.css";
 import { FadeInOnScroll } from "../fadeInonscroll";
 
@@ -17,7 +24,7 @@ interface GrupoResena {
 }
 
 interface ProfessionalReviewProps {
-  formularioUrl?: string; // prop en español para url externa del formulario
+  formularioUrl?: string;
   onContactClick?: () => void;
 }
 
@@ -59,6 +66,16 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
     Personalización: <Users className={styles.cardIcon} />,
   };
 
+  const valoresIconMap: Record<string, React.ReactNode> = {
+    "Confidencialidad absoluta": <Lock className={styles.cardIcon} />,
+    "Compromiso y ética profesional": (
+      <ShieldCheck className={styles.cardIcon} />
+    ),
+    "Resultados con enfoque en bienestar sostenible": (
+      <FaSeedling className={styles.cardIcon} />
+    ),
+  };
+
   return (
     <FadeInOnScroll>
       <section className={styles.section}>
@@ -82,7 +99,6 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
 
         <div className={styles.contentWrapper}>
           <div className={styles.leftCards}>
-            {/* Mantengo las cards explicativas para contexto */}
             <div className={styles.card}>
               {reseñaTrabajo[0].title && (
                 <h4 className={styles.cardTitle}>{reseñaTrabajo[0].title}</h4>
@@ -102,19 +118,22 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
                   )
                 )}
               </ul>
-            </div>
 
-            <div className={`${styles.card} ${styles.cardYellow}`}>
-              <ul className={styles.cardList}>
-                {reseñaTrabajo[1].items.map((item) => {
-                  if (typeof item !== "string") return null;
-                  return (
-                    <li key={item} className={styles.cardListItem}>
-                      {item}
-                    </li>
-                  );
-                })}
-              </ul>
+              <div className={styles.subListWrapper}>
+                <h5 className={styles.subListTitle}>Nuestros valores</h5>
+                <ul className={styles.cardList}>
+                  {reseñaTrabajo[1].items.map((item) =>
+                    typeof item === "string" ? (
+                      <li key={item} className={styles.cardListItem}>
+                        <div className={styles.iconCircle}>
+                          {valoresIconMap[item]}
+                        </div>
+                        <span>{item}</span>
+                      </li>
+                    ) : null
+                  )}
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -147,10 +166,17 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
             </div>
           </div>
         </div>
-        {/* Badge */}
-        <div className={styles.badge}>
-          <FaLeaf className={styles.badgeIcon} />
-          Agenda Tu Primera Consulta
+
+        <div className={styles.ctaWrapper}>
+          <a
+            href="https://wa.me/5491123456789?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20primera%20consulta."
+            className={styles.startButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLeaf className={styles.badgeIcon} />
+            Agenda Tu Primera Consulta
+          </a>
         </div>
       </section>
     </FadeInOnScroll>

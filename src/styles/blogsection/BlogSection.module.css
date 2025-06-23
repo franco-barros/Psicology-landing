@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+/* Badge superior */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -19,6 +20,7 @@
   margin: 0 auto 1rem;
 }
 
+/* Título principal */
 .title {
   font-size: 2rem;
   font-family: var(--font-title);
@@ -30,58 +32,17 @@
 }
 
 .title span:last-child {
-  color: #8a9650;
+  color: #a8e063;
 }
 
+/* Subtítulo */
 .subtitle {
   font-size: 1.1rem;
   color: #444;
   margin-bottom: 3rem;
 }
 
-/* Card contenedor */
-.cardWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Botones del carrusel */
-.carouselControls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  margin-bottom: 3rem;
-}
-
-.navButton {
-  background-color: #f0f0f0;
-  border: 1px solid #8a9650;
-  color: #8a9650;
-  padding: 0.6rem 1rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  border-radius: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navButton:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-.navButton:last-child {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.navButton:hover {
-  background-color: #8a9650;
-  color: #fff;
-}
-
-/* Card */
+/* Card individual */
 .card {
   background: #fff;
   border-radius: 1rem;
@@ -94,6 +55,7 @@
   flex-direction: column;
 }
 
+/* Imagen */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -108,6 +70,7 @@
   object-fit: cover;
 }
 
+/* Badge de categoría */
 .categoryBadge {
   position: absolute;
   top: 0.75rem;
@@ -123,6 +86,7 @@
   align-items: center;
 }
 
+/* Contenido interno */
 .cardContent {
   padding: 1.25rem;
   flex: 1;
@@ -158,10 +122,11 @@
   color: #9e9e9e;
 }
 
+/* Botón leer artículo */
 .readButton {
   align-self: center;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -187,7 +152,7 @@
 
 .viewAllButton {
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   border: none;
   border-radius: 999px;
   font-weight: bold;
@@ -202,7 +167,82 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
+/* ======================
+   Estructura de tarjetas
+   ====================== */
+
+/* Grid para desktop */
+.cardGridWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/* Carrusel para mobile */
+.cardWrapper {
+  display: none; /* se muestra solo en mobile */
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Botones del carrusel */
+.carouselControls {
+  display: none; /* se muestra solo en mobile */
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+.navButton {
+  background-color: #f0f0f0;
+  border: 1px solid #8a9650;
+  color: #8a9650;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navButton:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.navButton:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.navButton:hover {
+  background-color: #8a9650;
+  color: #fff;
+}
+
+/* ======================
+   Media Queries
+   ====================== */
+
+@media (max-width: 1024px) {
+  .cardGridWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .cardGridWrapper {
+    display: none; /* ocultar grid */
+  }
+
+  .cardWrapper,
+  .carouselControls {
+    display: flex; /* mostrar slider */
+  }
+}
+
 @media (max-width: 600px) {
   .card {
     width: 100%;

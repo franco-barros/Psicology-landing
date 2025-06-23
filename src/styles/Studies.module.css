@@ -28,7 +28,7 @@
 }
 
 .mainTitle span:last-child {
-  color: #8da65d;
+  color: #a8e063;
 }
 
 .sectionSubtitle {
@@ -76,7 +76,7 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem 1rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
 }
 
 .typeBadge {
@@ -85,7 +85,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #444;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font: 500 0.875rem var(--font-body);
@@ -97,7 +97,7 @@
 
 .title {
   font: 700 1.25rem var(--font-title);
-  color: #fff;
+  color: #444;
 }
 
 .dateRow {
@@ -105,7 +105,7 @@
   align-items: center;
   gap: 0.25rem;
   font: 400 0.875rem var(--font-body);
-  color: #eef2e0;
+  color: #444;
 }
 
 .body {
@@ -147,8 +147,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  color: #444;
   padding: 0.75rem 1.5rem;
   font: 600 1rem var(--font-button);
   border: none;

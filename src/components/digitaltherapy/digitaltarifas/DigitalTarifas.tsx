@@ -43,11 +43,11 @@ const DigitalTarifas = () => {
           Opciones de terapia digital con todas las explicaciones incluidas
         </p>
 
-        <div className={styles.carouselMobile}>
+        <div className={styles.onlyMobile}>
           <CarouselTarifa tarifas={tarifas} />
         </div>
 
-        <div className={`${styles.tarifasGrid} ${styles.cardsDesktop}`}>
+        <div className={`${styles.tarifasGrid} ${styles.onlyDesktop}`}>
           {tarifas.map(({ title, duration, benefits, popular }, index) => {
             const cardColorClass =
               index === 0

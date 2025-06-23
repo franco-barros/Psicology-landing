@@ -76,7 +76,7 @@ const Footer = () => {
               <h4 className={styles.subtitle}>Redes Sociales</h4>
               <div className={styles.socialLinks}>
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/creandocaminos__"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -99,10 +99,10 @@ const Footer = () => {
             <div className={styles.section}>
               <h4 className={styles.subtitle}>Contacto</h4>
               <p className={styles.contact}>
-                <FaPhoneAlt /> +1 (555) 123-4567
+                <FaPhoneAlt /> +31649393678
               </p>
               <p className={styles.contact}>
-                <FaEnvelope /> dr.carlosmendoza@email.com
+                <FaEnvelope /> psi.ivanwaisman@gmail.com
               </p>
             </div>
           </>

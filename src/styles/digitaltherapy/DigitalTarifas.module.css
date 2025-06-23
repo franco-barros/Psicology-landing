@@ -28,37 +28,35 @@
   margin-bottom: 1.5rem;
 }
 
-.tarifasGrid {
-  display: grid;
-  gap: 2rem;
-}
-
-.carouselMobile {
+/* Mostrar solo en mobile */
+.onlyMobile {
   display: block;
 }
 
-.cardsDesktop {
+/* Ocultar en mobile */
+.onlyDesktop {
   display: none;
 }
 
+/* A partir de desktop (768px en adelante) */
 @media (min-width: 768px) {
-  .carouselMobile {
-    display: none;
+  .onlyMobile {
+    display: none !important;
   }
 
-  .cardsDesktop {
-    display: block;
+  .onlyDesktop {
+    display: block !important;
   }
 
   .tarifasGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     justify-content: center;
     align-items: stretch;
   }
 
   .tarifaWrapperItem {
-    width: auto; /* importante para que el grid funcione bien */
     position: relative;
   }
 
@@ -67,25 +65,14 @@
     min-height: 450px;
     border-radius: 1rem;
     padding: 2rem;
+    background-color: #fefefe;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    text-align: left;
-    position: relative;
     border: 2px solid transparent;
-    transition: transform 0.2s ease, box-shadow 0.2s ease,
-      border-color 0.2s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #fefefe;
-  }
-}
-
-@media (max-width: 767px) {
-  .tarifasGrid {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
 }
 
@@ -104,7 +91,6 @@
   z-index: 1000;
 }
 
-/* Colores de fondo claros */
 .tarifa1 {
   background-color: #f0f7e8;
 }
@@ -169,12 +155,12 @@
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   border: none;
   border-radius: 999px;
   font-weight: bold;
   font-family: var(--font-button);
-  color: white;
+  color: #444;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;

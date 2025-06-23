@@ -1,0 +1,124 @@
+.tabList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tabItem {
+  background: #e0d4eb;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabItem:hover {
+  background: #d6c6e6;
+}
+
+.tabItemActive {
+  background: #a8e063;
+  color: #444;
+}
+
+.questionList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 3rem;
+  max-width: 1000px;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.questionItem {
+  background: linear-gradient(135deg, #f1e4f9 0%, #e7d3f3 100%);
+  color: #444;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 140px;
+  width: 100%;
+  position: relative;
+  border: none;
+  text-align: left;
+}
+
+.questionItem:hover {
+  transform: translateY(-2px);
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.questionText {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #444;
+  flex: 1;
+}
+
+.answerText {
+  font-weight: 400;
+  font-size: 0.98rem;
+  color: #666;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  color: #a8e063;
+  margin-left: 0.5rem;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Eliminar estilos innecesarios */
+.answerWrapper,
+.answerWrapper.open,
+.answer {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .questionList {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 2rem;
+    max-width: 100%;
+  }
+
+  .questionItem {
+    min-width: 100%;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .questionList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .questionList {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

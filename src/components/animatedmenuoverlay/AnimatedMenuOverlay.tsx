@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../styles/AnimatedMenuOverlay.module.css";
 
 interface AnimatedMenuOverlayProps {
@@ -17,64 +18,57 @@ const AnimatedMenuOverlay: React.FC<AnimatedMenuOverlayProps> = ({
   navLinks,
   activeSection,
 }) => {
-  const [animate, setAnimate] = useState<"enter" | "exit">("enter");
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    // dispara la animación de entrada
-    setAnimate("enter");
-    setIsMounted(true);
-  }, []);
+  const [visible, setVisible] = useState(true);
 
   const handleClose = () => {
-    // dispara la animación de salida
-    setAnimate("exit");
-    setTimeout(onClose, 500); // igual duración que la animación CSS
+    setVisible(false);
+    setTimeout(onClose, 500); // igual a la duración de la animación
   };
 
-  if (!isMounted) return null;
-
   return createPortal(
-    <div className={styles.menuOverlayContainer}>
-      <button
-        className={styles.closeButton}
-        onClick={handleClose}
-        aria-label="Cerrar menú"
-      >
-        &times;
-      </button>
-
-      <div
-        className={`${styles.animatedMenu} ${
-          animate === "enter" ? styles.open : styles.closing
-        }`}
-      >
-        <div className={styles.menuItemsContainer}>
-          {navLinks.map(({ href, label }) => (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className={styles.menuOverlayContainer}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className={styles.animatedMenu}
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
             <button
-              key={href}
-              onClick={() => {
-                scrollToSection(href);
-                handleClose();
-              }}
-              className={`${styles.menuItem} ${
-                activeSection === href ? styles.activeItem : ""
-              }`}
+              className={styles.closeButton}
+              onClick={handleClose}
+              aria-label="Cerrar menú"
             >
-              {/* la cookie siempre está, pero sólo visible si está activo */}
-              <span
-                className={`${styles.cookie} ${
-                  activeSection === href ? styles.cookieVisible : ""
-                }`}
-              >
-                🍪
-              </span>
-              {label}
+              &times;
             </button>
-          ))}
-        </div>
-      </div>
-    </div>,
+
+            <div className={styles.menuItemsContainer}>
+              {navLinks.map(({ href, label }) => (
+                <button
+                  key={href}
+                  onClick={() => {
+                    scrollToSection(href);
+                    handleClose();
+                  }}
+                  className={`${styles.menuItem} ${
+                    activeSection === href ? styles.activeItem : ""
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
     document.body
   );
 };

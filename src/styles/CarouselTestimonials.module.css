@@ -43,9 +43,9 @@
 
 .gradientBlock {
   position: relative;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   padding: 1.5rem;
-  color: #fff;
+  color: #444;
   text-align: left;
   flex: 1;
   display: flex;
@@ -59,7 +59,7 @@
   right: 1rem;
   font-size: 3rem;
   opacity: 0.1;
-  color: #fff;
+  color: #444;
 }
 
 .quote {
@@ -110,7 +110,7 @@
 }
 
 .star {
-  color: #fff;
+  color: #444;
 }
 
 .resultCard {

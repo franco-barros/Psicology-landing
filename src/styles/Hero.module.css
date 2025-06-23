@@ -46,7 +46,7 @@
 }
 
 .highlightSecondary {
-  color: #8da65d; /* Naranja */
+  color: #a8e063;
 }
 
 .description {
@@ -91,12 +91,12 @@
 }
 
 .btnSecondary {
-  background-color: #708238; /* Verde oliva */
+  background-color: #a8e063; /* Verde lima */
   color: white;
 }
 
 .btnSecondary:hover {
-  background-color: #5a6a2e;
+  background-color: #8ab345; /* Un tono lima más oscuro para hover */
 }
 
 /* Estilo para el wrapper del carousel en hero */

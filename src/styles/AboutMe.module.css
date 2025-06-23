@@ -75,11 +75,11 @@
 }
 
 .mainTitle span:first-child {
-  color: #333;
+  color: #444;
 }
 
 .mainTitle span:last-child {
-  color: #8da65d;
+  color: #a8e063;
 }
 
 .subTitle {
@@ -160,7 +160,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   font-family: var(--font-title);
-  color: #496422;
+  color: #a8e063;
   margin-bottom: 0.75rem;
 }
 
@@ -175,7 +175,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #60732a 0%, #708238 50%, #8a9650 100%);
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   color: white;
   padding: 0.8rem 1.6rem;
   border-radius: 9999px;
