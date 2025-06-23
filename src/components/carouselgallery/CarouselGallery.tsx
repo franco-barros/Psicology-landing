@@ -1,3 +1,4 @@
+// components/carouselgallery/CarouselGallery.tsx
 "use client";
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
@@ -6,9 +7,13 @@ import styles from "../../styles/CarouselGallery.module.css";
 
 interface Props {
   items: string[];
+  intervalMs?: number;
 }
 
-const CarouselGallery: React.FC<Props> = ({ items }) => {
+export const CarouselGallery: React.FC<Props> = ({
+  items,
+  intervalMs = 6000,
+}) => {
   const controls = useAnimation();
   const carouselRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
@@ -16,10 +21,8 @@ const CarouselGallery: React.FC<Props> = ({ items }) => {
 
   const speed = 60; // px por segundo, ajusta a gusto
 
-  // Duplicar items para loop infinito
   const loopItems = [...items, ...items];
 
-  // Calcula ancho total para animar desplazamiento
   const startAnimation = useCallback(() => {
     if (!carouselRef.current) return;
     const fullWidth = carouselRef.current.scrollWidth / 2;
@@ -55,7 +58,6 @@ const CarouselGallery: React.FC<Props> = ({ items }) => {
     };
   }, [startAnimation, controls]);
 
-  // Control carga embed instagram (como antes)
   useEffect(() => {
     window.instgrm?.Embeds.process();
 
@@ -66,12 +68,10 @@ const CarouselGallery: React.FC<Props> = ({ items }) => {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Carga embeds para el índice actual, control sencillo (podrías ampliar)
   useEffect(() => {
     window.instgrm?.Embeds.process();
   }, [loadedIndexes]);
 
-  // Manejo de drag y scroll manual
   useEffect(() => {
     const el = carouselRef.current;
     if (!el) return;
@@ -81,17 +81,16 @@ const CarouselGallery: React.FC<Props> = ({ items }) => {
       stopAnimation();
       x.set(x.get() + e.deltaY);
 
-      // Reanuda animación luego de 2s sin scroll
       setTimeout(() => {
         startAnimation();
-      }, 2000);
+      }, intervalMs);
     };
 
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => {
       el.removeEventListener("wheel", onWheel);
     };
-  }, [stopAnimation, startAnimation, x]);
+  }, [stopAnimation, startAnimation, x, intervalMs]);
 
   return (
     <div className={styles.carouselWrapper}>
