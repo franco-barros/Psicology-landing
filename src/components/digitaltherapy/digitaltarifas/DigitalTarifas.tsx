@@ -15,12 +15,20 @@ const tarifas = [
       "Material de apoyo",
     ],
     popular: false,
+    icon: LucideIcons.User, // icono de fondo
+    color: "#000",
   },
   {
     title: "Paquete 4 Sesiones",
     duration: "4 sesiones de 50 min",
-    benefits: ["Seguimiento entre sesiones", "Plan personalizado"],
+    benefits: [
+      "Seguimiento entre sesiones",
+      "Plan personalizado",
+      "Material de apoyo",
+    ],
     popular: true,
+    icon: LucideIcons.CheckCircle,
+    color: "#000",
   },
   {
     title: "Sesión de Pareja",
@@ -28,13 +36,15 @@ const tarifas = [
     benefits: [
       "Terapia de pareja",
       "Ejercicios para casa",
-      "Seguimiento semanal",
+      "Material de apoyo",
     ],
     popular: false,
+    icon: LucideIcons.Users,
+    color: "#000",
   },
 ];
 
-const DigitalTarifas = () => {
+const DigitalTarifas: React.FC = () => {
   return (
     <div className={styles.tarifasWrapperCard}>
       <div className={styles.tarifasWrapper}>
@@ -48,41 +58,52 @@ const DigitalTarifas = () => {
         </div>
 
         <div className={`${styles.tarifasGrid} ${styles.onlyDesktop}`}>
-          {tarifas.map(({ title, duration, benefits, popular }, index) => {
-            const cardColorClass =
-              index === 0
-                ? styles.tarifa1
-                : index === 1
-                ? styles.tarifa2
-                : styles.tarifa3;
+          {tarifas.map(
+            (
+              { title, duration, benefits, popular, icon: Icon, color },
+              idx
+            ) => {
+              const bgClass =
+                idx === 0
+                  ? styles.tarifa1
+                  : idx === 1
+                  ? styles.tarifa2
+                  : styles.tarifa3;
+              return (
+                <div key={title} className={styles.tarifaWrapperItem}>
+                  {popular && (
+                    <div className={styles.popularBadge}>Más Popular</div>
+                  )}
+                  <div
+                    className={`${styles.tarifaCard} ${bgClass} ${
+                      popular ? styles.popularBorder : ""
+                    }`}
+                  >
+                    {/* Icono de fondo */}
+                    <Icon
+                      size={120}
+                      className={styles.backgroundIcon}
+                      color={color}
+                    />
 
-            return (
-              <div key={title} className={styles.tarifaWrapperItem}>
-                {popular && (
-                  <div className={styles.popularBadge}>Más Popular</div>
-                )}
-                <div
-                  className={`${styles.tarifaCard} ${cardColorClass} ${
-                    popular ? styles.popularBorder : ""
-                  }`}
-                >
-                  <h4 className={styles.tarifaTitle}>{title}</h4>
-                  <div className={styles.tarifaDuration}>{duration}</div>
-                  <ul className={styles.benefitsList}>
-                    {benefits.map((b) => (
-                      <li key={b}>
-                        <LucideIcons.CheckCircle
-                          size={20}
-                          className={styles.checkIcon}
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                    <h4 className={styles.tarifaTitle}>{title}</h4>
+                    <div className={styles.tarifaDuration}>{duration}</div>
+                    <ul className={styles.benefitsList}>
+                      {benefits.map((b) => (
+                        <li key={b}>
+                          <LucideIcons.CheckCircle
+                            size={18}
+                            className={styles.checkIcon}
+                          />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            }
+          )}
         </div>
 
         <div style={{ marginTop: "2rem", textAlign: "center" }}>

@@ -69,6 +69,7 @@ const mismaEfectividadItems = [
   "Estudios científicos validan su eficacia",
   "Mismas técnicas terapéuticas aplicadas",
   "Resultados equivalentes a terapia presencial",
+  "Resultados con enfoque en bienestar sostenible",
 ].map((desc) => ({
   title: "",
   description: desc,

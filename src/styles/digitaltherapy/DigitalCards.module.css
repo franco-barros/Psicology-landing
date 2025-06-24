@@ -1,15 +1,15 @@
 /* Gradientes por tarjeta */
 .card1 {
-  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
 }
 
 .card2,
 .card3 {
-  background: linear-gradient(135deg, #a9b987 0%, #b8c28f 50%, #c9cd9c 100%);
+  background: linear-gradient(135deg, #c4ff72 0%, #a8e063 50%, #8da65d 100%);
 }
 
 .card4 {
-  background: linear-gradient(135deg, #e8dff0 0%, #f2e6f2 50%, #f9f0fb 100%);
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
 }
 
 .carouselCard {
@@ -106,13 +106,13 @@
 /* Colores específicos para los textos según tarjeta */
 .card1 .carouselItem strong,
 .card4 .carouselItem strong {
-  color: #5a3e6a;
+  color: #000;
   font-weight: 700;
 }
 
 .card2 .carouselItem strong,
 .card3 .carouselItem strong {
-  color: #3e4d21;
+  color: #000;
   font-weight: 700;
 }
 

@@ -1,7 +1,7 @@
-/* ---- TARIFAS ---- */
+/* ---- TARIFAS (padre) ---- */
 .tarifasWrapperCard {
   background-color: #fff;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 1rem; /* menos padding */
   margin-top: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -19,116 +19,132 @@
   font-size: 1.3rem;
   font-weight: 700;
   color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .tarifaIntro {
-  color: #6d4c41;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
 }
 
-/* Mostrar solo en mobile */
+/* Ocultar/mostrar según viewport */
 .onlyMobile {
   display: block;
 }
-
-/* Ocultar en mobile */
 .onlyDesktop {
   display: none;
 }
 
-/* A partir de desktop (768px en adelante) */
+/* ========================================
+   MOBILE: sólo carrusel (Grid queda oculto)
+   ======================================== */
+
+/* ========================================
+   DESKTOP: fila de 3 tarjetas lado a lado
+   ======================================== */
 @media (min-width: 768px) {
   .onlyMobile {
-    display: none !important;
+    display: none;
   }
-
   .onlyDesktop {
-    display: block !important;
+    display: block;
   }
 
   .tarifasGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .tarifaWrapperItem {
-    position: relative;
-  }
-
-  .tarifaCard {
-    height: 100%;
-    min-height: 450px;
-    border-radius: 1rem;
-    padding: 2rem;
-    background-color: #fefefe;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    border: 2px solid transparent;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease,
-      border-color 0.2s ease;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
   }
+}
+
+/* ========================================
+   Tarjeta individual
+   ======================================== */
+.tarifaWrapperItem {
+  position: relative;
+  flex: 0 0 280px; /* ancho fijo */
+  max-width: 280px;
+}
+
+.tarifaCard {
+  position: relative;
+  background-color: #fefefe;
+  border-radius: 0.75rem; /* un poco menos */
+  padding: 1rem; /* menos padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 300px; /* menos altura */
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .popularBadge {
   position: absolute;
-  top: -0.8rem;
+  top: -0.6rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: #ffb74d;
   color: white;
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  text-align: center;
-  z-index: 1000;
-}
-
-.tarifa1 {
-  background-color: #f0f7e8;
-}
-
-.tarifa2 {
-  background-color: #fff9e5;
-}
-
-.tarifa3 {
-  background-color: #e9f0f8;
-}
-
-.tarifaCard:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  border-color: #a2c965;
+  font-weight: bold;
+  font-size: 0.75rem;
   z-index: 2;
 }
 
+/* Icono de fondo */
+.backgroundIcon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Colores de fondo */
+/* Fondo de la primera tarjeta: suave lavanda */
+.tarifa1 {
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
+}
+
+/* Fondo de la segunda (popular): verde lima vibrante */
+.tarifa2 {
+  background: linear-gradient(135deg, #c4ff72 0%, #a8e063 50%, #8da65d 100%);
+}
+
+/* Fondo de la tercera: verde suave acorde al resto */
+.tarifa3 {
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
+}
+
+/* Hover */
+.tarifaCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
 .popularBorder {
-  border-color: #ffeb3b !important;
+  border: 2px solid #ffeb3b;
 }
 
-.popularBorder:hover {
-  border-color: #ffeb3b;
-}
-
+/* Contenido */
 .tarifaTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #5d4037;
+  color: #444;
   margin-bottom: 0.5rem;
 }
 
 .tarifaDuration {
-  font-size: 0.95rem;
-  color: #6d4c41;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.75rem;
 }
 
 .benefitsList {
@@ -140,7 +156,8 @@
 .benefitsList li {
   display: flex;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
   color: #444;
 }
 
@@ -150,22 +167,23 @@
   flex-shrink: 0;
 }
 
+/* Botón centralizado */
 .agendarButton {
+  margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.75rem;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
   background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   border: none;
   border-radius: 12px;
-  font-weight: bold;
+  font-weight: 600;
   font-family: var(--font-button);
   color: #444;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .agendarButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
