@@ -57,7 +57,6 @@ const comoFuncionaItems = [
   "Agenda tu cita online",
   "Recibe el enlace seguro por email",
   "Conéctate desde cualquier dispositivo",
-  "Disfruta de tu sesión terapéutica",
 ].map((desc, i) => ({
   title: `Paso ${i + 1}`,
   description: desc,
@@ -69,7 +68,6 @@ const mismaEfectividadItems = [
   "Estudios científicos validan su eficacia",
   "Mismas técnicas terapéuticas aplicadas",
   "Resultados equivalentes a terapia presencial",
-  "Resultados con enfoque en bienestar sostenible",
 ].map((desc) => ({
   title: "",
   description: desc,

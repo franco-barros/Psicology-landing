@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../../styles/CarouselTarifa.module.css";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -17,47 +17,86 @@ interface CarouselTarifaProps {
 
 const CarouselTarifa: React.FC<CarouselTarifaProps> = ({ tarifas }) => {
   const [current, setCurrent] = useState(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const resumeRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalMs = 5000;
 
-  const handlePrev = () => {
-    setCurrent((prev) => (prev === 0 ? tarifas.length - 1 : prev - 1));
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % tarifas.length);
+  }, [tarifas.length]);
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayRef.current) return;
+    autoplayRef.current = setInterval(next, intervalMs);
+  }, [next]);
+
+  const stopAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+    if (resumeRef.current) {
+      clearTimeout(resumeRef.current);
+      resumeRef.current = null;
+    }
   };
 
-  const handleNext = () => {
-    setCurrent((prev) => (prev === tarifas.length - 1 ? 0 : prev + 1));
+  const handleUserAction = (fn: () => void) => {
+    stopAutoplay();
+    fn();
+    resumeRef.current = setTimeout(startAutoplay, intervalMs);
   };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      stopAutoplay();
+    };
+  }, [startAutoplay]);
 
   const { title, duration, benefits, popular } = tarifas[current];
-
-  let colorClass = styles.tarifa1;
-  if (current === 1) colorClass = styles.tarifa2;
-  if (current === 2) colorClass = styles.tarifa3;
+  const colorClass =
+    current === 1
+      ? styles.tarifa2
+      : current === 2
+      ? styles.tarifa3
+      : styles.tarifa1;
 
   return (
     <div className={styles.carouselWrapper}>
-      {popular && <div className={styles.popularBadge}>Más Popular</div>}
-
       <div
         className={`${styles.card} ${colorClass} ${
           popular ? styles.popularBorder : ""
         }`}
       >
-        <h4 className={styles.title}>{title}</h4>
-        <div className={styles.duration}>{duration}</div>
-        <ul className={styles.benefits}>
-          {benefits.map((benefit) => (
-            <li key={benefit}>
-              <CheckCircle className={styles.icon} size={20} />
-              {benefit}
-            </li>
-          ))}
-        </ul>
+        {popular && <div className={styles.popularBadge}>Más Popular</div>}
+
+        <div className={styles.cardContent}>
+          <h4 className={styles.title}>{title}</h4>
+          <div className={styles.duration}>{duration}</div>
+          <ul className={styles.benefits}>
+            {benefits.map((b) => (
+              <li key={b}>
+                <CheckCircle className={styles.icon} size={20} />
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className={styles.controls}>
-        <button onClick={handlePrev}>
+        <button
+          onClick={() =>
+            handleUserAction(() =>
+              setCurrent((prev) => (prev === 0 ? tarifas.length - 1 : prev - 1))
+            )
+          }
+          aria-label="Anterior"
+        >
           <ChevronLeft size={20} />
         </button>
-        <button onClick={handleNext}>
+        <button onClick={() => handleUserAction(next)} aria-label="Siguiente">
           <ChevronRight size={20} />
         </button>
       </div>

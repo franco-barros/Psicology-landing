@@ -3,57 +3,94 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  max-width: 300px;
   margin: 0 auto;
 }
 
+/* Card principal del carrusel */
 .card {
+  position: relative;
   border-radius: 1rem;
   padding: 2rem;
-  width: 100%;
+  width: 280px;
+  max-width: 100%;
   text-align: left;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  border: 2px solid transparent;
+  border: 2px solid #e0e0e0; /* default border */
   transition: transform 0.2s ease, border-color 0.2s ease;
+  height: 350px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem; /* más compacto */
+}
+
+.popularBadge {
+  position: absolute;
+  top: 0.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff176;
+  color: #444;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  z-index: 2;
+}
+
+.popularBorder {
+  border-color: #fdd835;
 }
 
 .title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #5d4037;
+  color: #444;
   margin-bottom: 0.5rem;
 }
 
 .duration {
   font-size: 0.95rem;
-  color: #6d4c41;
+  color: #444;
   margin-bottom: 1rem;
 }
 
+/* Lista de beneficios con altura mínima para estabilidad visual */
 .benefits {
   list-style: none;
   padding: 0;
   margin: 0;
+  min-height: 100px; /* asegura altura constante aunque cambie contenido */
 }
 
 .benefits li {
   display: flex;
   align-items: center;
   color: #444;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .icon {
   margin-right: 0.5rem;
-  color: #4caf50;
+  color: #444;
   flex-shrink: 0;
 }
 
+/* Controles de navegación */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1.5rem auto 0;
 }
 
 .controls button {
@@ -62,41 +99,40 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .controls button:hover {
-  background-color: #8a9650;
+  background-color: #a8e063;
   color: white;
 }
 
-.popularBadge {
-  position: absolute;
-  top: -0.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffb74d;
-  color: white;
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  z-index: 1;
-}
-
-.popularBorder {
-  border-color: #ffeb3b;
-}
-
-/* Fondos de tarifa */
+/* Gradientes por cada tipo de tarjeta */
 .tarifa1 {
-  background-color: #f1f8e9;
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
 }
 
 .tarifa2 {
-  background-color: #fff9c4;
+  background: linear-gradient(135deg, #c4ff72 0%, #a8e063 50%, #8da65d 100%);
 }
 
 .tarifa3 {
-  background-color: #e6f4ea;
+  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
+}
+
+/* Ocultar en desktop */
+.onlyMobile {
+  display: block;
+}
+.onlyDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .onlyMobile {
+    display: none;
+  }
+  .onlyDesktop {
+    display: block;
+  }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../../styles/CarouselDigitalTherapy.module.css";
 import type { LucideIcon } from "lucide-react";
@@ -20,17 +20,27 @@ interface Card {
 
 interface CarouselDigitalTherapyProps {
   cards: Card[];
+  autoPlayInterval?: number;
 }
 
 const CarouselDigitalTherapy: React.FC<CarouselDigitalTherapyProps> = ({
   cards,
+  autoPlayInterval = 4000,
 }) => {
   const [current, setCurrent] = useState(0);
   const total = cards.length;
 
-  if (total === 0) {
-    return <p>No hay elementos para mostrar.</p>;
-  }
+  useEffect(() => {
+    if (total <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % total);
+    }, autoPlayInterval);
+
+    return () => clearInterval(interval);
+  }, [total, autoPlayInterval]);
+
+  if (total === 0) return <p>No hay elementos para mostrar.</p>;
 
   const next = () => setCurrent((prev) => (prev + 1) % total);
   const prev = () => setCurrent((prev) => (prev - 1 + total) % total);
@@ -50,6 +60,7 @@ const CarouselDigitalTherapy: React.FC<CarouselDigitalTherapyProps> = ({
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.4 }}
+          className={styles.motionDiv}
         >
           {currentCard.items.map(
             ({ title, description, icon: Icon, color }, i) => (

@@ -14,6 +14,9 @@ import styles from "../../styles/Footer.module.css";
 const Footer = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isAdmin = pathname.startsWith("/admin");
+
+  if (isAdmin) return null;
 
   const handleInternalLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
