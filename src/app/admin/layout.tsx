@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Sidebar } from "@/components/sidebar";
 import styles from "../../styles/admin/AdminPage.module.css";
 import { ArrowLeft } from "lucide-react";
@@ -8,11 +7,19 @@ import { useRouter } from "next/navigation";
 
 type ContentType = "article" | "testimonial" | "tip";
 
+interface AdminLayoutProps {
+  children: React.ReactNode;
+  type: ContentType;
+  setType: (type: ContentType) => void;
+  setMode: (mode: "create" | "list") => void;
+}
+
 export default function AdminLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const [type, setType] = useState<ContentType>("article");
-  const [, setMode] = useState<"create" | "list">("create");
+  type,
+  setType,
+  setMode,
+}: Readonly<AdminLayoutProps>) {
   const router = useRouter();
 
   return (
