@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { FaBrain } from "react-icons/fa";
-import AnimatedMenuOverlay from "../animatedmenuoverlay";
+import AnimatedMenuOverlay from "../animations/animatedmenuoverlay";
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar: React.FC = () => {
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         <button className={styles.logo} onClick={() => scrollToSection("hero")}>
-          <FaBrain size={32} color="#a8e063" />
+          <FaBrain size={32} className={styles.logoIcon} />
           <span className={styles.logoText}>Lic. Ivan Waisman</span>
         </button>
 

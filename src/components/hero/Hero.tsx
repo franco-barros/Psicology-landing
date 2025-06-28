@@ -4,18 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { UserCheck } from "lucide-react";
-import { CarouselTestimonials } from "../carouseltestimonial";
-import styles from "../../styles/Hero.module.css";
-import { testimonials } from "@/data/testimonials";
+import { CarouselTestimonials } from "./carouseltestimonial";
+import styles from "../../styles/hero/Hero.module.css";
+import { testimonials } from "../../data/testimonials";
 
 const Hero: React.FC = () => {
-  const scrollToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section id="hero" className={styles.hero}>
       <motion.div
@@ -29,6 +22,7 @@ const Hero: React.FC = () => {
               <UserCheck size={18} />
               <span>Psicólogo Clínico Certificado</span>
             </div>
+
             <h1 className={styles.title}>
               <span className={styles.highlightPrimary}>
                 Transformando vidas a través de la
@@ -37,27 +31,32 @@ const Hero: React.FC = () => {
                 psicología especializada
               </span>
             </h1>
+
+            {/* Imagen solo en mobile */}
+            <div className={`${styles.imageContainer} ${styles.mobileOnly}`}>
+              <Image
+                src="/images/ivanpsicology1.png"
+                alt="Lic. Ivan Waisman"
+                width={400}
+                height={200}
+                className={styles.image}
+              />
+            </div>
+
             <p className={styles.description}>
               Acompañamiento profesional para superar desafíos emocionales,
               mejorar relaciones y alcanzar tu mejor versión. Terapia presencial
               y online, siempre intentando mejorar.
             </p>
-            <div className={styles.buttons}>
-              <button
-                onClick={scrollToContact}
-                className={`${styles.btn} ${styles.btnSecondary}`}
-              >
-                Reservar Primera Consulta
-              </button>
-            </div>
 
             <p className={styles.signature}>Lic. Ivan Waisman – Psicólogo</p>
           </div>
 
-          <div className={styles.imageContainer}>
+          {/* Imagen solo en desktop */}
+          <div className={`${styles.imageContainer} ${styles.desktopOnly}`}>
             <Image
               src="/images/ivanpsicology1.png"
-              alt="Dr. Carlos Mendoza"
+              alt="Lic. Ivan Waisman"
               width={400}
               height={200}
               className={styles.image}

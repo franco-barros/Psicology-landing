@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "../../styles/AboutMe.module.css";
 import Image from "next/image";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import { FaUserGraduate } from "react-icons/fa";
 import {
   Award,

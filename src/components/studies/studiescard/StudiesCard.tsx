@@ -2,8 +2,8 @@
 
 import { FC } from "react";
 import { Calendar, ArrowRight, Check } from "lucide-react";
-import styles from "../../styles/Studies.module.css";
-import type { Study } from "../../types/study";
+import styles from "../../../styles/studies/Studies.module.css";
+import type { Study } from "../../../types/study";
 
 interface Props {
   study: Study;

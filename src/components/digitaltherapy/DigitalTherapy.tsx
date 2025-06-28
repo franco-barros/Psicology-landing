@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "../../styles/digitaltherapy/DigitalTherapy.module.css";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import * as LucideIcons from "lucide-react";
 import { DigitalCards } from "./digitalcards";
 import { DigitalTarifas } from "./digitaltarifas";

@@ -11,9 +11,8 @@ declare global {
 }
 
 import React, { useEffect, useState } from "react";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import Script from "next/script";
-import Image from "next/image";
 import {
   FaLeaf,
   FaBook,
@@ -21,8 +20,8 @@ import {
   FaQuoteLeft,
   FaInstagram,
 } from "react-icons/fa";
-import styles from "../../styles/Gallery.module.css";
-import { CarouselGallery } from "../carouselgallery";
+import styles from "../../styles/gallery/Gallery.module.css";
+import { CarouselGallery } from "./carouselgallery";
 
 const posts: string[] = [
   "https://www.instagram.com/reel/DJ87KN1Nhdz",
@@ -55,25 +54,32 @@ const Gallery: React.FC = () => {
           <FaInstagram /> Nuestro Instagram
         </h2>
 
-        <div className={styles.sharedContent}>
-          <h3 className={styles.cardTitle}>¿Qué compartimos?</h3>
-          <p className={styles.sharedText}>
-            En nuestro Instagram encontrarás contenido que inspira bienestar:
-          </p>
-          <ul className={styles.cardList}>
-            <li>
-              <FaLeaf /> Consejos para manejar la ansiedad y el estrés.
-            </li>
-            <li>
-              <FaBook /> Reflexiones sobre salud mental y autocuidado.
-            </li>
-            <li>
-              <FaVideo /> Fragmentos de charlas y videos educativos.
-            </li>
-            <li>
-              <FaQuoteLeft /> Frases motivacionales y ejercicios prácticos.
-            </li>
-          </ul>
+        {/* Card container para la sección "¿Qué compartimos?" */}
+        <div className={styles.sharedContentCard}>
+          <div className={styles.sharedContent}>
+            <h3 className={styles.cardTitle}>¿Qué compartimos?</h3>
+            <p className={styles.sharedText}>
+              En nuestro Instagram encontrarás contenido que inspira bienestar:
+            </p>
+            <ul className={styles.cardList}>
+              <li>
+                <FaLeaf className={styles.iconCircle} /> Consejos para manejar
+                la ansiedad y el estrés.
+              </li>
+              <li>
+                <FaBook className={styles.iconCircle} /> Reflexiones sobre salud
+                mental y autocuidado.
+              </li>
+              <li>
+                <FaVideo className={styles.iconCircle} /> Fragmentos de charlas
+                y videos educativos.
+              </li>
+              <li>
+                <FaQuoteLeft className={styles.iconCircle} /> Frases
+                motivacionales y ejercicios prácticos.
+              </li>
+            </ul>
+          </div>
         </div>
       </FadeInOnScroll>
 
@@ -97,15 +103,16 @@ const Gallery: React.FC = () => {
             )}
           </div>
 
-          <div className={styles.instagramFollow}>
-            <Image
-              src="/images/psycologyinstagram.png"
-              alt="QR Instagram para seguirnos"
-              width={300}
-              height={300}
-              className={styles.instagramImage}
-            />
-            <p className={styles.qrText}>Escanea el código para seguirnos</p>
+          <div className={styles.instagramButtonWrapper}>
+            <a
+              href="https://www.instagram.com/tu_usuario_aqui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.instagramButton}
+            >
+              <FaInstagram size={20} />
+              Seguir en Instagram
+            </a>
           </div>
         </div>
       </FadeInOnScroll>

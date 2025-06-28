@@ -1,0 +1,41 @@
+.backToTopButton {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem; /* misma altura que WhatsApp */
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  color: #444;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font: 600 1rem var(--font-button);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.backToTopButton:hover {
+  background: linear-gradient(135deg, #c4f370 0%, #b3e974 50%, #e6ffc4 100%);
+  transform: scale(1.02);
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .backToTopButton {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    right: 1rem;
+    bottom: 1.25rem;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+}

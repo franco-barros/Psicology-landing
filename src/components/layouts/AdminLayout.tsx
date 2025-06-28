@@ -1,7 +1,7 @@
 // components/layouts/AdminLayout.tsx
 "use client";
 
-import { Sidebar } from "@/components/sidebar";
+import { Sidebar } from "@/components/admin/sidebar";
 import styles from "../../styles/admin/AdminPage.module.css";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";

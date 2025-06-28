@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-import styles from "../../styles/CarouselTestimonials.module.css";
-import { Testimonial } from "@/data/testimonials";
+import styles from "../../../styles/hero/CarouselTestimonials.module.css";
+import { Testimonial } from "../../../data/testimonials";
 
 interface Props {
   testimonials: Testimonial[];

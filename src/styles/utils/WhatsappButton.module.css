@@ -1,0 +1,61 @@
+.whatsappButton {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  color: #444;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font: 600 1rem var(--font-button);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: max-content;
+  max-width: 90vw;
+}
+
+.whatsappButton:hover {
+  background: linear-gradient(135deg, #c4f370 0%, #b3e974 50%, #e6ffc4 100%);
+  transform: scale(1.02);
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.text {
+  white-space: nowrap;
+}
+
+/* Ocultar en desktop */
+@media (min-width: 769px) {
+  .whatsappButton {
+    display: none;
+  }
+}
+
+/* Mobile ajustes */
+@media (max-width: 768px) {
+  .whatsappButton {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.25rem;
+    right: 1rem;
+    left: 1rem;
+    transform: none;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+  }
+}

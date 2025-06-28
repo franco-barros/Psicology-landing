@@ -1,13 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  FaInstagram,
-  FaTiktok,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaLeaf,
-} from "react-icons/fa";
+import { FaInstagram, FaPhoneAlt, FaEnvelope, FaLeaf } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import styles from "../../styles/Footer.module.css";
 
@@ -34,7 +28,7 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>
             <FaLeaf className={styles.iconLeaf} />
-            Lic. Ivan Waisman
+            Lic. Iván Waisman | Psicólogo Clínico
           </h3>
           <p className={styles.description}>
             Psicólogo clínico especializado en bienestar mental y crecimiento
@@ -42,7 +36,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Enlaces y redes sociales */}
+        {/* Enlaces y contacto */}
         {isHome && (
           <>
             <div className={styles.section}>
@@ -76,30 +70,6 @@ const Footer = () => {
             </div>
 
             <div className={styles.section}>
-              <h4 className={styles.subtitle}>Redes Sociales</h4>
-              <div className={styles.socialLinks}>
-                <a
-                  href="https://www.instagram.com/creandocaminos__"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram />
-                  <span>Instagram</span>
-                </a>
-                <a
-                  href="https://www.tiktok.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                >
-                  <FaTiktok />
-                  <span>TikTok</span>
-                </a>
-              </div>
-            </div>
-
-            <div className={styles.section}>
               <h4 className={styles.subtitle}>Contacto</h4>
               <p className={styles.contact}>
                 <FaPhoneAlt /> +31649393678
@@ -107,6 +77,15 @@ const Footer = () => {
               <p className={styles.contact}>
                 <FaEnvelope /> psi.ivanwaisman@gmail.com
               </p>
+              <a
+                href="https://www.instagram.com/creandocaminos__"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contact}
+                aria-label="Instagram"
+              >
+                <FaInstagram /> @creandocaminos__
+              </a>
             </div>
           </>
         )}
@@ -115,7 +94,7 @@ const Footer = () => {
       {/* Pie común */}
       <div className={styles.bottomBar}>
         <p className={styles.copy}>
-          © 2024 Lic. Ivan Waisman Todos los derechos reservados.
+          © 2024 Lic. Iván Waisman Todos los derechos reservados.
         </p>
       </div>
     </footer>

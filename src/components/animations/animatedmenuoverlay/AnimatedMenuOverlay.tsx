@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "../../styles/AnimatedMenuOverlay.module.css";
+import styles from "../../../styles/animations/AnimatedMenuOverlay.module.css";
 
 interface AnimatedMenuOverlayProps {
   onClose: () => void;

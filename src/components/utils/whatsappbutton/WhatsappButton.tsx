@@ -1,7 +1,9 @@
 "use client";
+
 import React from "react";
-import styles from "../../styles/WhatsappButton.module.css";
+import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
+import styles from "../../../styles/utils/WhatsappButton.module.css";
 
 interface WhatsappButtonProps {
   phoneNumber: string;
@@ -16,14 +18,18 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <a
+    <motion.a
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.whatsappButton}
     >
       <FaWhatsapp className={styles.icon} />
-    </a>
+      <span className={styles.text}>Agendar una cita</span>
+    </motion.a>
   );
 };
 

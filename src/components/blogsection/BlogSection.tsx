@@ -5,7 +5,7 @@ import { BlogSectionMobile } from "./blogsectionmobile";
 import { BlogSectionDesktop } from "./blogsectiondesktop";
 import styles from "../../styles/blog/blogsection/BlogSection.module.css";
 import { FaBrain } from "react-icons/fa";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import { useRouter } from "next/navigation";
 
 const BlogSection = () => {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "../../../styles/digitaltherapy/DigitalCards.module.css";
-import { CarouselDigitalTherapy } from "../../carouseldigitaltherapy";
+import { CarouselDigitalTherapy } from "../carouseldigitaltherapy";
 import * as LucideIcons from "lucide-react";
 
 const ventajas = [

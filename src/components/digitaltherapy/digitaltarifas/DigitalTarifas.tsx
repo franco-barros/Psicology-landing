@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "../../../styles/digitaltherapy/DigitalTarifas.module.css";
-import { CarouselTarifa } from "../../carouseltarifa";
+import { CarouselTarifa } from "../carouseltarifa";
 import * as LucideIcons from "lucide-react";
 
 const tarifas = [
@@ -104,13 +104,6 @@ const DigitalTarifas: React.FC = () => {
               );
             }
           )}
-        </div>
-
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <button className={styles.agendarButton}>
-            <LucideIcons.Video size={20} style={{ marginRight: "0.5rem" }} />
-            Agendar Consulta Online
-          </button>
         </div>
       </div>
     </div>

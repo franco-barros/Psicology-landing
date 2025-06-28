@@ -17,17 +17,18 @@
   gap: 0.75rem;
 }
 
+/* 🔽 Estilo más pequeño y moderno para el nombre */
 .title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.05rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #d9a75f; /* tono amarillo otoñal */
+  color: #a8e063; /* verde lima */
 }
 
 .iconLeaf {
-  color: #88a14a; /* verde seco otoñal */
+  color: #e7d3f3; /* lavanda suave */
 }
 
 .subtitle {
@@ -64,12 +65,17 @@
   color: #e6c17e;
 }
 
+/* Contacto, incluido Instagram */
 .contact {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #f3f3f3;
   font-size: 0.95rem;
+}
+
+.contact svg {
+  color: #a8e063; /* verde lima para íconos */
 }
 
 /* Bottom bar */
@@ -82,48 +88,7 @@
   padding-top: 1.5rem;
   gap: 1rem;
 }
-
-.socialLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.socialLinks a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: #f2f2f2;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.socialLinks a:hover {
-  color: #e6c17e;
-}
-
-.socialLinks svg {
-  font-size: 1.2rem;
-  color: #d9a75f;
-}
-
 .copy {
   font-size: 0.85rem;
   color: #ccc;
-}
-
-.backToTop {
-  background-color: transparent;
-  border: 1px solid #d9a75f;
-  border-radius: 50%;
-  padding: 0.4rem 0.5rem;
-  cursor: pointer;
-  color: #d9a75f;
-  transition: background 0.3s, color 0.3s;
-}
-
-.backToTop:hover {
-  background-color: #d9a75f;
-  color: #1d2b53;
 }

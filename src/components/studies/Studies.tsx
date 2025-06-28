@@ -2,9 +2,9 @@
 
 import React from "react";
 import { GraduationCap } from "lucide-react";
-import styles from "../../styles/Studies.module.css";
-import { FadeInOnScroll } from "../fadeInonscroll";
-import { StudiesSlider } from "../studiesslider";
+import styles from "../../styles/studies/Studies.module.css";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
+import { StudiesSlider } from "./studiesslider";
 
 const Studies: React.FC = () => (
   <section id="studies" className={styles.studiesSection}>

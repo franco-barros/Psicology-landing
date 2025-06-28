@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import styles from "../../styles/CarouselGallery.module.css";
+import styles from "../../../styles/gallery/CarouselGallery.module.css";
 
 interface Props {
   items: string[];

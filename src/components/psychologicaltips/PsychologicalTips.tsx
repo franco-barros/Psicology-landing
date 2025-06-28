@@ -9,7 +9,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 import styles from "../../styles/PsychologicalTips.module.css";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 
 const categories = ["Todos", "Ansiedad", "Estrés", "Relaciones", "Autoestima"];
 

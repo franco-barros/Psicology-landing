@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import styles from "../../styles/CarouselTarifa.module.css";
+import styles from "../../../styles/digitaltherapy/CarouselTarifa.module.css";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Tarifa {

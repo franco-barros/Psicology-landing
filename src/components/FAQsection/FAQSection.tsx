@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import styles from "../../styles/FAQSection.module.css";
+import styles from "../../styles/faqsection/FAQSection.module.css";
 import { MessageCircle } from "lucide-react";
-import { FadeInOnScroll } from "../fadeInonscroll";
-import { FAQTabsCarousel } from "../FAQtabscarousel";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
+import { FAQTabsCarousel } from "./FAQtabscarousel";
 
 const FAQSection: React.FC = () => {
   return (

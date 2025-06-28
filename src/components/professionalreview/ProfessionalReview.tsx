@@ -9,9 +9,9 @@ import {
   Lock,
   ShieldCheck,
 } from "lucide-react";
-import { FaLeaf, FaSeedling } from "react-icons/fa";
+import { FaSeedling } from "react-icons/fa";
 import styles from "../../styles/ProfessionalReview.module.css";
-import { FadeInOnScroll } from "../fadeInonscroll";
+import { FadeInOnScroll } from "../shared/fadeInonscroll";
 
 interface ItemConDesc {
   title: string;
@@ -165,18 +165,6 @@ const ProfessionalReview: React.FC<ProfessionalReviewProps> = ({
               )}
             </div>
           </div>
-        </div>
-
-        <div className={styles.ctaWrapper}>
-          <a
-            href="https://wa.me/5491123456789?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20primera%20consulta."
-            className={styles.startButton}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLeaf className={styles.badgeIcon} />
-            Agenda Tu Primera Consulta
-          </a>
         </div>
       </section>
     </FadeInOnScroll>
