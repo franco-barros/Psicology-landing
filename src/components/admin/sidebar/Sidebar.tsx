@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "../../styles/admin/Sidebar.module.css";
+import styles from "../../../styles/admin/Sidebar.module.css";
 import { FileText, MessageCircle, Lightbulb, Menu } from "lucide-react";
 
 interface SidebarProps {
