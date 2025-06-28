@@ -1,0 +1,26 @@
+.sliderWrapper {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  position: relative;
+  height: 550px; /* altura fija según el slider mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicesContainer {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto; /* para scroll horizontal si hay muchas */
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+
+  /* Opcional: ocultar scrollbar en webkit */
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.servicesContainer::-webkit-scrollbar {
+  display: none;
+}

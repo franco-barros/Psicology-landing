@@ -44,7 +44,7 @@
   flex-grow: 1;
   overflow-y: auto;
   padding-right: 0.25rem;
-  max-height: 250px; /* Limita altura en mobile para evitar expansión excesiva */
+  max-height: 250px;
 }
 
 .carouselItem {

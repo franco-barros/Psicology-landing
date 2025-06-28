@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { Calendar, ArrowRight, Check } from "lucide-react";
-import styles from "../../../styles/studies/Studies.module.css";
+import styles from "../../../styles/studies/StudiesCard.module.css";
 import type { Study } from "../../../types/study";
 
 interface Props {

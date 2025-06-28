@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import useAutoAdvance from "../../../hooks/useAutoAdvance";
 import { StudiesCard } from "../studiescard";
 import { studiesData } from "../../../data/studies";
-import styles from "../../../styles/studies/Studies.module.css";
+import styles from "../../../styles/studies/StudiesSlider.module.css";
 
 const StudiesSlider = () => {
   const [isMobile, setIsMobile] = useState(false);

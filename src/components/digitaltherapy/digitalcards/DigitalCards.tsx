@@ -8,22 +8,19 @@ import * as LucideIcons from "lucide-react";
 const ventajas = [
   {
     title: "Accesibilidad Total",
-    description:
-      "Recibe terapia desde cualquier lugar del mundo, eliminando barreras geográficas y de movilidad.",
+    description: "Terapia desde cualquier lugar, sin límites geográficos.",
     icon: LucideIcons.Globe,
     color: "#4caf50",
   },
   {
     title: "Flexibilidad Horaria",
-    description:
-      "Horarios adaptados a tu rutina, incluyendo sesiones en horarios extendidos y fines de semana.",
+    description: "Sesiones adaptadas a tu rutina, incluso fines de semana.",
     icon: LucideIcons.Clock,
     color: "#ff9800",
   },
   {
     title: "Privacidad y Comodidad",
-    description:
-      "Sesiones desde tu espacio seguro, con total confidencialidad y sin preocupaciones de transporte.",
+    description: "Desde tu espacio seguro, con total confidencialidad.",
     icon: LucideIcons.Home,
     color: "#9c27b0",
   },
@@ -32,22 +29,19 @@ const ventajas = [
 const tecnologia = [
   {
     title: "Videoconferencia HD",
-    description:
-      "Plataforma segura con video y audio de alta calidad para una comunicación óptima.",
+    description: "Audio y video seguros y de alta calidad.",
     icon: LucideIcons.Video,
     color: "#2196f3",
   },
   {
     title: "Encriptación Total",
-    description:
-      "Todas las sesiones están protegidas con encriptación de extremo a extremo.",
+    description: "Protección completa con cifrado extremo a extremo.",
     icon: LucideIcons.Lock,
     color: "#795548",
   },
   {
     title: "Soporte Técnico",
-    description:
-      "Asistencia técnica disponible para garantizar una experiencia sin interrupciones.",
+    description: "Asistencia disponible para resolver cualquier problema.",
     icon: LucideIcons.Headphones,
     color: "#009688",
   },
@@ -56,7 +50,8 @@ const tecnologia = [
 const comoFuncionaItems = [
   "Agenda tu cita online",
   "Recibe el enlace seguro por email",
-  "Conéctate desde cualquier dispositivo",
+  "Conéctate desde cualquier lugar",
+  "Comienza la terapia",
 ].map((desc, i) => ({
   title: `Paso ${i + 1}`,
   description: desc,
@@ -65,15 +60,31 @@ const comoFuncionaItems = [
 }));
 
 const mismaEfectividadItems = [
-  "Estudios científicos validan su eficacia",
-  "Mismas técnicas terapéuticas aplicadas",
-  "Resultados equivalentes a terapia presencial",
-].map((desc) => ({
-  title: "",
-  description: desc,
-  icon: LucideIcons.CheckCircle,
-  color: "#4caf50",
-}));
+  {
+    title: "Validación Científica",
+    description: "Eficacia comprobada",
+    icon: LucideIcons.CheckCircle,
+    color: "#4caf50",
+  },
+  {
+    title: "Técnicas Aplicadas",
+    description: "Mismas técnicas usadas",
+    icon: LucideIcons.CheckCircle,
+    color: "#4caf50",
+  },
+  {
+    title: "Resultados",
+    description: "Igual efectividad",
+    icon: LucideIcons.CheckCircle,
+    color: "#4caf50",
+  },
+  {
+    title: "Privacidad",
+    description: "Confidencialidad garantizada",
+    icon: LucideIcons.CheckCircle,
+    color: "#4caf50",
+  },
+];
 
 const allCards = [
   {
@@ -92,7 +103,7 @@ const allCards = [
     gradientClass: "card3",
   },
   {
-    title: "Misma Efectividad Comprobada",
+    title: "Misma Efectividad ",
     items: mismaEfectividadItems,
     gradientClass: "card4",
   },
@@ -118,7 +129,7 @@ const DigitalCards = () => {
                   ({ title, description, icon: Icon, color }, i) => (
                     <div key={i} className={styles.carouselItem}>
                       <div className={styles.iconWrapper}>
-                        <Icon size={28} color={color} />
+                        <Icon size={26} color={color} />
                       </div>
                       <div>
                         {title && <strong>{title}</strong>}
