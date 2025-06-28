@@ -34,7 +34,7 @@ const StudiesSlider = () => {
     return (
       <section
         aria-label="Slider de estudios"
-        className="w-full max-w-3xl mx-auto h-[550px] relative flex items-center justify-center px-4"
+        className={styles.sliderContainer}
       >
         <AnimatePresence mode="wait">
           <motion.div
