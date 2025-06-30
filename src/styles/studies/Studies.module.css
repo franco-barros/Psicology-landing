@@ -1,7 +1,13 @@
 /* --- Sección principal --- */
 .studiesSection {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  /* Imagen de fondo con overlay blanco semitransparente */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/images/paisajespsycology2.png") no-repeat center center;
+  background-size: cover;
   text-align: center;
 }
 
@@ -19,7 +25,7 @@
 
 .mainTitle {
   font: 700 2rem var(--font-title);
-  color: #4d392d;
+  color: #444;
   margin: 0 auto 1rem;
   max-width: 600px;
 }

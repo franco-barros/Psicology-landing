@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { Calendar, ArrowRight, Check } from "lucide-react";
+import { Calendar, Check } from "lucide-react";
 import styles from "../../../styles/studies/StudiesCard.module.css";
 import type { Study } from "../../../types/study";
 
@@ -40,10 +40,6 @@ const StudiesCard: FC<Props> = ({ study, setIsPaused }) => {
             </li>
           ))}
         </ul>
-        <button onClick={study.onClick} className={styles.button}>
-          <ArrowRight size={16} />
-          <span>{study.cta}</span>
-        </button>
       </div>
     </article>
   );

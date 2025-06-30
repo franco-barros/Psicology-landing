@@ -139,6 +139,27 @@
   border-radius: 50%;
 }
 
+.buttonWrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.testimonialsButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #a8e063 0%, #b5e550 100%);
+  color: #444;
+  font-weight: 700;
+  font-family: var(--font-button);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.testimonialsButton:hover {
+  background: linear-gradient(135deg, #b8f374 0%, #c0f370 100%);
+}
+
 /* Mostrar/ocultar imagen según dispositivo */
 .mobileOnly {
   display: none;

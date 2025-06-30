@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { UserCheck } from "lucide-react";
 import { CarouselTestimonials } from "./carouseltestimonial";
@@ -66,6 +67,12 @@ const Hero: React.FC = () => {
 
         <div className={styles.testimonialsWrapper}>
           <CarouselTestimonials testimonials={testimonials} />
+
+          <div className={styles.buttonWrapper}>
+            <Link href="/testimonials" className={styles.testimonialsButton}>
+              Ver todos los testimonios
+            </Link>
+          </div>
         </div>
       </motion.div>
     </section>

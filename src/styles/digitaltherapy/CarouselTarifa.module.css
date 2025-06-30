@@ -15,7 +15,7 @@
   max-width: 100%;
   text-align: left;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  border: 2px solid #e0e0e0; /* default border */
+  border: 2px solid #e0e0e0;
   transition: transform 0.2s ease, border-color 0.2s ease;
   height: 350px;
   box-sizing: border-box;
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.75rem; /* más compacto */
+  gap: 0.75rem;
 }
 
 .popularBadge {
@@ -63,12 +63,12 @@
   margin-bottom: 1rem;
 }
 
-/* Lista de beneficios con altura mínima para estabilidad visual */
+/* Lista de beneficios con altura mínima */
 .benefits {
   list-style: none;
   padding: 0;
   margin: 0;
-  min-height: 100px; /* asegura altura constante aunque cambie contenido */
+  min-height: 100px;
 }
 
 .benefits li {
@@ -84,30 +84,34 @@
   flex-shrink: 0;
 }
 
-/* Controles de navegación */
-.controls {
+/* Indicadores (paginación con esferas) */
+.indicators {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
-  margin: 1.5rem auto 0;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
-.controls button {
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.controls button:hover {
+.activeIndicator {
   background-color: #a8e063;
-  color: white;
+  transform: scale(1.2);
 }
 
-/* Gradientes por cada tipo de tarjeta */
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #8da65d;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.indicator:hover {
+  background-color: #444;
+}
+
+/* Gradientes por tipo de tarjeta */
 .tarifa1 {
   background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
 }
@@ -118,21 +122,4 @@
 
 .tarifa3 {
   background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
-}
-
-/* Ocultar en desktop */
-.onlyMobile {
-  display: block;
-}
-.onlyDesktop {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .onlyMobile {
-    display: none;
-  }
-  .onlyDesktop {
-    display: block;
-  }
 }

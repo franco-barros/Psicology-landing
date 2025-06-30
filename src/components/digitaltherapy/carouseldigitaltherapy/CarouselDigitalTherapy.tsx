@@ -42,9 +42,6 @@ const CarouselDigitalTherapy: React.FC<CarouselDigitalTherapyProps> = ({
 
   if (total === 0) return <p>No hay elementos para mostrar.</p>;
 
-  const next = () => setCurrent((prev) => (prev + 1) % total);
-  const prev = () => setCurrent((prev) => (prev - 1 + total) % total);
-
   const currentCard = cards[current];
 
   return (
@@ -78,13 +75,17 @@ const CarouselDigitalTherapy: React.FC<CarouselDigitalTherapyProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      <div className={styles.controls}>
-        <button aria-label="Anterior" onClick={prev}>
-          ‹
-        </button>
-        <button aria-label="Siguiente" onClick={next}>
-          ›
-        </button>
+      <div className={styles.indicators}>
+        {cards.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.indicator} ${
+              index === current ? styles.activeIndicator : ""
+            }`}
+            onClick={() => setCurrent(index)}
+            aria-label={`Ir a la tarjeta ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

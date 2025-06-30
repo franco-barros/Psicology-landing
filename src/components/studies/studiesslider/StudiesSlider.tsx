@@ -32,10 +32,7 @@ const StudiesSlider = () => {
     const current = studiesData[currentIndex];
 
     return (
-      <section
-        aria-label="Slider de estudios"
-        className={styles.sliderContainer}
-      >
+      <section aria-label="Slider de estudios" className={styles.sliderWrapper}>
         <AnimatePresence mode="wait">
           <motion.div
             key={current.id}
@@ -48,6 +45,23 @@ const StudiesSlider = () => {
             <StudiesCard study={current} setIsPaused={setIsPaused} />
           </motion.div>
         </AnimatePresence>
+
+        <div className={styles.indicators}>
+          {studiesData.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.indicator} ${
+                index === currentIndex ? styles.activeIndicator : ""
+              }`}
+              onClick={() => {
+                setIsPaused(true);
+                setCurrentIndex(index);
+                setTimeout(() => setIsPaused(false), 5000);
+              }}
+              aria-label={`Ir a la tarjeta ${index + 1}`}
+            />
+          ))}
+        </div>
       </section>
     );
   }

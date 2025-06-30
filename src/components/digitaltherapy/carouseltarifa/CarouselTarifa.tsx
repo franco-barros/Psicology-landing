@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../../../styles/digitaltherapy/CarouselTarifa.module.css";
-import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 interface Tarifa {
   title: string;
@@ -85,20 +85,17 @@ const CarouselTarifa: React.FC<CarouselTarifaProps> = ({ tarifas }) => {
         </div>
       </div>
 
-      <div className={styles.controls}>
-        <button
-          onClick={() =>
-            handleUserAction(() =>
-              setCurrent((prev) => (prev === 0 ? tarifas.length - 1 : prev - 1))
-            )
-          }
-          aria-label="Anterior"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button onClick={() => handleUserAction(next)} aria-label="Siguiente">
-          <ChevronRight size={20} />
-        </button>
+      <div className={styles.indicators}>
+        {tarifas.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.indicator} ${
+              index === current ? styles.activeIndicator : ""
+            }`}
+            onClick={() => handleUserAction(() => setCurrent(index))}
+            aria-label={`Ir a la tarjeta ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,12 @@
 .digitalTherapySection {
   padding: 4rem 1.5rem;
-  background-color: #f8f9fa;
+  /* Imagen de fondo con overlay blanco semitransparente para legibilidad */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/images/paisajespsycology.png") no-repeat center center;
+  background-size: cover;
   text-align: center;
 }
 
@@ -35,6 +41,6 @@
 
 .description {
   font-size: 1.1rem;
-  color: #444;
+  color: #000;
   margin-bottom: 3rem;
 }
