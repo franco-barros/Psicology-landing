@@ -15,34 +15,22 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
 }) => {
   const [name, setName] = useState("");
   const [testimonial, setTestimonial] = useState("");
-  const [image, setImage] = useState<string>("");
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [tags, setTags] = useState("");
+  const [rating, setRating] = useState(0); // Calificación estrellas (1-5)
 
   useEffect(() => {
     if (initialData) {
       setName(initialData.name || "");
       setTestimonial(initialData.message || "");
-      // Podés agregar image y tags al modelo si los vas a guardar
-      setImage(initialData.image || "");
-      setImageFile(null);
+      setRating(initialData.rating || 0); // asumiendo que TestimonialItem tiene rating
     }
   }, [initialData]);
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setImageFile(file);
-      setImage(URL.createObjectURL(file)); // preview
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simulado: en el backend, se usaría imageFile
-    if (imageFile) {
-      console.log("Imagen seleccionada:", imageFile.name);
+    if (rating < 1) {
+      alert("Por favor selecciona una calificación con estrellas.");
+      return;
     }
 
     if (initialData) {
@@ -51,12 +39,9 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
       alert(`Testimonio cargado (simulado)`);
     }
 
-    // Reset
     setName("");
     setTestimonial("");
-    setImage("");
-    setImageFile(null);
-    setTags("");
+    setRating(0);
 
     if (onSuccess) onSuccess();
   };
@@ -71,6 +56,21 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
         className={styles.input}
       />
 
+      <label className={styles.label}>Calificación:</label>
+      <div className={styles.stars}>
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            type="button"
+            key={star}
+            className={`${styles.star} ${star <= rating ? styles.filled : ""}`}
+            onClick={() => setRating(star)}
+            aria-label={`${star} estrella${star > 1 ? "s" : ""}`}
+          >
+            ★
+          </button>
+        ))}
+      </div>
+
       <textarea
         placeholder="Escribe el testimonio..."
         rows={4}
@@ -78,32 +78,6 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
         onChange={(e) => setTestimonial(e.target.value)}
         required
         className={styles.textarea}
-      />
-
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-        className={styles.input}
-      />
-
-      {image && (
-        <div className={styles.imagePreview}>
-          <p>Previsualización:</p>
-          <img
-            src={image}
-            alt="Previsualización"
-            className={styles.previewImg}
-          />
-        </div>
-      )}
-
-      <input
-        type="text"
-        placeholder="Tags (separados por coma)"
-        value={tags}
-        onChange={(e) => setTags(e.target.value)}
-        className={styles.input}
       />
 
       <button type="submit" className={styles.button}>

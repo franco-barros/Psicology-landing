@@ -1,4 +1,3 @@
-// components/admin/AdminPage.tsx
 "use client";
 
 import React from "react";
@@ -44,11 +43,6 @@ const AdminPage: React.FC<AdminPageProps> = ({
         currentMode={mode}
         onModeChange={setMode}
         currentType={type}
-        onTypeChange={(newType) => {
-          setType(newType);
-          setMode("create");
-          clearEditItem();
-        }}
       />
 
       {mode === "create" ? (

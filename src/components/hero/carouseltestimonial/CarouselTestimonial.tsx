@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
 import styles from "../../../styles/hero/CarouselTestimonials.module.css";
 import { Testimonial } from "../../../data/testimonials";
 
@@ -48,22 +48,17 @@ const CarouselTestimonials: React.FC<Props> = ({ testimonials }) => {
         >
           <div className={styles.gradientBlock}>
             <FaQuoteLeft className={styles.bgIcon} />
-            <p className={styles.quote}>{t.quote}</p>
-            <div className={styles.authorInfoOnly}>
+            <div className={styles.header}>
               <strong className={styles.authorName}>{t.name}</strong>
-              <span className={styles.verified}>Paciente verificado</span>
+              <div className={styles.rating}>
+                {Array(5)
+                  .fill(0)
+                  .map((_, idx) => (
+                    <FaStar key={idx} className={styles.star} />
+                  ))}
+              </div>
             </div>
-            <div className={styles.rating}>
-              {Array(5)
-                .fill(0)
-                .map((_, idx) => (
-                  <FaStar key={idx} className={styles.star} />
-                ))}
-            </div>
-          </div>
-          <div className={styles.resultCard}>
-            <strong>{t.result}</strong>
-            <span>Resultado del tratamiento</span>
+            <p className={styles.quote}>{t.quote}</p>
           </div>
         </div>
       ))}

@@ -6,13 +6,12 @@
   align-items: stretch;
 }
 
-/* Tablet → 2 columnas */
 @media (max-width: 1024px) {
   .carouselGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Móvil → 1 columna */
+
 @media (max-width: 768px) {
   .carouselGrid {
     grid-template-columns: 1fr;
@@ -22,7 +21,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: white;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid transparent;
@@ -30,14 +28,9 @@
   height: 100%;
 }
 
-.carouselGrid > .card {
-  height: 100%;
-}
-
-/* En mobile, altura fija para evitar saltos al cambiar */
 @media (max-width: 768px) {
   .card {
-    height: 420px;
+    height: auto;
   }
 }
 
@@ -46,11 +39,18 @@
   background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
   padding: 1.5rem;
   color: #444;
-  text-align: left;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  border-radius: 12px;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .gradientBlock {
+    min-height: 280px;
+  }
 }
 
 .bgIcon {
@@ -62,46 +62,18 @@
   color: #444;
 }
 
-.quote {
-  font-style: italic;
-  margin-bottom: 1rem;
-  max-height: 120px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
-
-.authorRow {
+.header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
   margin-bottom: 1rem;
-}
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 2px solid #fff;
-}
-
-.authorInfo {
-  text-align: left;
 }
 
 .authorName {
-  display: block;
   font-weight: 700;
   font-size: 1rem;
-}
-
-.verified {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 400;
+  color: #333;
 }
 
 .rating {
@@ -110,32 +82,20 @@
 }
 
 .star {
+  color: #fff; /* blanco sobre fondo verde */
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1rem;
   color: #444;
-}
-
-.resultCard {
-  background: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-top: 1px solid #e6e4e0;
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
-  flex-shrink: 0;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.resultCard strong {
-  display: block;
-  font-size: 1.1rem;
-  color: #4b4b38;
-  margin-bottom: 0.25rem;
-}
-
-.resultCard span {
-  font-size: 0.9rem;
-  color: #777;
+  line-height: 1.5;
+  margin-top: auto;
+  max-height: 120px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 
 .active {

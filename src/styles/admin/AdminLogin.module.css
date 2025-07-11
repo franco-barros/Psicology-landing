@@ -6,6 +6,8 @@
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .loginForm {
@@ -19,6 +21,8 @@
   font-size: 1rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .loginForm button {
@@ -29,9 +33,32 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.loginForm button:hover {
+  background-color: #4a2f7a;
 }
 
 .error {
   color: red;
   font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* -------------------------- */
+/* Responsive para pantallas pequeñas */
+/* -------------------------- */
+@media (max-width: 480px) {
+  .loginContainer {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .loginForm input,
+  .loginForm button {
+    font-size: 1rem;
+    padding: 0.65rem;
+  }
 }

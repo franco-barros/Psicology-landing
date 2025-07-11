@@ -17,14 +17,13 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
   const [content, setContent] = useState("");
   const [image, setImage] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [tags, setTags] = useState("");
 
   useEffect(() => {
     if (initialData) {
       setTitle(initialData.title || "");
       setContent(initialData.content || "");
       setImage(initialData.image || "");
-      setImageFile(null); // Reset image file (no se puede precargar archivo desde URL)
+      setImageFile(null); // Reset image file
     }
   }, [initialData]);
 
@@ -32,17 +31,15 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
     const file = e.target.files?.[0];
     if (file) {
       setImageFile(file);
-      setImage(URL.createObjectURL(file)); // Vista previa
+      setImage(URL.createObjectURL(file)); // Preview
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simulación de subida
     if (imageFile) {
       console.log("Imagen seleccionada para subir:", imageFile.name);
-      // Acá podrías armar un FormData y enviar al backend más adelante
     }
 
     if (initialData) {
@@ -55,7 +52,6 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
     setContent("");
     setImage("");
     setImageFile(null);
-    setTags("");
     if (onSuccess) onSuccess();
   };
 
@@ -96,14 +92,6 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
           />
         </div>
       )}
-
-      <input
-        type="text"
-        placeholder="Tags (separados por coma)"
-        value={tags}
-        onChange={(e) => setTags(e.target.value)}
-        className={styles.input}
-      />
 
       <button type="submit" className={styles.button}>
         {initialData ? "Actualizar artículo" : "Publicar artículo"}

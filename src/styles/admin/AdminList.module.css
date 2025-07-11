@@ -3,6 +3,9 @@
   border-radius: 1.25rem;
   padding: 2rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .listContainer h3 {
@@ -30,6 +33,7 @@
   justify-content: space-between;
   align-items: center;
   transition: box-shadow 0.2s ease;
+  flex-wrap: wrap;
 }
 
 .item:hover {
@@ -40,11 +44,14 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #444;
+  flex: 1 1 auto;
+  min-width: 200px;
 }
 
 .actions {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .actions button {
@@ -56,6 +63,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .actions button:hover {
@@ -69,4 +77,42 @@
 
 .actions button:first-child:hover {
   background-color: #482f77;
+}
+
+/* -------------------------- */
+/* Responsive para mobile 📱  */
+/* -------------------------- */
+@media (max-width: 600px) {
+  .listContainer {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .listContainer h3 {
+    font-size: 1.2rem;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .itemHeader {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .actions button {
+    flex: 1 1 auto;
+    padding: 0.5rem;
+    min-width: 100px;
+  }
 }

@@ -9,7 +9,8 @@ export interface TestimonialItem {
   id: string;
   name: string;
   message: string;
-  image: string;
+  image?: string;
+  rating?: number;
 }
 
 export interface TipItem {

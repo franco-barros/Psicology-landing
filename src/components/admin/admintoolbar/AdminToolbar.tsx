@@ -6,14 +6,15 @@ interface AdminToolbarProps {
   currentMode: "create" | "list";
   onModeChange: (mode: "create" | "list") => void;
   currentType: "article" | "testimonial" | "tip";
-  onTypeChange?: (type: "article" | "testimonial" | "tip") => void;
+  // Eliminamos onTypeChange porque no lo vamos a usar acá
+  // onTypeChange?: (type: "article" | "testimonial" | "tip") => void;
 }
 
 const AdminToolbar: React.FC<AdminToolbarProps> = ({
   currentMode,
   onModeChange,
   currentType,
-  onTypeChange,
+  // onTypeChange,
 }) => {
   const label =
     currentType === "article"
@@ -38,29 +39,6 @@ const AdminToolbar: React.FC<AdminToolbarProps> = ({
           Ver {label}
         </button>
       </div>
-
-      {onTypeChange && (
-        <div className={styles.typeButtons}>
-          <button
-            onClick={() => onTypeChange("article")}
-            className={currentType === "article" ? styles.active : ""}
-          >
-            Artículos
-          </button>
-          <button
-            onClick={() => onTypeChange("testimonial")}
-            className={currentType === "testimonial" ? styles.active : ""}
-          >
-            Testimonios
-          </button>
-          <button
-            onClick={() => onTypeChange("tip")}
-            className={currentType === "tip" ? styles.active : ""}
-          >
-            Tips
-          </button>
-        </div>
-      )}
     </div>
   );
 };
