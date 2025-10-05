@@ -5,7 +5,6 @@ import styles from "../../styles/digitaltherapy/DigitalTherapy.module.css";
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import * as LucideIcons from "lucide-react";
 import { DigitalCards } from "./digitalcards";
-import { DigitalTarifas } from "./digitaltarifas";
 
 const DigitalTherapy: React.FC = () => {
   return (
@@ -27,9 +26,6 @@ const DigitalTherapy: React.FC = () => {
 
       {/* Sección de Cards */}
       <DigitalCards />
-
-      {/* Sección de Tarifas */}
-      <DigitalTarifas />
     </section>
   );
 };

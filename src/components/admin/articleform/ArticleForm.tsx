@@ -13,17 +13,17 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
   initialData,
   onSuccess,
 }) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+  const [imagePreview, setImagePreview] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
 
   useEffect(() => {
     if (initialData) {
       setTitle(initialData.title || "");
       setContent(initialData.content || "");
-      setImage(initialData.image || "");
-      setImageFile(null); // Reset image file
+      setImagePreview(initialData.image || "");
+      setImageFile(null);
     }
   }, [initialData]);
 
@@ -31,28 +31,48 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
     const file = e.target.files?.[0];
     if (file) {
       setImageFile(file);
-      setImage(URL.createObjectURL(file)); // Preview
+      setImagePreview(URL.createObjectURL(file));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!title || !content || (!imageFile && !initialData?.image)) {
+      alert("Por favor completá todos los campos.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
     if (imageFile) {
-      console.log("Imagen seleccionada para subir:", imageFile.name);
+      formData.append("image", imageFile);
     }
 
-    if (initialData) {
-      alert(`Artículo "${title}" actualizado (simulado)`);
-    } else {
-      alert(`Artículo "${title}" cargado (simulado)`);
-    }
+    try {
+      const res = await fetch("/api/article", {
+        method: "POST",
+        body: formData,
+      });
 
-    setTitle("");
-    setContent("");
-    setImage("");
-    setImageFile(null);
-    if (onSuccess) onSuccess();
+      const data: { imageUrl: string; id: string } = await res.json();
+
+      if (!res.ok) {
+        throw new Error("Error al subir el artículo.");
+      }
+
+      alert("✅ Artículo subido con éxito");
+      console.log("📦 URL imagen:", data.imageUrl);
+      onSuccess?.();
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Error desconocido al subir el artículo.";
+      console.error("❌ Error:", message);
+      alert(message);
+    }
   };
 
   return (
@@ -82,11 +102,11 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
         className={styles.input}
       />
 
-      {image && (
+      {imagePreview && (
         <div className={styles.imagePreview}>
           <p>Previsualización:</p>
           <img
-            src={image}
+            src={imagePreview}
             alt="Previsualización"
             className={styles.previewImg}
           />

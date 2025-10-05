@@ -1,28 +1,36 @@
 "use client";
 
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../lib/firebaseClient";
 import styles from "../../../styles/admin/AdminLogin.module.css";
 
 interface AdminLoginProps {
   onLoginSuccess: () => void;
 }
 
-const VALID_USER = "admin";
-const VALID_PASS = "terapia123";
-
 const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
 
-    if (user === VALID_USER && pass === VALID_PASS) {
-      localStorage.setItem("adminLoggedIn", "true");
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
       onLoginSuccess();
-    } else {
-      setError("Usuario o contraseña incorrectos");
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Error desconocido al iniciar sesión");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -31,11 +39,12 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
       <h2>Acceso de Administrador</h2>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <input
-          type="text"
-          placeholder="Usuario"
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
+          disabled={loading}
         />
         <input
           type="password"
@@ -43,9 +52,12 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           required
+          disabled={loading}
         />
         {error && <p className={styles.error}>{error}</p>}
-        <button type="submit">Ingresar</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Ingresando..." : "Ingresar"}
+        </button>
       </form>
     </div>
   );

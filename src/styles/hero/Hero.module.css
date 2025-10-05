@@ -160,6 +160,42 @@
   background: linear-gradient(135deg, #b8f374 0%, #c0f370 100%);
 }
 
+.instagramWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.instagramButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #e1306c, #f77737);
+  color: white;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: var(--font-button);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instagramButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+}
+
+@media (max-width: 768px) {
+  .instagramWrapper {
+    margin-top: 1.2rem;
+  }
+
+  .instagramButton {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.1rem;
+  }
+}
+
 /* Mostrar/ocultar imagen según dispositivo */
 .mobileOnly {
   display: none;

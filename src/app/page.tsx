@@ -6,7 +6,6 @@ import { DigitalTherapy } from "../components/digitaltherapy";
 import { FAQSection } from "../components/FAQsection";
 import { PsychologicalTips } from "../components/psychologicaltips";
 import { ProfessionalReview } from "../components/professionalreview";
-import { Gallery } from "../components/gallery";
 import WhatsappButton from "../components/utils/whatsappbutton";
 import BackToTopButton from "../components/utils/backtotopbutton";
 
@@ -23,10 +22,6 @@ export default function HomePage() {
 
       <div id="aboutme">
         <About />
-      </div>
-
-      <div id="gallery">
-        <Gallery />
       </div>
 
       <div id="blog">

@@ -35,8 +35,8 @@ const BlogSection = () => {
         </h2>
 
         <p className={styles.subtitle}>
-          Explora contenido especializado para tu crecimiento personal y
-          bienestar mental
+          ¿Querés conocer un poco más mis perspectivas en psicología y en la
+          vida?
         </p>
       </FadeInOnScroll>
 

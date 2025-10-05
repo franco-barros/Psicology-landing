@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { UserCheck } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 import { CarouselTestimonials } from "./carouseltestimonial";
 import styles from "../../styles/hero/Hero.module.css";
 import { testimonials } from "../../data/testimonials";
@@ -51,6 +52,19 @@ const Hero: React.FC = () => {
             </p>
 
             <p className={styles.signature}>Lic. Ivan Waisman – Psicólogo</p>
+
+            {/* 🔹 Botón de Instagram */}
+            <div className={styles.instagramWrapper}>
+              <Link
+                href="https://www.instagram.com/ivanwaisman.psicologo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.instagramButton}
+              >
+                <FaInstagram size={20} />
+                <span>Seguir en Instagram</span>
+              </Link>
+            </div>
           </div>
 
           {/* Imagen solo en desktop */}

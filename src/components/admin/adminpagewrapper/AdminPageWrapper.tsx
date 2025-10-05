@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AdminPage from "../AdminPage";
 import { AdminLogin } from "../adminlogin";
 import type { ArticleItem, TestimonialItem, TipItem } from "@/types/admin";
+import styles from "../../../styles/admin/AdminWrapper.module.css";
 
 type ContentType = "article" | "testimonial" | "tip";
 type ContentItem = ArticleItem | TestimonialItem | TipItem;
@@ -45,6 +46,11 @@ export default function AdminPageWrapper() {
     setMode("create");
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("adminLoggedIn");
+    setLoggedIn(false);
+  };
+
   if (!authorized) {
     return (
       <div>
@@ -58,16 +64,24 @@ export default function AdminPageWrapper() {
   }
 
   return (
-    <AdminPage
-      type={type}
-      setType={setType}
-      mode={mode}
-      setMode={setMode}
-      items={items}
-      editingItem={editingItem}
-      onEdit={handleEdit}
-      onDelete={handleDelete}
-      clearEditItem={() => setEditingItem(null)}
-    />
+    <div>
+      <div className={styles.logoutContainer}>
+        <button onClick={handleLogout} className={styles.logoutButton}>
+          Cerrar sesión
+        </button>
+      </div>
+
+      <AdminPage
+        type={type}
+        setType={setType}
+        mode={mode}
+        setMode={setMode}
+        items={items}
+        editingItem={editingItem}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        clearEditItem={() => setEditingItem(null)}
+      />
+    </div>
   );
 }
