@@ -6,12 +6,12 @@
   margin: 0 auto 3rem; /* centrado horizontal y margen inferior */
   padding: 0 1rem; /* espacio lateral para evitar que quede pegado */
   max-width: 1054px; /* 3 columnas + gaps */
-  justify-content: start; /* para evitar desplazamiento raro */
+  justify-content: start;
 }
 
 /* Card individual */
 .card {
-  background: #fff;
+  background: #ffffff; /* fondo blanco neutro */
   border-radius: 1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -35,6 +35,8 @@
 
 .image {
   object-fit: cover;
+  /* opcional: sombra suave para profundidad */
+  box-shadow: 0 2px 8px rgba(31, 78, 93, 0.1);
 }
 
 /* Badge de categoría */
@@ -42,8 +44,8 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  color: #000;
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.75rem;
@@ -63,13 +65,13 @@
 
 .cardTitle {
   font-size: 1.2rem;
-  color: #000;
+  color: #1f4e5d; /* azul profundo */
   margin-bottom: 0.5rem;
 }
 
 .cardDescription {
   font-size: 0.95rem;
-  color: #444;
+  color: #708090; /* gris pizarra */
   margin-bottom: 1rem;
   flex-grow: 1;
   overflow: hidden;
@@ -77,7 +79,7 @@
 
 .meta {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: #708090; /* gris pizarra */
   margin-bottom: 1rem;
   display: flex;
   gap: 0.5rem;
@@ -86,15 +88,15 @@
 .meta span {
   display: inline-flex;
   align-items: center;
-  color: #9e9e9e;
+  color: #708090; /* gris pizarra */
 }
 
 /* Botón leer artículo */
 .readButton {
   align-self: center;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
-  color: #444;
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
+  color: #ffffff;
   border: none;
   border-radius: 12px;
   font-size: 0.9rem;
@@ -109,7 +111,7 @@
 
 .readButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 14px rgba(31, 78, 93, 0.25);
 }
 
 /* Responsive para tablet */

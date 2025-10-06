@@ -1,6 +1,6 @@
 .footer {
-  background-color: #1d2b53;
-  color: #f9f9f9;
+  background-color: #1f4e5d; /* azul profundo */
+  color: #faf3e0; /* texto general beige claro */
   padding: 3rem 1.5rem 2rem;
 }
 
@@ -17,32 +17,35 @@
   gap: 0.75rem;
 }
 
-/* 🔽 Estilo más pequeño y moderno para el nombre */
+/* Títulos con íconos */
 .title {
   font-size: 1.05rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #a8e063; /* verde lima */
+  color: #d8cab8; /* beige suave para el texto principal */
 }
 
 .iconLeaf {
-  color: #e7d3f3; /* lavanda suave */
+  color: #708090; /* gris pizarra para el ícono */
 }
 
+/* Subtítulo */
 .subtitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #e0dbc8;
+  color: #faf3e0; /* beige claro */
 }
 
+/* Descripción */
 .description {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #ccc;
+  color: #e0dbc8; /* beige medio */
 }
 
+/* Listas */
 .list {
   list-style: none;
   padding: 0;
@@ -51,44 +54,46 @@
 
 .list li {
   margin-bottom: 0.5rem;
-  color: #f2f2f2;
+  color: #faf3e0; /* beige claro */
   font-size: 0.95rem;
 }
 
 .list li a {
-  color: #f2f2f2;
+  color: #faf3e0; /* beige claro */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .list li a:hover {
-  color: #e6c17e;
+  color: #d8cab8; /* beige más intenso al pasar el cursor */
 }
 
-/* Contacto, incluido Instagram */
+/* Contacto con iconos */
 .contact {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #f3f3f3;
+  color: #faf3e0; /* texto beige */
   font-size: 0.95rem;
 }
 
 .contact svg {
-  color: #a8e063; /* verde lima para íconos */
+  color: #d8cab8; /* íconos beige suave */
 }
 
 /* Bottom bar */
 .bottomBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* copy centrado como estaba antes */
   align-items: center;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(250, 243, 224, 0.3); /* línea beige suave */
   padding-top: 1.5rem;
   gap: 1rem;
 }
+
 .copy {
   font-size: 0.85rem;
-  color: #ccc;
+  color: #e0dbc8; /* beige medio */
+  text-align: center; /* mantener centrado */
 }

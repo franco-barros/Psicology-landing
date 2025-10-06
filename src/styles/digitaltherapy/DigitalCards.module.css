@@ -1,17 +1,15 @@
-/* Gradientes por tarjeta */
-.card1 {
-  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
+/* Gradientes por tarjeta con paleta 2 */
+.card1,
+.card4 {
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
 }
 
 .card2,
 .card3 {
-  background: linear-gradient(135deg, #c4ff72 0%, #a8e063 50%, #8da65d 100%);
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
 }
 
-.card4 {
-  background: linear-gradient(135deg, #e0bbe4 0%, #d6c1e0 50%, #cbb8dc 100%);
-}
-
+/* Card genérica */
 .carouselCard {
   background-color: #fff;
   border-radius: 1rem;
@@ -30,13 +28,15 @@
   max-width: 330px; /* límite ancho en mobile */
 }
 
+/* Título de cada tarjeta */
 .carouselTitle {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #000;
+  color: #1f4e5d; /* azul profundo de paleta 2 */
   margin-bottom: 1.25rem;
 }
 
+/* Contenido con scroll */
 .motionDiv {
   display: flex;
   flex-direction: column;
@@ -47,6 +47,7 @@
   max-height: 250px;
 }
 
+/* Items individuales */
 .carouselItem {
   display: flex;
   align-items: flex-start;
@@ -55,19 +56,21 @@
 }
 
 .carouselItem strong {
-  color: #000;
+  color: #1f4e5d; /* azul profundo */
   font-size: 1rem;
   display: block;
   margin-bottom: 0.25rem;
+  font-weight: 700;
 }
 
 .carouselItem p {
-  color: #444;
+  color: #444; /* gris oscuro */
   font-size: 0.95rem;
   line-height: 1.4;
   margin: 0;
 }
 
+/* Iconos circulares */
 .iconWrapper {
   width: 40px;
   height: 40px;
@@ -80,6 +83,7 @@
   margin-top: 0.2rem;
 }
 
+/* Controles del slider */
 .controls {
   display: flex;
   justify-content: center;
@@ -99,28 +103,8 @@
 }
 
 .controls button:hover {
-  background-color: #8a9650;
+  background-color: #1f4e5d; /* azul profundo hover */
   color: white;
-}
-
-/* Colores específicos para los textos según tarjeta */
-.card1 .carouselItem strong,
-.card4 .carouselItem strong {
-  color: #000;
-  font-weight: 700;
-}
-
-.card2 .carouselItem strong,
-.card3 .carouselItem strong {
-  color: #000;
-  font-weight: 700;
-}
-
-.card1 .carouselItem p,
-.card2 .carouselItem p,
-.card3 .carouselItem p,
-.card4 .carouselItem p {
-  color: #000;
 }
 
 /* GRID en desktop */

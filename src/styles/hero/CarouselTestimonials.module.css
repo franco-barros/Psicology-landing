@@ -36,9 +36,14 @@
 
 .gradientBlock {
   position: relative;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    /* beige suave */ #faf3e0 50%,
+    /* beige claro */ #e0dbc8 100% /* beige medio */
+  );
   padding: 1.5rem;
-  color: #444;
+  color: #1f4e5d; /* azul profundo */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,7 +64,7 @@
   right: 1rem;
   font-size: 3rem;
   opacity: 0.1;
-  color: #444;
+  color: #708090; /* gris pizarra para icono de fondo */
 }
 
 .header {
@@ -73,7 +78,7 @@
 .authorName {
   font-weight: 700;
   font-size: 1rem;
-  color: #333;
+  color: #1f4e5d; /* azul profundo */
 }
 
 .rating {
@@ -82,13 +87,13 @@
 }
 
 .star {
-  color: #fff; /* blanco sobre fondo verde */
+  color: #000000; /* beige claro sobre fondo beige medio */
 }
 
 .quote {
   font-style: italic;
   font-size: 1rem;
-  color: #444;
+  color: #1f4e5d; /* azul profundo */
   line-height: 1.5;
   margin-top: auto;
   max-height: 120px;
@@ -99,6 +104,6 @@
 }
 
 .active {
-  border: 3px solid #b497bd;
+  border: 3px solid #d8cab8; /* beige suave */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }

@@ -6,9 +6,9 @@
   position: relative;
 }
 
-/* Card individual (similar a desktop, pero tamaño flexible) */
+/* Card individual */
 .card {
-  background: #fff;
+  background: #fff; /* blanco para contraste */
   border-radius: 1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -40,8 +40,13 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
-  color: #000;
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    /* beige suave */ #e0dbc8 50%,
+    /* beige medio */ #faf3e0 100% /* beige claro */
+  );
+  color: #1f4e5d; /* azul profundo */
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.75rem;
@@ -61,13 +66,13 @@
 
 .cardTitle {
   font-size: 1.2rem;
-  color: #000;
+  color: #1f4e5d; /* azul profundo */
   margin-bottom: 0.5rem;
 }
 
 .cardDescription {
   font-size: 0.95rem;
-  color: #444;
+  color: #444; /* gris oscuro */
   margin-bottom: 1rem;
   flex-grow: 1;
   overflow: hidden;
@@ -75,7 +80,7 @@
 
 .meta {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: #708090; /* gris pizarra */
   margin-bottom: 1rem;
   display: flex;
   gap: 0.5rem;
@@ -84,7 +89,7 @@
 .meta span {
   display: inline-flex;
   align-items: center;
-  color: #9e9e9e;
+  color: #708090; /* gris pizarra */
 }
 
 /* Botones del carrusel */
@@ -99,8 +104,13 @@
 .readButton {
   align-self: center;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
-  color: #444;
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    #faf3e0 50%,
+    #e0dbc8 100%
+  ); /* beige */
+  color: #1f4e5d; /* azul profundo */
   border: none;
   border-radius: 12px;
   font-size: 0.9rem;
@@ -116,12 +126,18 @@
 .readButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    #faf3e0 0%,
+    #e0dbc8 50%,
+    #d8cab8 100%
+  ); /* hover beige invertido */
 }
 
 .navButton {
-  background-color: #f0f0f0;
-  border: 1px solid #a8e063;
-  color: #a8e063;
+  background-color: #faf3e0; /* beige claro */
+  border: 1px solid #d8cab8; /* beige medio */
+  color: #1f4e5d; /* azul profundo */
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
   cursor: pointer;
@@ -140,6 +156,6 @@
 }
 
 .navButton:hover {
-  background-color: #8a9650;
-  color: #444;
+  background-color: #e0dbc8; /* beige medio */
+  color: #1f4e5d; /* azul profundo */
 }

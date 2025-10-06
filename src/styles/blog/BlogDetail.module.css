@@ -1,7 +1,7 @@
 .blogDetail {
-  --brown: #8b5e3c;
-  --yellow: #ebac30;
-  --green: #4d6447;
+  --beige: #d8cab8;
+  --slate-gray: #708090;
+  --blue-deep: #1f4e5d;
 
   max-width: 960px;
   min-height: 100vh;
@@ -9,7 +9,7 @@
   padding: 2rem 1.5rem;
   font-family: "Segoe UI", sans-serif;
   color: #333;
-  background-color: #faf3e0;
+  background-color: #f8f9fa; /* Fondo neutro claro */
 }
 
 .header {
@@ -21,8 +21,8 @@
 .category {
   display: inline-flex;
   align-items: center;
-  background-color: var(--yellow);
-  color: #fff;
+  background-color: var(--beige);
+  color: var(--blue-deep);
   padding: 0.4rem 1rem;
   border-radius: 999px;
   font-weight: 600;
@@ -32,13 +32,13 @@
 
 .title {
   font-size: 2rem;
-  color: var(--brown);
+  color: var(--blue-deep);
   margin-bottom: 0.5rem;
 }
 
 .meta {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--slate-gray);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -52,12 +52,13 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  border: 3px solid var(--blue-deep); /* opcional para dar énfasis */
 }
 
 .content {
   font-size: 1.1rem;
   line-height: 1.75;
-  color: #444;
+  color: var(--slate-gray);
   padding: 0 1rem;
 }
 

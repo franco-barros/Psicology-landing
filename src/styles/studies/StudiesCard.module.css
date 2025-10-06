@@ -26,7 +26,7 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem 1rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
 }
 
 .typeBadge {
@@ -35,7 +35,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.2);
-  color: #444;
+  color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font: 500 0.875rem var(--font-body);
@@ -47,7 +47,7 @@
 
 .title {
   font: 700 1.25rem var(--font-title);
-  color: #444;
+  color: #1f4e5d; /* azul profundo */
 }
 
 .dateRow {
@@ -55,7 +55,7 @@
   align-items: center;
   gap: 0.25rem;
   font: 400 0.875rem var(--font-body);
-  color: #444;
+  color: #708090; /* gris pizarra */
 }
 
 .body {
@@ -77,7 +77,7 @@
   align-items: center;
   gap: 0.5rem;
   font: 400 0.9rem var(--font-body);
-  color: #4d392d;
+  color: #444; /* texto oscuro neutro */
 }
 
 .iconCircle {
@@ -87,7 +87,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #d3e0b9;
+  background-color: #d8cab8; /* beige suave de la paleta 2 */
   flex-shrink: 0;
   margin-right: 0.5rem;
 }

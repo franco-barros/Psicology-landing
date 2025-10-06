@@ -1,5 +1,5 @@
 .blogPage {
-  background-color: #faf3e0;
+  background-color: #f8f9fa; /* Fondo neutro claro */
   padding: 4rem 1rem;
 }
 
@@ -11,20 +11,20 @@
 
 .icon {
   font-size: 2rem;
-  color: #4d6447;
+  color: #1f4e5d; /* azul profundo */
   margin-bottom: 0.5rem;
 }
 
 .title {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #1f4e5d; /* azul profundo */
   margin: 0.5rem 0;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #555;
+  color: #708090; /* gris pizarra */
 }
 
 .cardsContainer {
@@ -36,10 +36,10 @@
 }
 
 .card {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 }
@@ -51,15 +51,15 @@
 
 .image {
   object-fit: cover;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d8cab8; /* beige claro */
 }
 
 .categoryBadge {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: #ebac30;
-  color: white;
+  background: #d8cab8;
+  color: #1f4e5d;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.75rem;
@@ -79,17 +79,17 @@
 .cardTitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #222;
+  color: #1f4e5d; /* azul profundo */
 }
 
 .cardDescription {
   font-size: 0.95rem;
-  color: #555;
+  color: #708090; /* gris pizarra */
 }
 
 .meta {
   font-size: 0.85rem;
-  color: #666;
+  color: #708090; /* gris pizarra */
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -100,7 +100,7 @@
   align-self: flex-start;
   background: none;
   border: none;
-  color: #298513;
+  color: #1f4e5d; /* azul profundo */
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -110,5 +110,5 @@
 }
 
 .readButton:hover {
-  color: #1d4c0f;
+  color: #556b2f; /* tono verde/olive para hover */
 }

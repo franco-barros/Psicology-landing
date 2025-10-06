@@ -36,7 +36,7 @@
 .indicator {
   width: 12px;
   height: 12px;
-  background-color: #a8e063;
+  background-color: #d8cab8; /* beige suave de paleta 2 */
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -46,13 +46,13 @@
 }
 
 .indicator:hover {
-  background-color: #eee;
+  background-color: #708090; /* gris pizarra */
   transform: scale(1.1);
   opacity: 1;
 }
 
 .activeIndicator {
-  background-color: #a8e063;
+  background-color: #1f4e5d; /* azul profundo */
   transform: scale(1.2);
   opacity: 1;
 }

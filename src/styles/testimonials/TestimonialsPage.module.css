@@ -1,6 +1,6 @@
 .testimonialsSection {
   padding: 4rem 1.5rem;
-  background-color: #f8f9fa;
+  background-color: #faf3e0; /* beige suave */
   text-align: center;
 }
 
@@ -14,15 +14,16 @@
   font-weight: 700;
   font-family: var(--font-title);
   margin-bottom: 0.5rem;
+  color: #1f4e5d; /* azul profundo */
 }
 
 .title span {
-  color: #a8e063;
+  color: #d8cab8; /* beige más claro para resaltar */
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #555;
+  color: #444; /* gris oscuro */
 }
 
 .grid {
@@ -34,16 +35,17 @@
 }
 
 .card {
-  background-color: white;
+  background-color: #fff; /* blanco para las tarjetas */
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   text-align: left;
+  color: #1f4e5d; /* texto principal azul profundo */
 }
 
 .quote {
   font-size: 1rem;
-  color: #444;
+  color: #444; /* gris oscuro para citas */
   margin-bottom: 1rem;
   line-height: 1.4;
 }
@@ -53,12 +55,12 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  color: #888;
+  color: #708090; /* gris pizarra para información secundaria */
 }
 
 .result {
-  background-color: #e6f8d9;
-  color: #5b7b2e;
+  background-color: #d8cab8; /* beige suave */
+  color: #1f4e5d; /* azul profundo */
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-weight: 600;

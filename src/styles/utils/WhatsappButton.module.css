@@ -2,8 +2,13 @@
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
-  color: #000;
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    /* beige suave */ #faf3e0 50%,
+    /* beige claro */ #e0dbc8 100% /* beige medio */
+  );
+  color: #1f4e5d; /* azul profundo para texto e ícono */
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 12px;
@@ -22,16 +27,24 @@
 }
 
 .whatsappButton:hover {
-  background: linear-gradient(135deg, #c4f370 0%, #b3e974 50%, #e6ffc4 100%);
+  background: linear-gradient(
+    135deg,
+    #faf3e0 0%,
+    /* beige claro */ #d8cab8 50%,
+    /* beige suave */ #e0dbc8 100% /* beige medio */
+  );
   transform: scale(1.02);
 }
 
 .icon {
   font-size: 1.25rem;
+  color: #1f4e5d; /* azul profundo para contraste */
 }
 
 .text {
   white-space: nowrap;
+  font-size: 1rem;
+  color: #1f4e5d; /* azul profundo */
 }
 
 /* Ocultar en desktop */

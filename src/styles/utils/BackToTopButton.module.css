@@ -2,8 +2,13 @@
   position: fixed;
   bottom: 1.25rem;
   left: 1.25rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
-  color: #000;
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    #faf3e0 50%,
+    #e0dbc8 100%
+  ); /* beige suave → beige claro → beige medio */
+  color: #1f4e5d; /* azul profundo para contraste del texto */
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   border: none;
@@ -19,12 +24,18 @@
 }
 
 .backToTopButton:hover {
-  background: linear-gradient(135deg, #c4f370 0%, #b3e974 50%, #e6ffc4 100%);
+  background: linear-gradient(
+    135deg,
+    #faf3e0 0%,
+    #d8cab8 50%,
+    #e0dbc8 100%
+  ); /* inversión sutil de los beiges para hover */
   transform: scale(1.02);
 }
 
 .icon {
   font-size: 1.25rem;
+  color: #1f4e5d; /* azul profundo */
 }
 
 @media (max-width: 768px) {

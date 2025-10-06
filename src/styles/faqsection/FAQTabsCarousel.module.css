@@ -7,24 +7,24 @@
 }
 
 .tabItem {
-  background: #e0d4eb;
+  background: #d8cab8; /* beige paleta 2 */
   border: none;
   border-radius: 12px;
   padding: 0.5rem 1.25rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #444;
+  color: #1f4e5d; /* azul profundo */
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .tabItem:hover {
-  background: #d6c6e6;
+  background: #c0b29f; /* beige más oscuro para hover */
 }
 
 .tabItemActive {
-  background: #a8e063;
-  color: #444;
+  background: #708090; /* gris pizarra como activo */
+  color: #faf3e0; /* beige claro para contraste del texto */
 }
 
 .questionList {
@@ -38,8 +38,12 @@
 }
 
 .questionItem {
-  background: linear-gradient(135deg, #f1e4f9 0%, #e7d3f3 100%);
-  color: #444;
+  background: linear-gradient(
+    135deg,
+    #d8cab8 0%,
+    /* beige */ #708090 100% /* gris pizarra */
+  );
+  color: #1f4e5d; /* azul profundo */
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
   cursor: pointer;
@@ -57,6 +61,11 @@
 
 .questionItem:hover {
   transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #cbbfae 0%,
+    /* beige hover más oscuro */ #5f6b78 100% /* gris hover */
+  );
 }
 
 .questionHeader {
@@ -69,21 +78,21 @@
 .questionText {
   font-weight: 600;
   font-size: 1.05rem;
-  color: #444;
+  color: #1f4e5d; /* azul profundo */
   flex: 1;
 }
 
 .answerText {
   font-weight: 400;
   font-size: 0.98rem;
-  color: #666;
+  color: #444; /* gris oscuro */
   line-height: 1.5;
   flex: 1;
 }
 
 .chevron {
   transition: transform 0.3s ease;
-  color: #a8e063;
+  color: #708090; /* gris pizarra para icono */
   margin-left: 0.5rem;
 }
 
@@ -115,9 +124,6 @@
 
   .questionList::-webkit-scrollbar {
     display: none;
-  }
-
-  .questionList {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

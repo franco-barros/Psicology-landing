@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <div className={styles.content}>
         {/* Presentación */}
         <div className={styles.section}>

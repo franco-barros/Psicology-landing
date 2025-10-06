@@ -1,15 +1,11 @@
 .navbar {
-  --brown: #8b5e3c;
-  --yellow: #ebac30;
-  --green: #298513;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.75); /* blanco translúcido */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -37,7 +33,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  color: #e0bbe4;
+  color: #1f4e5d; /* azul profundo */
   background: none;
   border: none;
   padding: 0;
@@ -46,7 +42,7 @@
 .logoText {
   font-size: 1rem;
   font-weight: 600;
-  color: black;
+  color: #1f4e5d; /* beige suave */
 }
 
 .links {
@@ -61,22 +57,22 @@
   font: inherit;
   cursor: pointer;
   padding: 0.5rem;
-  color: #333;
+  color: #1f4e5d; /* azul profundo */
   transition: color 0.2s;
 }
 
-/* Cíclico: hover por clase */
+/* Hover: tonos beige */
 .link1:hover {
-  color: var(--brown);
+  color: #d8cab8;
 }
 .link2:hover {
-  color: var(--yellow);
+  color: #faf3e0;
 }
 .link3:hover {
-  color: var(--green);
+  color: #e0dbc8;
 }
 
-/* Activo: degradado de línea inferior */
+/* Activo: línea inferior degradada beige */
 .activeLink {
   font-weight: 600;
   position: relative;
@@ -88,12 +84,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--brown),
-    var(--yellow),
-    var(--green)
-  );
+  background: linear-gradient(to right, #d8cab8, #faf3e0, #e0dbc8);
   border-radius: 2px;
 }
 
@@ -104,21 +95,23 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #1f4e5d; /* azul profundo */
 }
 
-/* CTA desktop */
+/* CTA desktop: solo beige */
 .ctaButton {
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
-  color: #444;
+  background-color: #d8cab8; /* beige */
+  color: #1f4e5d; /* azul profundo para texto */
   padding: 0.6rem 1rem;
   border-radius: 12px;
   font-weight: bold;
   text-decoration: none;
   margin-left: 1rem;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .ctaButton:hover {
-  background-color: #3c4f36;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive: en mobile ocultamos links desktop y CTA, mostramos botón */

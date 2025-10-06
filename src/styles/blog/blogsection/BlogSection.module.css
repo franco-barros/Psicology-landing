@@ -1,6 +1,6 @@
 .blogSection {
   padding: 4rem 1.5rem;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Fondo neutro claro */
   text-align: center;
 }
 
@@ -10,13 +10,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #b497bd 0%, #c8a2c8 50%, #e0bbe4 100%);
+  background: #d8cab8;
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-badge);
-  color: black;
+  color: #1f4e5d;
   margin: 0 auto 1rem;
 }
 
@@ -25,20 +25,21 @@
   font-size: 2rem;
   font-family: var(--font-title);
   margin-bottom: 0.5rem;
+  color: #1f4e5d; /* azul profundo */
 }
 
-.title span {
-  color: #000;
+.title span:first-child {
+  color: #1f4e5d; /* azul profundo */
 }
 
 .title span:last-child {
-  color: #a8e063;
+  color: #708090; /* gris pizarra */
 }
 
 /* Subtítulo */
 .subtitle {
   font-size: 1.1rem;
-  color: #444;
+  color: #708090; /* gris pizarra */
   margin-bottom: 3rem;
 }
 
@@ -49,11 +50,11 @@
 
 .viewAllButton {
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #b5e550 0%, #a8e063 50%, #d0ffb3 100%);
+  background: linear-gradient(135deg, #d8cab8 0%, #708090 50%, #1f4e5d 100%);
   border: none;
   border-radius: 12px;
   font-weight: bold;
-  color: #444;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
